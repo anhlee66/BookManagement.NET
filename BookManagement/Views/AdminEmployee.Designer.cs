@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminEmployee));
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             panel1 = new Panel();
+            groupBox1 = new GroupBox();
             label12 = new Label();
             label11 = new Label();
             label10 = new Label();
@@ -50,9 +52,6 @@
             position = new DataGridViewTextBoxColumn();
             state = new DataGridViewTextBoxColumn();
             panel2 = new Panel();
-            panel5 = new Panel();
-            label13 = new Label();
-            comboBox1 = new ComboBox();
             panel4 = new Panel();
             label8 = new Label();
             comboBox5 = new ComboBox();
@@ -60,29 +59,17 @@
             label7 = new Label();
             comboBox4 = new ComboBox();
             panel1.SuspendLayout();
+            groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel2.SuspendLayout();
-            panel5.SuspendLayout();
             panel4.SuspendLayout();
             panel3.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
-            panel1.Controls.Add(label12);
-            panel1.Controls.Add(label11);
-            panel1.Controls.Add(label10);
-            panel1.Controls.Add(label9);
-            panel1.Controls.Add(label1);
-            panel1.Controls.Add(pictureBox1);
-            panel1.Controls.Add(button4);
-            panel1.Controls.Add(label6);
-            panel1.Controls.Add(label3);
-            panel1.Controls.Add(button1);
-            panel1.Controls.Add(label5);
-            panel1.Controls.Add(label4);
-            panel1.Controls.Add(label2);
+            panel1.Controls.Add(groupBox1);
             panel1.Dock = DockStyle.Left;
             panel1.Font = new Font("Segoe UI", 12F);
             panel1.Location = new Point(0, 0);
@@ -90,81 +77,102 @@
             panel1.Size = new Size(500, 665);
             panel1.TabIndex = 0;
             // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(label12);
+            groupBox1.Controls.Add(label11);
+            groupBox1.Controls.Add(label10);
+            groupBox1.Controls.Add(label9);
+            groupBox1.Controls.Add(label1);
+            groupBox1.Controls.Add(pictureBox1);
+            groupBox1.Controls.Add(button4);
+            groupBox1.Controls.Add(label6);
+            groupBox1.Controls.Add(label3);
+            groupBox1.Controls.Add(button1);
+            groupBox1.Controls.Add(label5);
+            groupBox1.Controls.Add(label4);
+            groupBox1.Controls.Add(label2);
+            groupBox1.Location = new Point(32, 71);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(444, 535);
+            groupBox1.TabIndex = 0;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "on";
+            // 
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(234, 411);
+            label12.Location = new Point(225, 377);
             label12.Name = "label12";
             label12.Size = new Size(59, 28);
-            label12.TabIndex = 25;
+            label12.TabIndex = 38;
             label12.Text = "Work";
             // 
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(234, 362);
+            label11.Location = new Point(225, 328);
             label11.Name = "label11";
             label11.Size = new Size(70, 28);
-            label11.TabIndex = 24;
+            label11.TabIndex = 37;
             label11.Text = "Admin";
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(234, 315);
+            label10.Location = new Point(225, 281);
             label10.Name = "label10";
             label10.Size = new Size(177, 28);
-            label10.TabIndex = 23;
+            label10.TabIndex = 36;
             label10.Text = "Ninh Kieu, Can Tho";
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(234, 265);
+            label9.Location = new Point(225, 231);
             label9.Name = "label9";
             label9.Size = new Size(56, 28);
-            label9.TabIndex = 22;
+            label9.TabIndex = 35;
             label9.Text = "2002";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(234, 218);
+            label1.Location = new Point(225, 184);
             label1.Name = "label1";
             label1.Size = new Size(118, 28);
-            label1.TabIndex = 21;
+            label1.TabIndex = 34;
             label1.Text = "Le Tuan Anh";
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(158, 12);
+            pictureBox1.Location = new Point(146, 43);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(184, 163);
+            pictureBox1.Size = new Size(152, 114);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 20;
+            pictureBox1.TabIndex = 33;
             pictureBox1.TabStop = false;
             // 
             // button4
             // 
             button4.Font = new Font("Segoe UI", 12F);
-            button4.Location = new Point(121, 603);
+            button4.Location = new Point(77, 451);
             button4.Name = "button4";
             button4.Size = new Size(108, 37);
-            button4.TabIndex = 19;
+            button4.TabIndex = 32;
             button4.Text = "New";
             button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             label6.ForeColor = SystemColors.ActiveCaptionText;
-            label6.Location = new Point(47, 411);
+            label6.Location = new Point(38, 377);
             label6.Name = "label6";
             label6.Size = new Size(66, 28);
-            label6.TabIndex = 17;
+            label6.TabIndex = 31;
             label6.Text = "State:";
             // 
             // label3
@@ -173,19 +181,19 @@
             label3.FlatStyle = FlatStyle.Popup;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             label3.ForeColor = SystemColors.ActiveCaptionText;
-            label3.Location = new Point(47, 265);
+            label3.Location = new Point(38, 231);
             label3.Name = "label3";
             label3.Size = new Size(136, 28);
-            label3.TabIndex = 13;
+            label3.TabIndex = 30;
             label3.Text = "Year of birth:";
             // 
             // button1
             // 
             button1.Font = new Font("Segoe UI", 12F);
-            button1.Location = new Point(271, 603);
+            button1.Location = new Point(222, 451);
             button1.Name = "button1";
             button1.Size = new Size(108, 37);
-            button1.TabIndex = 5;
+            button1.TabIndex = 29;
             button1.Text = "Update";
             button1.UseVisualStyleBackColor = true;
             // 
@@ -194,10 +202,10 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             label5.ForeColor = SystemColors.ActiveCaptionText;
-            label5.Location = new Point(47, 362);
+            label5.Location = new Point(38, 328);
             label5.Name = "label5";
             label5.Size = new Size(93, 28);
-            label5.TabIndex = 4;
+            label5.TabIndex = 28;
             label5.Text = "Position:";
             // 
             // label4
@@ -205,10 +213,10 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             label4.ForeColor = SystemColors.ActiveCaptionText;
-            label4.Location = new Point(47, 315);
+            label4.Location = new Point(38, 281);
             label4.Name = "label4";
             label4.Size = new Size(92, 28);
-            label4.TabIndex = 3;
+            label4.TabIndex = 27;
             label4.Text = "Address:";
             // 
             // label2
@@ -216,14 +224,21 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             label2.ForeColor = SystemColors.ActiveCaptionText;
-            label2.Location = new Point(47, 218);
+            label2.Location = new Point(38, 184);
             label2.Name = "label2";
             label2.Size = new Size(167, 28);
-            label2.TabIndex = 1;
+            label2.TabIndex = 26;
             label2.Text = "Employee name:";
             // 
             // dataGridView1
             // 
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(224, 224, 224);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.Gray;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(0, 192, 192);
+            dataGridViewCellStyle1.SelectionForeColor = Color.White;
+            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -231,7 +246,7 @@
             dataGridView1.Location = new Point(500, 83);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(676, 582);
+            dataGridView1.Size = new Size(664, 582);
             dataGridView1.TabIndex = 1;
             // 
             // employeename
@@ -272,7 +287,6 @@
             // 
             // panel2
             // 
-            panel2.Controls.Add(panel5);
             panel2.Controls.Add(panel4);
             panel2.Controls.Add(panel3);
             panel2.Dock = DockStyle.Top;
@@ -280,35 +294,6 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(676, 77);
             panel2.TabIndex = 2;
-            // 
-            // panel5
-            // 
-            panel5.Anchor = AnchorStyles.Right;
-            panel5.Controls.Add(label13);
-            panel5.Controls.Add(comboBox1);
-            panel5.Location = new Point(379, 18);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(275, 41);
-            panel5.TabIndex = 6;
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label13.Location = new Point(4, 6);
-            label13.Name = "label13";
-            label13.Size = new Size(60, 28);
-            label13.TabIndex = 4;
-            label13.Text = "State:";
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(109, 6);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(151, 28);
-            comboBox1.TabIndex = 3;
-            comboBox1.Text = "-- filter state --";
             // 
             // panel4
             // 
@@ -345,7 +330,7 @@
             panel3.Anchor = AnchorStyles.Right;
             panel3.Controls.Add(label7);
             panel3.Controls.Add(comboBox4);
-            panel3.Location = new Point(81, 18);
+            panel3.Location = new Point(389, 18);
             panel3.Name = "panel3";
             panel3.Size = new Size(275, 41);
             panel3.TabIndex = 4;
@@ -387,12 +372,11 @@
             TopMost = true;
             WindowState = FormWindowState.Maximized;
             panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel2.ResumeLayout(false);
-            panel5.ResumeLayout(false);
-            panel5.PerformLayout();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
             panel3.ResumeLayout(false);
@@ -403,34 +387,32 @@
         #endregion
 
         private Panel panel1;
-        private Button button1;
-        private Label label5;
-        private Label label4;
-        private Label label2;
-        private Label label3;
-        private Label label6;
         private DataGridView dataGridView1;
         private Panel panel2;
-        private Button button4;
         private Panel panel4;
         private Label label8;
         private ComboBox comboBox5;
         private Panel panel3;
         private Label label7;
         private ComboBox comboBox4;
-        private PictureBox pictureBox1;
-        private Label label12;
-        private Label label11;
-        private Label label10;
-        private Label label9;
-        private Label label1;
         private DataGridViewTextBoxColumn employeename;
         private DataGridViewTextBoxColumn yearofbirth;
         private DataGridViewTextBoxColumn gener;
         private DataGridViewTextBoxColumn position;
         private DataGridViewTextBoxColumn state;
-        private Panel panel5;
-        private Label label13;
-        private ComboBox comboBox1;
+        private GroupBox groupBox1;
+        private Label label12;
+        private Label label11;
+        private Label label10;
+        private Label label9;
+        private Label label1;
+        private PictureBox pictureBox1;
+        private Button button4;
+        private Label label6;
+        private Label label3;
+        private Button button1;
+        private Label label5;
+        private Label label4;
+        private Label label2;
     }
 }

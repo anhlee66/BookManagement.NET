@@ -34,25 +34,27 @@ namespace BookManagement.Views
             panel3 = new Panel();
             label2 = new Label();
             pbThumbnail = new PictureBox();
-            label1 = new Label();
             panel2 = new Panel();
             splitContainer1 = new SplitContainer();
             panel1 = new Panel();
+            panel4 = new Panel();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbThumbnail).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
+            splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // cbSort
             // 
+            cbSort.DropDownStyle = ComboBoxStyle.DropDownList;
             cbSort.FormattingEnabled = true;
-            cbSort.Location = new Point(72, 7);
+            cbSort.Location = new Point(29, 8);
             cbSort.Name = "cbSort";
-            cbSort.Size = new Size(165, 28);
+            cbSort.Size = new Size(165, 36);
             cbSort.TabIndex = 0;
             // 
             // panel3
@@ -86,17 +88,6 @@ namespace BookManagement.Views
             pbThumbnail.TabIndex = 0;
             pbThumbnail.TabStop = false;
             // 
-            // label1
-            // 
-            label1.Anchor = AnchorStyles.None;
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(13, 7);
-            label1.Name = "label1";
-            label1.Size = new Size(53, 28);
-            label1.TabIndex = 3;
-            label1.Text = "Sort:";
-            // 
             // panel2
             // 
             panel2.Controls.Add(splitContainer1);
@@ -115,7 +106,7 @@ namespace BookManagement.Views
             // 
             // splitContainer1.Panel1
             // 
-            splitContainer1.Panel1.BackColor = Color.White;
+            splitContainer1.Panel1.BackColor = Color.Silver;
             splitContainer1.Panel1.Controls.Add(panel1);
             splitContainer1.Panel1.Controls.Add(panel3);
             splitContainer1.Panel1.Paint += splitContainer1_Panel1_Paint;
@@ -123,6 +114,7 @@ namespace BookManagement.Views
             // splitContainer1.Panel2
             // 
             splitContainer1.Panel2.BackColor = Color.Gainsboro;
+            splitContainer1.Panel2.Controls.Add(panel4);
             splitContainer1.Panel2.Paint += splitContainer1_Panel2_Paint;
             splitContainer1.Size = new Size(801, 446);
             splitContainer1.SplitterDistance = 55;
@@ -132,12 +124,19 @@ namespace BookManagement.Views
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Left;
-            panel1.Controls.Add(label1);
             panel1.Controls.Add(cbSort);
+            panel1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             panel1.Location = new Point(12, 4);
             panel1.Name = "panel1";
             panel1.Size = new Size(242, 50);
             panel1.TabIndex = 5;
+            // 
+            // panel4
+            // 
+            panel4.Location = new Point(12, 17);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(777, 171);
+            panel4.TabIndex = 0;
             // 
             // AdminDashborad
             // 
@@ -156,10 +155,10 @@ namespace BookManagement.Views
             ((System.ComponentModel.ISupportInitialize)pbThumbnail).EndInit();
             panel2.ResumeLayout(false);
             splitContainer1.Panel1.ResumeLayout(false);
+            splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
             panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -167,11 +166,11 @@ namespace BookManagement.Views
 
         private ComboBox cbSort;
         private Panel panel2;
-        private Label label1;
         private Panel panel3;
         private PictureBox pbThumbnail;
         private Label label2;
         private SplitContainer splitContainer1;
         private Panel panel1;
+        private Panel panel4;
     }
 }

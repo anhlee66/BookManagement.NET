@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            button4 = new Button();
+            label9 = new Label();
             button1 = new Button();
             button3 = new Button();
             comboBox3 = new ComboBox();
@@ -53,14 +55,28 @@
             bookgenre = new DataGridViewTextBoxColumn();
             quantity = new DataGridViewTextBoxColumn();
             price = new DataGridViewTextBoxColumn();
+            panel1 = new Panel();
+            panel4 = new Panel();
+            btnSearch = new Button();
+            textBox5 = new TextBox();
+            panel3 = new Panel();
+            comboBox6 = new ComboBox();
+            comboBox5 = new ComboBox();
+            label8 = new Label();
+            comboBox4 = new ComboBox();
             groupBox1.SuspendLayout();
             groupBox3.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            panel1.SuspendLayout();
+            panel4.SuspendLayout();
+            panel3.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(button4);
+            groupBox1.Controls.Add(label9);
             groupBox1.Controls.Add(button1);
             groupBox1.Controls.Add(button3);
             groupBox1.Controls.Add(comboBox3);
@@ -68,22 +84,42 @@
             groupBox1.Controls.Add(button2);
             groupBox1.Controls.Add(groupBox3);
             groupBox1.Controls.Add(groupBox2);
-            groupBox1.Dock = DockStyle.Left;
             groupBox1.Font = new Font("Segoe UI", 12F);
-            groupBox1.Location = new Point(0, 0);
+            groupBox1.Location = new Point(0, 107);
             groupBox1.Name = "groupBox1";
             groupBox1.RightToLeft = RightToLeft.No;
-            groupBox1.Size = new Size(593, 728);
+            groupBox1.Size = new Size(587, 652);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
+            // 
+            // button4
+            // 
+            button4.Font = new Font("Segoe UI", 12F);
+            button4.Location = new Point(97, 604);
+            button4.Name = "button4";
+            button4.RightToLeft = RightToLeft.No;
+            button4.Size = new Size(110, 41);
+            button4.TabIndex = 23;
+            button4.Text = "New";
+            button4.UseVisualStyleBackColor = true;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label9.Location = new Point(167, 30);
+            label9.Name = "label9";
+            label9.Size = new Size(252, 38);
+            label9.TabIndex = 22;
+            label9.Text = "Book Information";
             // 
             // button1
             // 
             button1.Font = new Font("Segoe UI", 12F);
-            button1.Location = new Point(238, 640);
+            button1.Location = new Point(255, 604);
             button1.Name = "button1";
             button1.RightToLeft = RightToLeft.No;
-            button1.Size = new Size(110, 42);
+            button1.Size = new Size(110, 41);
             button1.TabIndex = 17;
             button1.Text = "Update";
             button1.UseVisualStyleBackColor = true;
@@ -91,10 +127,10 @@
             // button3
             // 
             button3.Font = new Font("Segoe UI", 12F);
-            button3.Location = new Point(377, 640);
+            button3.Location = new Point(416, 604);
             button3.Name = "button3";
             button3.RightToLeft = RightToLeft.No;
-            button3.Size = new Size(110, 42);
+            button3.Size = new Size(110, 41);
             button3.TabIndex = 21;
             button3.Text = "Help";
             button3.UseVisualStyleBackColor = true;
@@ -104,7 +140,7 @@
             // 
             comboBox3.Font = new Font("Segoe UI", 12F);
             comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(202, 531);
+            comboBox3.Location = new Point(206, 528);
             comboBox3.Name = "comboBox3";
             comboBox3.RightToLeft = RightToLeft.No;
             comboBox3.Size = new Size(346, 36);
@@ -114,7 +150,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 12F);
-            label5.Location = new Point(58, 534);
+            label5.Location = new Point(62, 531);
             label5.Name = "label5";
             label5.RightToLeft = RightToLeft.No;
             label5.Size = new Size(104, 28);
@@ -124,7 +160,7 @@
             // button2
             // 
             button2.Font = new Font("Segoe UI", 12F);
-            button2.Location = new Point(101, 640);
+            button2.Location = new Point(106, 676);
             button2.Name = "button2";
             button2.RightToLeft = RightToLeft.No;
             button2.Size = new Size(110, 42);
@@ -139,7 +175,7 @@
             groupBox3.Controls.Add(label6);
             groupBox3.Controls.Add(label7);
             groupBox3.Font = new Font("Segoe UI", 12F);
-            groupBox3.Location = new Point(23, 311);
+            groupBox3.Location = new Point(28, 347);
             groupBox3.Name = "groupBox3";
             groupBox3.RightToLeft = RightToLeft.No;
             groupBox3.Size = new Size(543, 159);
@@ -198,7 +234,7 @@
             groupBox2.Controls.Add(textBox1);
             groupBox2.Controls.Add(label1);
             groupBox2.Font = new Font("Segoe UI", 12F);
-            groupBox2.Location = new Point(23, 50);
+            groupBox2.Location = new Point(28, 86);
             groupBox2.Name = "groupBox2";
             groupBox2.RightToLeft = RightToLeft.No;
             groupBox2.Size = new Size(543, 255);
@@ -290,15 +326,15 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { bookname, bookgenre, quantity, price });
-            dataGridView1.Dock = DockStyle.Fill;
-            dataGridView1.Location = new Point(593, 0);
+            dataGridView1.Location = new Point(593, 119);
             dataGridView1.MultiSelect = false;
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridView1.Size = new Size(388, 728);
+            dataGridView1.Size = new Size(614, 728);
             dataGridView1.TabIndex = 1;
             // 
             // bookname
@@ -333,11 +369,105 @@
             price.ReadOnly = true;
             price.Width = 125;
             // 
+            // panel1
+            // 
+            panel1.BackColor = Color.White;
+            panel1.Controls.Add(panel4);
+            panel1.Controls.Add(panel3);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1219, 106);
+            panel1.TabIndex = 2;
+            // 
+            // panel4
+            // 
+            panel4.Anchor = AnchorStyles.Right;
+            panel4.Controls.Add(btnSearch);
+            panel4.Controls.Add(textBox5);
+            panel4.Location = new Point(676, 14);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(531, 47);
+            panel4.TabIndex = 6;
+            // 
+            // btnSearch
+            // 
+            btnSearch.BackColor = SystemColors.ButtonShadow;
+            btnSearch.Image = Properties.Resources.search25x25;
+            btnSearch.ImageAlign = ContentAlignment.MiddleLeft;
+            btnSearch.Location = new Point(393, 3);
+            btnSearch.Margin = new Padding(4);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(129, 41);
+            btnSearch.TabIndex = 3;
+            btnSearch.Text = "Search";
+            btnSearch.UseVisualStyleBackColor = false;
+            // 
+            // textBox5
+            // 
+            textBox5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox5.Location = new Point(22, 9);
+            textBox5.Margin = new Padding(4);
+            textBox5.Name = "textBox5";
+            textBox5.PlaceholderText = "Search ?";
+            textBox5.Size = new Size(363, 34);
+            textBox5.TabIndex = 2;
+            // 
+            // panel3
+            // 
+            panel3.Anchor = AnchorStyles.Right;
+            panel3.Controls.Add(comboBox6);
+            panel3.Controls.Add(comboBox5);
+            panel3.Controls.Add(label8);
+            panel3.Controls.Add(comboBox4);
+            panel3.Location = new Point(676, 62);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(531, 41);
+            panel3.TabIndex = 5;
+            // 
+            // comboBox6
+            // 
+            comboBox6.FormattingEnabled = true;
+            comboBox6.Location = new Point(371, 6);
+            comboBox6.Name = "comboBox6";
+            comboBox6.Size = new Size(151, 28);
+            comboBox6.TabIndex = 6;
+            comboBox6.Text = "-- filter publiser --";
+            // 
+            // comboBox5
+            // 
+            comboBox5.FormattingEnabled = true;
+            comboBox5.Location = new Point(200, 6);
+            comboBox5.Name = "comboBox5";
+            comboBox5.Size = new Size(151, 28);
+            comboBox5.TabIndex = 5;
+            comboBox5.Text = "-- filter author --";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label8.Location = new Point(4, 6);
+            label8.Name = "label8";
+            label8.Size = new Size(0, 28);
+            label8.TabIndex = 4;
+            // 
+            // comboBox4
+            // 
+            comboBox4.FormattingEnabled = true;
+            comboBox4.Location = new Point(26, 6);
+            comboBox4.Name = "comboBox4";
+            comboBox4.Size = new Size(151, 28);
+            comboBox4.TabIndex = 3;
+            comboBox4.Text = "-- filter genre --";
+            // 
             // AdminStorage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(981, 728);
+            AutoSize = true;
+            ClientSize = new Size(1219, 764);
+            Controls.Add(panel1);
             Controls.Add(dataGridView1);
             Controls.Add(groupBox1);
             FormBorderStyle = FormBorderStyle.None;
@@ -351,6 +481,11 @@
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            panel1.ResumeLayout(false);
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -381,5 +516,16 @@
         private DataGridViewTextBoxColumn bookgenre;
         private DataGridViewTextBoxColumn quantity;
         private DataGridViewTextBoxColumn price;
+        private Panel panel1;
+        private Panel panel3;
+        private ComboBox comboBox5;
+        private Label label8;
+        private ComboBox comboBox4;
+        private Panel panel4;
+        private Button btnSearch;
+        private TextBox textBox5;
+        private ComboBox comboBox6;
+        private Button button4;
+        private Label label9;
     }
 }
