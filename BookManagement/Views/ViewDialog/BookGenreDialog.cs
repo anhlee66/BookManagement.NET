@@ -1,4 +1,5 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using BookManagement.Models;
+using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,11 +21,12 @@ namespace BookManagement.Views.ViewDialog
         {
             InitializeComponent();
         }
-        internal void getData(int id,string genreName, string description)
+        internal void getData(BookGenre genre)
         {
-            txtGenreId.Text = id.ToString();
-            txtGenreName.Text = genreName;
-            txtGenreDescription.Text = description;
+            txtGenreName.Text = genre.name;
+            txtGenreId.Text = genre.genreId.ToString();
+            txtGenreDescription.Text = genre.description;
+
         }
         public void NotifyIdChangeVaulue()
         {

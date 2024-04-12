@@ -1,4 +1,5 @@
 ﻿using BookManagement.Controller;
+using BookManagement.Models;
 using BookManagement.Views.ViewDialog;
 using System;
 using System.Collections.Generic;
@@ -20,7 +21,7 @@ namespace BookManagement.Views
         {
             InitializeComponent();
         }
-        
+
         private void AdminCategory_Load(object sender, EventArgs e)
         {
             this.ControlBox = false;
@@ -64,38 +65,11 @@ namespace BookManagement.Views
 
         }
 
-        private void dgvGenre_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int index = e.RowIndex;
-            if (isRangeOut(index, dgvGenre.Rows.Count)) return;
-            DataGridViewRow dr = dgvGenre.Rows[index];
-            id = Convert.ToInt32(dr.Cells["BookGenreId"].Value);
-            txtGenreName.Text = dr.Cells["genreName"].Value.ToString();
-            txtGenreDescription.Text = dr.Cells["genreDescription"].Value.ToString();
 
-        }
 
-        private void dgvAuthor_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int index = e.RowIndex;
-            if (isRangeOut(index, dgvAuthor.Rows.Count)) return;
-            DataGridViewRow dr = dgvAuthor.Rows[index];
-            txtAuthorName.Text = dr.Cells["authorName"].Value.ToString();
-            txtAuthorDescription.Text = dr.Cells["authorDescription"].Value.ToString();
-            txtAuthorContact.Text = dr.Cells["authorContact"].Value.ToString();
-        }
 
-        private void dgvPublisher_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int index = e.RowIndex;
-            if (isRangeOut(index, dgvPublisher.Rows.Count)) return;
 
-            DataGridViewRow dr = dgvPublisher.Rows[index];
-            txtPublisherName.Text = dr.Cells["publisherName"].Value.ToString();
-            txtPublisherDescription.Text = dr.Cells["publisherDescription"].Value.ToString();
-            txtPublisherContact.Text = dr.Cells["publisherContact"].Value.ToString();
-            txtPublisherAddress.Text = dr.Cells["publisherAddress"].Value.ToString();
-        }
+
 
         public bool isRangeOut(int index, int size)
         {
@@ -103,21 +77,26 @@ namespace BookManagement.Views
             return false;
         }
 
-        private void btnNewGenre_Click(object sender, EventArgs e)
-        {
-            
 
+        private void btnEditGenre_Click(object sender, EventArgs e)
+        {
+            if (bookGenreSelected != null)
+            {
+                BookGenreDialog gender = new BookGenreDialog();
+                gender.getData(bookGenreSelected);
+                gender.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Not has ob");
+            }
         }
 
-        private void btnUpdateGenre_Click(object sender, EventArgs e)
+        private void dgvGenre_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (id != -1)
-            {
-                BookGenreDialog genre = new BookGenreDialog();
-                genre.getData(id, txtGenreName.Text, txtGenreDescription.Text);
-                //genre.Parent = this;
-                genre.ShowDialog();
-            }
+            int index = e.RowIndex;
+            if (isRangeOut(index, dtGenre.Rows.Count)) return;
+            bookGenreSelected = new BookGenre(dtGenre.Rows[index]); 
         }
     }
 }

@@ -20,8 +20,8 @@ namespace BookManagement.Models
             this.name = name;
             this.description = description;
         }
-        private int genreId { get; set; }
-        private string name { get; set; }
-        private string description { get; set; }
+        public int genreId { get; set; }
+        public string name { get; set; }
+        public string description { get; set; }
     }
 }

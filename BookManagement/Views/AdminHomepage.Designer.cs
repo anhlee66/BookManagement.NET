@@ -30,6 +30,9 @@
         {
             sidebar = new FlowLayoutPanel();
             panel7 = new Panel();
+            panel11 = new Panel();
+            label2 = new Label();
+            pbThumbnail = new PictureBox();
             panel3 = new Panel();
             sbDashboard = new Button();
             panel5 = new Panel();
@@ -51,11 +54,10 @@
             panel10 = new Panel();
             btnSearch = new Button();
             textBox1 = new TextBox();
-            panel11 = new Panel();
-            label2 = new Label();
-            pbThumbnail = new PictureBox();
             sidebar.SuspendLayout();
             panel7.SuspendLayout();
+            panel11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pbThumbnail).BeginInit();
             panel3.SuspendLayout();
             panel5.SuspendLayout();
             panel4.SuspendLayout();
@@ -65,8 +67,6 @@
             panel9.SuspendLayout();
             panel8.SuspendLayout();
             panel10.SuspendLayout();
-            panel11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pbThumbnail).BeginInit();
             SuspendLayout();
             // 
             // sidebar
@@ -97,6 +97,37 @@
             panel7.Name = "panel7";
             panel7.Size = new Size(284, 71);
             panel7.TabIndex = 6;
+            // 
+            // panel11
+            // 
+            panel11.Anchor = AnchorStyles.Right;
+            panel11.Controls.Add(label2);
+            panel11.Controls.Add(pbThumbnail);
+            panel11.Location = new Point(12, 10);
+            panel11.Name = "panel11";
+            panel11.Size = new Size(202, 54);
+            panel11.TabIndex = 5;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(53, 5);
+            label2.Name = "label2";
+            label2.Size = new Size(88, 28);
+            label2.TabIndex = 1;
+            label2.Text = "Anh Lee";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // pbThumbnail
+            // 
+            pbThumbnail.Image = Properties.Resources.user__Custom_;
+            pbThumbnail.Location = new Point(3, 7);
+            pbThumbnail.Name = "pbThumbnail";
+            pbThumbnail.Size = new Size(44, 44);
+            pbThumbnail.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbThumbnail.TabIndex = 0;
+            pbThumbnail.TabStop = false;
             // 
             // panel3
             // 
@@ -365,7 +396,7 @@
             panel10.Anchor = AnchorStyles.Left;
             panel10.Controls.Add(btnSearch);
             panel10.Controls.Add(textBox1);
-            panel10.Location = new Point(23, 12);
+            panel10.Location = new Point(6, 10);
             panel10.Name = "panel10";
             panel10.Size = new Size(509, 52);
             panel10.TabIndex = 1;
@@ -389,44 +420,13 @@
             // textBox1
             // 
             textBox1.Font = new Font("Segoe UI", 12F);
-            textBox1.Location = new Point(0, 5);
+            textBox1.Location = new Point(4, 6);
             textBox1.Margin = new Padding(4);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
             textBox1.PlaceholderText = "    Search ?";
             textBox1.Size = new Size(363, 42);
             textBox1.TabIndex = 2;
-            // 
-            // panel11
-            // 
-            panel11.Anchor = AnchorStyles.Right;
-            panel11.Controls.Add(label2);
-            panel11.Controls.Add(pbThumbnail);
-            panel11.Location = new Point(12, 10);
-            panel11.Name = "panel11";
-            panel11.Size = new Size(202, 54);
-            panel11.TabIndex = 5;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(53, 5);
-            label2.Name = "label2";
-            label2.Size = new Size(88, 28);
-            label2.TabIndex = 1;
-            label2.Text = "Anh Lee";
-            label2.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // pbThumbnail
-            // 
-            pbThumbnail.Image = Properties.Resources.user__Custom_;
-            pbThumbnail.Location = new Point(3, 7);
-            pbThumbnail.Name = "pbThumbnail";
-            pbThumbnail.Size = new Size(44, 44);
-            pbThumbnail.SizeMode = PictureBoxSizeMode.StretchImage;
-            pbThumbnail.TabIndex = 0;
-            pbThumbnail.TabStop = false;
             // 
             // AdminHomepage
             // 
@@ -444,6 +444,9 @@
             Load += sbDashboard_Click;
             sidebar.ResumeLayout(false);
             panel7.ResumeLayout(false);
+            panel11.ResumeLayout(false);
+            panel11.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pbThumbnail).EndInit();
             panel3.ResumeLayout(false);
             panel5.ResumeLayout(false);
             panel4.ResumeLayout(false);
@@ -454,9 +457,6 @@
             panel8.ResumeLayout(false);
             panel10.ResumeLayout(false);
             panel10.PerformLayout();
-            panel11.ResumeLayout(false);
-            panel11.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pbThumbnail).EndInit();
             ResumeLayout(false);
         }
 

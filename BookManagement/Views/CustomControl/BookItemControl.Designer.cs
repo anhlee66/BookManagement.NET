@@ -124,7 +124,7 @@
             Controls.Add(groupBox1);
             Controls.Add(pictureBox1);
             Name = "BookItemControl";
-            Size = new Size(680, 154);
+            Size = new Size(737, 154);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
