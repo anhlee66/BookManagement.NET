@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BookManagement.Views
+namespace BookManagement.Views.ViewDialog
 {
-    public partial class Content : Form
+    public partial class BookDialog : Form
     {
-        public Content()
+        public BookDialog()
         {
             InitializeComponent();
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -17,15 +17,13 @@ namespace BookManagement.Models
             this.name =(string) r["Name"];
             this.summary = (string)r["Summary"];
             this.quantity = (int)r["Quantity"];
-            this.importPrice = (int)r["Price"];
-            this.genre = (int)r["Genre"];
-            this.author = (int)r["Author"];
-            this.publisher = (int)r["Publisher"];
-            this.supplier = (int)r["Supplier"];
+            this.importPrice = (decimal)r["ImportPrice"];
+            this.genre = (int)r["BookGenreId"];
+            this.publisher = (int)r["PublisherId"];
 
         }
         public Book(int id,string name, string summary, int quantity,
-        int importPrice, int genre, int author, int publisher,int supplier)
+        int importPrice, int genre, int author, int publisher)
         {
             this.bookId = id;
             this.name = name;
@@ -33,19 +31,15 @@ namespace BookManagement.Models
             this.quantity = quantity;
             this.importPrice = importPrice;
             this.genre = genre;
-            this.author = author;
             this.publisher = publisher;
-            this.supplier = supplier;
 
         }
-        private int bookId { get; set; }
-        private string name { get; set; } 
-        private int genre { get; set; } 
-        private string summary { get; set; } 
-        private int quantity { get; set; } 
-        private int importPrice { get; set; } 
-        private int author { get; set; } 
-        private int publisher { get; set; } 
-        private int supplier { get; set; }
+        public int bookId { get; set; }
+        public string name { get; set; }
+        public int genre { get; set; }
+        public string summary { get; set; }
+        public int quantity { get; set; }
+        public decimal importPrice { get; set; }
+        public int publisher { get; set; }
     }
 }

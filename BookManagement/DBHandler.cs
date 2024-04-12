@@ -10,8 +10,8 @@ namespace BookManagement
 {
     internal class DBHandler
     {
-        private static SqlConnection con;
-        private static string server = "server=AnhLee;database=managebook;Integreted Security=SSPI";
+        public static SqlConnection con;
+        public static string server = "server=AnhLee;database=managebooks;Integrated Security=SSPI";
         public static bool open()
         {
             try

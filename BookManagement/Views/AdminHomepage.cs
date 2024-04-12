@@ -22,15 +22,10 @@ namespace BookManagement.Views
         public AdminHomepage()
         {
             InitializeComponent();
-            mdiProp();
 
         }
 
-        private void mdiProp()
-        {
-            this.SetBevel(false);
-            Controls.OfType<MdiClient>().FirstOrDefault().BackColor = Color.Black;
-        }
+        
         private void dashboard_Closed(object sender, FormClosedEventArgs e)
         {
             dashborad = null;
@@ -45,7 +40,6 @@ namespace BookManagement.Views
                 dashborad.MdiParent = this;
                 dashborad.Dock = DockStyle.Fill;
 
-                //dashborad.WindowState = FormWindowState.Maximized;
                 dashborad.Show();
             }
             else
@@ -95,6 +89,10 @@ namespace BookManagement.Views
         {
             category = null;
         }
+        private void storage_Closed(object sender, FormClosedEventArgs e)
+        {
+            storage = null;
+        }
         private void sbStorage_Click(object sender, EventArgs e)
         {
             if (storage == null)
@@ -111,10 +109,7 @@ namespace BookManagement.Views
             }
         }
 
-        private void storage_Closed(object sender, FormClosedEventArgs e)
-        {
-            storage = null;
-        }
+        
         private void sbSetting_Click(object sender, EventArgs e)
         {
             if (setting == null)
@@ -152,8 +147,8 @@ namespace BookManagement.Views
             if(employee == null)
             {
                 employee = new AdminEmployee();
-                employee.FormClosed += Employee_FormClosed;
                 employee.MdiParent = this;
+                employee.FormClosed += Employee_FormClosed;
                 employee.Dock = DockStyle.Fill;
                 employee.Show();
             }

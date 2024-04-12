@@ -15,17 +15,20 @@ namespace BookManagement.Models
             this.publisherId = (int)r["PublisherId"];
             this.name = (string)r["Name"];
             this.contact = (string)r["Contact"];
+            this.address = (string)r["Address"];
             this.description = (string)r["Description"];
         }
-        public Publisher(int id,string name,string contact, string description ) {
+        public Publisher(int id,string name,string contact,string address, string description ) {
             this.publisherId = id;
             this.name = name;
             this.contact = contact;
+            this.address = address;
             this.description = description;
         }
         private int publisherId { get; set; }
         private string name { get; set; }
         private string contact { get; set; }
+        private string address { get; set; }
         private string description { get; set; }
     }
 }

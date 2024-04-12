@@ -1,4 +1,6 @@
-﻿namespace BookManagement.Views
+﻿using System.Data;
+
+namespace BookManagement.Views
 {
     partial class AdminCategory
     {
@@ -29,88 +31,91 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            tabControl1 = new TabControl();
-            tabPage1 = new TabPage();
+            tabCategory = new TabControl();
+            tabGenre = new TabPage();
             panel2 = new Panel();
             panel3 = new Panel();
             panel4 = new Panel();
             btnSearch = new Button();
             textBox1 = new TextBox();
-            dataGridView1 = new DataGridView();
-            bookgenre = new DataGridViewTextBoxColumn();
-            description = new DataGridViewTextBoxColumn();
+            dgvGenre = new DataGridView();
+            genreName = new DataGridViewTextBoxColumn();
+            genreDescription = new DataGridViewTextBoxColumn();
             panel1 = new Panel();
             groupBox1 = new GroupBox();
-            button3 = new Button();
-            button2 = new Button();
-            button1 = new Button();
+            btnDeleteGenre = new Button();
+            btnUpdateGenre = new Button();
+            btnNewGenre = new Button();
             label8 = new Label();
-            label7 = new Label();
-            label6 = new Label();
+            txtGenreDescription = new Label();
+            txtGenreName = new Label();
             label5 = new Label();
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
-            tabPage2 = new TabPage();
+            tabAuthor = new TabPage();
             panel11 = new Panel();
-            dataGridView2 = new DataGridView();
-            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+            dgvAuthor = new DataGridView();
+            authorName = new DataGridViewTextBoxColumn();
+            authorContact = new DataGridViewTextBoxColumn();
+            authorDescription = new DataGridViewTextBoxColumn();
             panel6 = new Panel();
             panel7 = new Panel();
             button7 = new Button();
             textBox2 = new TextBox();
             panel5 = new Panel();
             groupBox2 = new GroupBox();
-            button4 = new Button();
-            button5 = new Button();
-            button6 = new Button();
-            label9 = new Label();
-            label10 = new Label();
-            label11 = new Label();
+            btnDeleteAuthor = new Button();
+            btnUpdateAuthor = new Button();
+            btnNewAuthor = new Button();
+            txtAuthorContact = new Label();
+            txtAuthorDescription = new Label();
+            txtAuthorName = new Label();
             label12 = new Label();
             label13 = new Label();
             label14 = new Label();
             label15 = new Label();
-            tabPage3 = new TabPage();
-            dataGridView3 = new DataGridView();
-            dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
+            tabPuslisher = new TabPage();
+            dgvPublisher = new DataGridView();
+            publisherName = new DataGridViewTextBoxColumn();
+            publisherContact = new DataGridViewTextBoxColumn();
+            publisherAddress = new DataGridViewTextBoxColumn();
+            publisherDescription = new DataGridViewTextBoxColumn();
             panel9 = new Panel();
             panel10 = new Panel();
             button11 = new Button();
             textBox3 = new TextBox();
             panel8 = new Panel();
             groupBox3 = new GroupBox();
-            label23 = new Label();
+            txtPublisherAddress = new Label();
             label24 = new Label();
-            button8 = new Button();
-            button9 = new Button();
-            button10 = new Button();
-            label16 = new Label();
-            label17 = new Label();
-            label18 = new Label();
+            btnDeletePublisher = new Button();
+            btnUpdatePublisher = new Button();
+            btnNewPublisher = new Button();
+            txtPublisherContact = new Label();
+            txtPublisherDescription = new Label();
+            txtPublisherName = new Label();
             label19 = new Label();
             label20 = new Label();
             label21 = new Label();
             label22 = new Label();
-            tabControl1.SuspendLayout();
-            tabPage1.SuspendLayout();
+            tabCategory.SuspendLayout();
+            tabGenre.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvGenre).BeginInit();
             panel1.SuspendLayout();
             groupBox1.SuspendLayout();
-            tabPage2.SuspendLayout();
+            tabAuthor.SuspendLayout();
             panel11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvAuthor).BeginInit();
             panel6.SuspendLayout();
             panel7.SuspendLayout();
             panel5.SuspendLayout();
             groupBox2.SuspendLayout();
-            tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
+            tabPuslisher.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvPublisher).BeginInit();
             panel9.SuspendLayout();
             panel10.SuspendLayout();
             panel8.SuspendLayout();
@@ -127,37 +132,38 @@
             label1.TabIndex = 1;
             label1.Text = "Welcom Category";
             // 
-            // tabControl1
+            // tabCategory
             // 
-            tabControl1.Controls.Add(tabPage1);
-            tabControl1.Controls.Add(tabPage2);
-            tabControl1.Controls.Add(tabPage3);
-            tabControl1.Dock = DockStyle.Fill;
-            tabControl1.Font = new Font("Segoe UI", 12F);
-            tabControl1.Location = new Point(0, 0);
-            tabControl1.Name = "tabControl1";
-            tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(1062, 602);
-            tabControl1.TabIndex = 2;
+            tabCategory.Controls.Add(tabGenre);
+            tabCategory.Controls.Add(tabAuthor);
+            tabCategory.Controls.Add(tabPuslisher);
+            tabCategory.Dock = DockStyle.Fill;
+            tabCategory.Font = new Font("Segoe UI", 12F);
+            tabCategory.Location = new Point(0, 0);
+            tabCategory.Multiline = true;
+            tabCategory.Name = "tabCategory";
+            tabCategory.SelectedIndex = 0;
+            tabCategory.Size = new Size(1062, 602);
+            tabCategory.TabIndex = 2;
             // 
-            // tabPage1
+            // tabGenre
             // 
-            tabPage1.Controls.Add(panel2);
-            tabPage1.Controls.Add(panel1);
-            tabPage1.Font = new Font("Segoe UI", 12F);
-            tabPage1.Location = new Point(4, 37);
-            tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(1054, 561);
-            tabPage1.TabIndex = 0;
-            tabPage1.Text = "Genre";
-            tabPage1.UseVisualStyleBackColor = true;
+            tabGenre.Controls.Add(panel2);
+            tabGenre.Controls.Add(panel1);
+            tabGenre.Font = new Font("Segoe UI", 12F);
+            tabGenre.Location = new Point(4, 37);
+            tabGenre.Name = "tabGenre";
+            tabGenre.Padding = new Padding(3);
+            tabGenre.Size = new Size(1054, 561);
+            tabGenre.TabIndex = 0;
+            tabGenre.Text = "Genre";
+            tabGenre.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
             panel2.AutoSize = true;
             panel2.Controls.Add(panel3);
-            panel2.Controls.Add(dataGridView1);
+            panel2.Controls.Add(dgvGenre);
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(457, 3);
             panel2.Name = "panel2";
@@ -205,30 +211,38 @@
             textBox1.Size = new Size(363, 34);
             textBox1.TabIndex = 2;
             // 
-            // dataGridView1
+            // dgvGenre
             // 
-            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { bookgenre, description });
-            dataGridView1.Location = new Point(26, 93);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(563, 457);
-            dataGridView1.TabIndex = 1;
+            dgvGenre.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dgvGenre.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvGenre.Columns.AddRange(new DataGridViewColumn[] { genreName, genreDescription });
+            dgvGenre.Location = new Point(26, 83);
+            dgvGenre.MultiSelect = false;
+            dgvGenre.Name = "dgvGenre";
+            dgvGenre.ReadOnly = true;
+            dgvGenre.RowHeadersWidth = 51;
+            dgvGenre.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvGenre.Size = new Size(563, 457);
+            dgvGenre.TabIndex = 1;
+            dgvGenre.CellClick += dgvGenre_CellContentClick;
             // 
-            // bookgenre
+            // genreName
             // 
-            bookgenre.HeaderText = "Genre name";
-            bookgenre.MinimumWidth = 6;
-            bookgenre.Name = "bookgenre";
-            bookgenre.Width = 300;
+            genreName.DataPropertyName = "Name";
+            genreName.HeaderText = "Genre name";
+            genreName.MinimumWidth = 6;
+            genreName.Name = "genreName";
+            genreName.ReadOnly = true;
+            genreName.Width = 300;
             // 
-            // description
+            // genreDescription
             // 
-            description.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            description.HeaderText = "Description";
-            description.MinimumWidth = 6;
-            description.Name = "description";
+            genreDescription.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            genreDescription.DataPropertyName = "Description";
+            genreDescription.HeaderText = "Description";
+            genreDescription.MinimumWidth = 6;
+            genreDescription.Name = "genreDescription";
+            genreDescription.ReadOnly = true;
             // 
             // panel1
             // 
@@ -242,12 +256,12 @@
             // groupBox1
             // 
             groupBox1.AutoSize = true;
-            groupBox1.Controls.Add(button3);
-            groupBox1.Controls.Add(button2);
-            groupBox1.Controls.Add(button1);
+            groupBox1.Controls.Add(btnDeleteGenre);
+            groupBox1.Controls.Add(btnUpdateGenre);
+            groupBox1.Controls.Add(btnNewGenre);
             groupBox1.Controls.Add(label8);
-            groupBox1.Controls.Add(label7);
-            groupBox1.Controls.Add(label6);
+            groupBox1.Controls.Add(txtGenreDescription);
+            groupBox1.Controls.Add(txtGenreName);
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(label3);
@@ -258,32 +272,34 @@
             groupBox1.TabIndex = 4;
             groupBox1.TabStop = false;
             // 
-            // button3
+            // btnDeleteGenre
             // 
-            button3.Location = new Point(300, 372);
-            button3.Name = "button3";
-            button3.Size = new Size(102, 39);
-            button3.TabIndex = 13;
-            button3.Text = "Delete";
-            button3.UseVisualStyleBackColor = true;
+            btnDeleteGenre.Location = new Point(300, 372);
+            btnDeleteGenre.Name = "btnDeleteGenre";
+            btnDeleteGenre.Size = new Size(102, 39);
+            btnDeleteGenre.TabIndex = 13;
+            btnDeleteGenre.Text = "Delete";
+            btnDeleteGenre.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnUpdateGenre
             // 
-            button2.Location = new Point(171, 372);
-            button2.Name = "button2";
-            button2.Size = new Size(102, 39);
-            button2.TabIndex = 12;
-            button2.Text = "Update";
-            button2.UseVisualStyleBackColor = true;
+            btnUpdateGenre.Location = new Point(171, 372);
+            btnUpdateGenre.Name = "btnUpdateGenre";
+            btnUpdateGenre.Size = new Size(102, 39);
+            btnUpdateGenre.TabIndex = 12;
+            btnUpdateGenre.Text = "Update";
+            btnUpdateGenre.UseVisualStyleBackColor = true;
+            btnUpdateGenre.Click += btnUpdateGenre_Click;
             // 
-            // button1
+            // btnNewGenre
             // 
-            button1.Location = new Point(35, 372);
-            button1.Name = "button1";
-            button1.Size = new Size(102, 39);
-            button1.TabIndex = 11;
-            button1.Text = "New";
-            button1.UseVisualStyleBackColor = true;
+            btnNewGenre.Location = new Point(35, 372);
+            btnNewGenre.Name = "btnNewGenre";
+            btnNewGenre.Size = new Size(102, 39);
+            btnNewGenre.TabIndex = 11;
+            btnNewGenre.Text = "New";
+            btnNewGenre.UseVisualStyleBackColor = true;
+            btnNewGenre.Click += btnNewGenre_Click;
             // 
             // label8
             // 
@@ -294,23 +310,23 @@
             label8.TabIndex = 10;
             label8.Text = "label8";
             // 
-            // label7
+            // txtGenreDescription
             // 
-            label7.AutoSize = true;
-            label7.Location = new Point(178, 217);
-            label7.Name = "label7";
-            label7.Size = new Size(65, 28);
-            label7.TabIndex = 9;
-            label7.Text = "label7";
+            txtGenreDescription.AutoSize = true;
+            txtGenreDescription.Location = new Point(178, 217);
+            txtGenreDescription.Name = "txtGenreDescription";
+            txtGenreDescription.Size = new Size(65, 28);
+            txtGenreDescription.TabIndex = 9;
+            txtGenreDescription.Text = "label7";
             // 
-            // label6
+            // txtGenreName
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(178, 120);
-            label6.Name = "label6";
-            label6.Size = new Size(120, 28);
-            label6.TabIndex = 8;
-            label6.Text = "Truyen tranh";
+            txtGenreName.AutoSize = true;
+            txtGenreName.Location = new Point(178, 120);
+            txtGenreName.Name = "txtGenreName";
+            txtGenreName.Size = new Size(120, 28);
+            txtGenreName.TabIndex = 8;
+            txtGenreName.Text = "Truyen tranh";
             // 
             // label5
             // 
@@ -352,61 +368,78 @@
             label2.TabIndex = 4;
             label2.Text = "Book Genre";
             // 
-            // tabPage2
+            // tabAuthor
             // 
-            tabPage2.Controls.Add(panel11);
-            tabPage2.Controls.Add(panel6);
-            tabPage2.Controls.Add(panel5);
-            tabPage2.Font = new Font("Segoe UI", 12F);
-            tabPage2.Location = new Point(4, 37);
-            tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1054, 561);
-            tabPage2.TabIndex = 1;
-            tabPage2.Text = "Author";
-            tabPage2.UseVisualStyleBackColor = true;
+            tabAuthor.Controls.Add(panel11);
+            tabAuthor.Controls.Add(panel6);
+            tabAuthor.Controls.Add(panel5);
+            tabAuthor.Font = new Font("Segoe UI", 12F);
+            tabAuthor.Location = new Point(4, 37);
+            tabAuthor.Name = "tabAuthor";
+            tabAuthor.Padding = new Padding(3);
+            tabAuthor.Size = new Size(1054, 561);
+            tabAuthor.TabIndex = 1;
+            tabAuthor.Text = "Author";
+            tabAuthor.UseVisualStyleBackColor = true;
             // 
             // panel11
             // 
-            panel11.Controls.Add(dataGridView2);
+            panel11.Controls.Add(dgvAuthor);
             panel11.Dock = DockStyle.Fill;
-            panel11.Location = new Point(478, 65);
+            panel11.Location = new Point(457, 65);
             panel11.Name = "panel11";
-            panel11.Size = new Size(573, 493);
+            panel11.Size = new Size(594, 493);
             panel11.TabIndex = 5;
             // 
-            // dataGridView2
+            // dgvAuthor
             // 
-            dataGridView2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2 });
-            dataGridView2.Location = new Point(27, 38);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.RowHeadersWidth = 51;
-            dataGridView2.Size = new Size(532, 427);
-            dataGridView2.TabIndex = 4;
+            dgvAuthor.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dgvAuthor.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvAuthor.Columns.AddRange(new DataGridViewColumn[] { authorName, authorContact, authorDescription });
+            dgvAuthor.Location = new Point(27, 38);
+            dgvAuthor.MultiSelect = false;
+            dgvAuthor.Name = "dgvAuthor";
+            dgvAuthor.ReadOnly = true;
+            dgvAuthor.RowHeadersWidth = 51;
+            dgvAuthor.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvAuthor.Size = new Size(553, 427);
+            dgvAuthor.TabIndex = 4;
+            dgvAuthor.CellClick += dgvAuthor_CellClick;
             // 
-            // dataGridViewTextBoxColumn1
+            // authorName
             // 
-            dataGridViewTextBoxColumn1.HeaderText = "Genre name";
-            dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            dataGridViewTextBoxColumn1.Width = 300;
+            authorName.DataPropertyName = "Name";
+            authorName.HeaderText = "Author name";
+            authorName.MinimumWidth = 6;
+            authorName.Name = "authorName";
+            authorName.ReadOnly = true;
+            authorName.Width = 300;
             // 
-            // dataGridViewTextBoxColumn2
+            // authorContact
             // 
-            dataGridViewTextBoxColumn2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewTextBoxColumn2.HeaderText = "Description";
-            dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            authorContact.DataPropertyName = "Contact";
+            authorContact.HeaderText = "Contact";
+            authorContact.MinimumWidth = 6;
+            authorContact.Name = "authorContact";
+            authorContact.ReadOnly = true;
+            authorContact.Width = 300;
+            // 
+            // authorDescription
+            // 
+            authorDescription.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            authorDescription.DataPropertyName = "Description";
+            authorDescription.HeaderText = "Description";
+            authorDescription.MinimumWidth = 6;
+            authorDescription.Name = "authorDescription";
+            authorDescription.ReadOnly = true;
             // 
             // panel6
             // 
             panel6.Controls.Add(panel7);
             panel6.Dock = DockStyle.Top;
-            panel6.Location = new Point(478, 3);
+            panel6.Location = new Point(457, 3);
             panel6.Name = "panel6";
-            panel6.Size = new Size(573, 62);
+            panel6.Size = new Size(594, 62);
             panel6.TabIndex = 3;
             // 
             // panel7
@@ -414,7 +447,7 @@
             panel7.Anchor = AnchorStyles.Right;
             panel7.Controls.Add(button7);
             panel7.Controls.Add(textBox2);
-            panel7.Location = new Point(37, 3);
+            panel7.Location = new Point(58, 3);
             panel7.Name = "panel7";
             panel7.Size = new Size(531, 47);
             panel7.TabIndex = 1;
@@ -447,18 +480,18 @@
             panel5.Dock = DockStyle.Left;
             panel5.Location = new Point(3, 3);
             panel5.Name = "panel5";
-            panel5.Size = new Size(475, 555);
+            panel5.Size = new Size(454, 555);
             panel5.TabIndex = 1;
             // 
             // groupBox2
             // 
             groupBox2.AutoSize = true;
-            groupBox2.Controls.Add(button4);
-            groupBox2.Controls.Add(button5);
-            groupBox2.Controls.Add(button6);
-            groupBox2.Controls.Add(label9);
-            groupBox2.Controls.Add(label10);
-            groupBox2.Controls.Add(label11);
+            groupBox2.Controls.Add(btnDeleteAuthor);
+            groupBox2.Controls.Add(btnUpdateAuthor);
+            groupBox2.Controls.Add(btnNewAuthor);
+            groupBox2.Controls.Add(txtAuthorContact);
+            groupBox2.Controls.Add(txtAuthorDescription);
+            groupBox2.Controls.Add(txtAuthorName);
             groupBox2.Controls.Add(label12);
             groupBox2.Controls.Add(label13);
             groupBox2.Controls.Add(label14);
@@ -469,59 +502,59 @@
             groupBox2.TabIndex = 4;
             groupBox2.TabStop = false;
             // 
-            // button4
+            // btnDeleteAuthor
             // 
-            button4.Location = new Point(300, 372);
-            button4.Name = "button4";
-            button4.Size = new Size(102, 39);
-            button4.TabIndex = 13;
-            button4.Text = "Delete";
-            button4.UseVisualStyleBackColor = true;
+            btnDeleteAuthor.Location = new Point(300, 372);
+            btnDeleteAuthor.Name = "btnDeleteAuthor";
+            btnDeleteAuthor.Size = new Size(102, 39);
+            btnDeleteAuthor.TabIndex = 13;
+            btnDeleteAuthor.Text = "Delete";
+            btnDeleteAuthor.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // btnUpdateAuthor
             // 
-            button5.Location = new Point(171, 372);
-            button5.Name = "button5";
-            button5.Size = new Size(102, 39);
-            button5.TabIndex = 12;
-            button5.Text = "Update";
-            button5.UseVisualStyleBackColor = true;
+            btnUpdateAuthor.Location = new Point(171, 372);
+            btnUpdateAuthor.Name = "btnUpdateAuthor";
+            btnUpdateAuthor.Size = new Size(102, 39);
+            btnUpdateAuthor.TabIndex = 12;
+            btnUpdateAuthor.Text = "Update";
+            btnUpdateAuthor.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // btnNewAuthor
             // 
-            button6.Location = new Point(35, 372);
-            button6.Name = "button6";
-            button6.Size = new Size(102, 39);
-            button6.TabIndex = 11;
-            button6.Text = "New";
-            button6.UseVisualStyleBackColor = true;
+            btnNewAuthor.Location = new Point(35, 372);
+            btnNewAuthor.Name = "btnNewAuthor";
+            btnNewAuthor.Size = new Size(102, 39);
+            btnNewAuthor.TabIndex = 11;
+            btnNewAuthor.Text = "New";
+            btnNewAuthor.UseVisualStyleBackColor = true;
             // 
-            // label9
+            // txtAuthorContact
             // 
-            label9.AutoSize = true;
-            label9.Location = new Point(178, 167);
-            label9.Name = "label9";
-            label9.Size = new Size(159, 28);
-            label9.TabIndex = 10;
-            label9.Text = "(+84)765109055";
+            txtAuthorContact.AutoSize = true;
+            txtAuthorContact.Location = new Point(178, 167);
+            txtAuthorContact.Name = "txtAuthorContact";
+            txtAuthorContact.Size = new Size(159, 28);
+            txtAuthorContact.TabIndex = 10;
+            txtAuthorContact.Text = "(+84)765109055";
             // 
-            // label10
+            // txtAuthorDescription
             // 
-            label10.AutoSize = true;
-            label10.Location = new Point(178, 217);
-            label10.Name = "label10";
-            label10.Size = new Size(88, 28);
-            label10.TabIndex = 9;
-            label10.Text = "Dep chai";
+            txtAuthorDescription.AutoSize = true;
+            txtAuthorDescription.Location = new Point(178, 217);
+            txtAuthorDescription.Name = "txtAuthorDescription";
+            txtAuthorDescription.Size = new Size(88, 28);
+            txtAuthorDescription.TabIndex = 9;
+            txtAuthorDescription.Text = "Dep chai";
             // 
-            // label11
+            // txtAuthorName
             // 
-            label11.AutoSize = true;
-            label11.Location = new Point(178, 120);
-            label11.Name = "label11";
-            label11.Size = new Size(118, 28);
-            label11.TabIndex = 8;
-            label11.Text = "Le Tuan Anh";
+            txtAuthorName.AutoSize = true;
+            txtAuthorName.Location = new Point(178, 120);
+            txtAuthorName.Name = "txtAuthorName";
+            txtAuthorName.Size = new Size(118, 28);
+            txtAuthorName.TabIndex = 8;
+            txtAuthorName.Text = "Le Tuan Anh";
             // 
             // label12
             // 
@@ -563,44 +596,70 @@
             label15.TabIndex = 4;
             label15.Text = "Author Information";
             // 
-            // tabPage3
+            // tabPuslisher
             // 
-            tabPage3.Controls.Add(dataGridView3);
-            tabPage3.Controls.Add(panel9);
-            tabPage3.Controls.Add(panel8);
-            tabPage3.Font = new Font("Segoe UI", 12F);
-            tabPage3.Location = new Point(4, 37);
-            tabPage3.Name = "tabPage3";
-            tabPage3.Padding = new Padding(3);
-            tabPage3.Size = new Size(1054, 561);
-            tabPage3.TabIndex = 2;
-            tabPage3.Text = "Publiser";
-            tabPage3.UseVisualStyleBackColor = true;
+            tabPuslisher.Controls.Add(dgvPublisher);
+            tabPuslisher.Controls.Add(panel9);
+            tabPuslisher.Controls.Add(panel8);
+            tabPuslisher.Font = new Font("Segoe UI", 12F);
+            tabPuslisher.Location = new Point(4, 37);
+            tabPuslisher.Name = "tabPuslisher";
+            tabPuslisher.Padding = new Padding(3);
+            tabPuslisher.Size = new Size(1054, 561);
+            tabPuslisher.TabIndex = 2;
+            tabPuslisher.Text = "Publisher";
+            tabPuslisher.UseVisualStyleBackColor = true;
             // 
-            // dataGridView3
+            // dgvPublisher
             // 
-            dataGridView3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView3.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4 });
-            dataGridView3.Location = new Point(487, 98);
-            dataGridView3.Name = "dataGridView3";
-            dataGridView3.RowHeadersWidth = 51;
-            dataGridView3.Size = new Size(550, 457);
-            dataGridView3.TabIndex = 5;
+            dgvPublisher.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dgvPublisher.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvPublisher.Columns.AddRange(new DataGridViewColumn[] { publisherName, publisherContact, publisherAddress, publisherDescription });
+            dgvPublisher.Location = new Point(487, 98);
+            dgvPublisher.MultiSelect = false;
+            dgvPublisher.Name = "dgvPublisher";
+            dgvPublisher.ReadOnly = true;
+            dgvPublisher.RowHeadersWidth = 51;
+            dgvPublisher.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvPublisher.Size = new Size(550, 457);
+            dgvPublisher.TabIndex = 5;
+            dgvPublisher.CellClick += dgvPublisher_CellClick;
             // 
-            // dataGridViewTextBoxColumn3
+            // publisherName
             // 
-            dataGridViewTextBoxColumn3.HeaderText = "Genre name";
-            dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            dataGridViewTextBoxColumn3.Width = 300;
+            publisherName.DataPropertyName = "Name";
+            publisherName.HeaderText = "Publisher name";
+            publisherName.MinimumWidth = 6;
+            publisherName.Name = "publisherName";
+            publisherName.ReadOnly = true;
+            publisherName.Width = 300;
             // 
-            // dataGridViewTextBoxColumn4
+            // publisherContact
             // 
-            dataGridViewTextBoxColumn4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewTextBoxColumn4.HeaderText = "Description";
-            dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            publisherContact.DataPropertyName = "Contact";
+            publisherContact.HeaderText = "Contact";
+            publisherContact.MinimumWidth = 6;
+            publisherContact.Name = "publisherContact";
+            publisherContact.ReadOnly = true;
+            publisherContact.Width = 300;
+            // 
+            // publisherAddress
+            // 
+            publisherAddress.DataPropertyName = "Address";
+            publisherAddress.HeaderText = "Address";
+            publisherAddress.MinimumWidth = 6;
+            publisherAddress.Name = "publisherAddress";
+            publisherAddress.ReadOnly = true;
+            publisherAddress.Width = 125;
+            // 
+            // publisherDescription
+            // 
+            publisherDescription.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            publisherDescription.DataPropertyName = "Description";
+            publisherDescription.HeaderText = "Description";
+            publisherDescription.MinimumWidth = 6;
+            publisherDescription.Name = "publisherDescription";
+            publisherDescription.ReadOnly = true;
             // 
             // panel9
             // 
@@ -655,14 +714,14 @@
             // groupBox3
             // 
             groupBox3.AutoSize = true;
-            groupBox3.Controls.Add(label23);
+            groupBox3.Controls.Add(txtPublisherAddress);
             groupBox3.Controls.Add(label24);
-            groupBox3.Controls.Add(button8);
-            groupBox3.Controls.Add(button9);
-            groupBox3.Controls.Add(button10);
-            groupBox3.Controls.Add(label16);
-            groupBox3.Controls.Add(label17);
-            groupBox3.Controls.Add(label18);
+            groupBox3.Controls.Add(btnDeletePublisher);
+            groupBox3.Controls.Add(btnUpdatePublisher);
+            groupBox3.Controls.Add(btnNewPublisher);
+            groupBox3.Controls.Add(txtPublisherContact);
+            groupBox3.Controls.Add(txtPublisherDescription);
+            groupBox3.Controls.Add(txtPublisherName);
             groupBox3.Controls.Add(label19);
             groupBox3.Controls.Add(label20);
             groupBox3.Controls.Add(label21);
@@ -673,14 +732,14 @@
             groupBox3.TabIndex = 4;
             groupBox3.TabStop = false;
             // 
-            // label23
+            // txtPublisherAddress
             // 
-            label23.AutoSize = true;
-            label23.Location = new Point(178, 219);
-            label23.Name = "label23";
-            label23.Size = new Size(177, 28);
-            label23.TabIndex = 15;
-            label23.Text = "Ninh Kieu, Can Tho";
+            txtPublisherAddress.AutoSize = true;
+            txtPublisherAddress.Location = new Point(178, 219);
+            txtPublisherAddress.Name = "txtPublisherAddress";
+            txtPublisherAddress.Size = new Size(177, 28);
+            txtPublisherAddress.TabIndex = 15;
+            txtPublisherAddress.Text = "Ninh Kieu, Can Tho";
             // 
             // label24
             // 
@@ -692,59 +751,59 @@
             label24.TabIndex = 14;
             label24.Text = "Address:";
             // 
-            // button8
+            // btnDeletePublisher
             // 
-            button8.Location = new Point(300, 372);
-            button8.Name = "button8";
-            button8.Size = new Size(102, 39);
-            button8.TabIndex = 13;
-            button8.Text = "Delete";
-            button8.UseVisualStyleBackColor = true;
+            btnDeletePublisher.Location = new Point(300, 372);
+            btnDeletePublisher.Name = "btnDeletePublisher";
+            btnDeletePublisher.Size = new Size(102, 39);
+            btnDeletePublisher.TabIndex = 13;
+            btnDeletePublisher.Text = "Delete";
+            btnDeletePublisher.UseVisualStyleBackColor = true;
             // 
-            // button9
+            // btnUpdatePublisher
             // 
-            button9.Location = new Point(171, 372);
-            button9.Name = "button9";
-            button9.Size = new Size(102, 39);
-            button9.TabIndex = 12;
-            button9.Text = "Update";
-            button9.UseVisualStyleBackColor = true;
+            btnUpdatePublisher.Location = new Point(171, 372);
+            btnUpdatePublisher.Name = "btnUpdatePublisher";
+            btnUpdatePublisher.Size = new Size(102, 39);
+            btnUpdatePublisher.TabIndex = 12;
+            btnUpdatePublisher.Text = "Update";
+            btnUpdatePublisher.UseVisualStyleBackColor = true;
             // 
-            // button10
+            // btnNewPublisher
             // 
-            button10.Location = new Point(35, 372);
-            button10.Name = "button10";
-            button10.Size = new Size(102, 39);
-            button10.TabIndex = 11;
-            button10.Text = "New";
-            button10.UseVisualStyleBackColor = true;
+            btnNewPublisher.Location = new Point(35, 372);
+            btnNewPublisher.Name = "btnNewPublisher";
+            btnNewPublisher.Size = new Size(102, 39);
+            btnNewPublisher.TabIndex = 11;
+            btnNewPublisher.Text = "New";
+            btnNewPublisher.UseVisualStyleBackColor = true;
             // 
-            // label16
+            // txtPublisherContact
             // 
-            label16.AutoSize = true;
-            label16.Location = new Point(178, 167);
-            label16.Name = "label16";
-            label16.Size = new Size(76, 28);
-            label16.TabIndex = 10;
-            label16.Text = "label16";
+            txtPublisherContact.AutoSize = true;
+            txtPublisherContact.Location = new Point(178, 167);
+            txtPublisherContact.Name = "txtPublisherContact";
+            txtPublisherContact.Size = new Size(76, 28);
+            txtPublisherContact.TabIndex = 10;
+            txtPublisherContact.Text = "label16";
             // 
-            // label17
+            // txtPublisherDescription
             // 
-            label17.AutoSize = true;
-            label17.Location = new Point(178, 263);
-            label17.Name = "label17";
-            label17.Size = new Size(76, 28);
-            label17.TabIndex = 9;
-            label17.Text = "label17";
+            txtPublisherDescription.AutoSize = true;
+            txtPublisherDescription.Location = new Point(178, 263);
+            txtPublisherDescription.Name = "txtPublisherDescription";
+            txtPublisherDescription.Size = new Size(76, 28);
+            txtPublisherDescription.TabIndex = 9;
+            txtPublisherDescription.Text = "label17";
             // 
-            // label18
+            // txtPublisherName
             // 
-            label18.AutoSize = true;
-            label18.Location = new Point(178, 120);
-            label18.Name = "label18";
-            label18.Size = new Size(120, 28);
-            label18.TabIndex = 8;
-            label18.Text = "Truyen tranh";
+            txtPublisherName.AutoSize = true;
+            txtPublisherName.Location = new Point(178, 120);
+            txtPublisherName.Name = "txtPublisherName";
+            txtPublisherName.Size = new Size(120, 28);
+            txtPublisherName.TabIndex = 8;
+            txtPublisherName.Text = "Truyen tranh";
             // 
             // label19
             // 
@@ -791,27 +850,27 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1062, 602);
-            Controls.Add(tabControl1);
+            Controls.Add(tabCategory);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "AdminCategory";
             Text = "AdminCategory";
             Load += AdminCategory_Load;
-            tabControl1.ResumeLayout(false);
-            tabPage1.ResumeLayout(false);
-            tabPage1.PerformLayout();
+            tabCategory.ResumeLayout(false);
+            tabGenre.ResumeLayout(false);
+            tabGenre.PerformLayout();
             panel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvGenre).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            tabPage2.ResumeLayout(false);
+            tabAuthor.ResumeLayout(false);
             panel11.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvAuthor).EndInit();
             panel6.ResumeLayout(false);
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
@@ -819,8 +878,8 @@
             panel5.PerformLayout();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
-            tabPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
+            tabPuslisher.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvPublisher).EndInit();
             panel9.ResumeLayout(false);
             panel10.ResumeLayout(false);
             panel10.PerformLayout();
@@ -835,45 +894,41 @@
         #endregion
 
         private Label label1;
-        private TabControl tabControl1;
-        private TabPage tabPage1;
-        private TabPage tabPage2;
-        private TabPage tabPage3;
+        private TabControl tabCategory;
+        private TabPage tabGenre;
+        private TabPage tabAuthor;
+        private TabPage tabPuslisher;
         private Panel panel1;
         private GroupBox groupBox1;
         private Label label5;
         private Label label4;
         private Label label3;
         private Label label2;
-        private Button button3;
-        private Button button2;
-        private Button button1;
+        private Button btnDeleteGenre;
+        private Button btnUpdateGenre;
+        private Button btnNewGenre;
         private Label label8;
-        private Label label7;
-        private Label label6;
+        private Label txtGenreDescription;
+        private Label txtGenreName;
         private Panel panel2;
-        private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn bookgenre;
-        private DataGridViewTextBoxColumn description;
+        private DataGridView dgvGenre;
         private Panel panel3;
         private Panel panel4;
         private Button btnSearch;
         private TextBox textBox1;
-        private DataGridView dataGridView2;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private DataGridView dgvAuthor;
         private Panel panel6;
         private Panel panel7;
         private Button button7;
         private TextBox textBox2;
         private Panel panel5;
         private GroupBox groupBox2;
-        private Button button4;
-        private Button button5;
-        private Button button6;
-        private Label label9;
-        private Label label10;
-        private Label label11;
+        private Button btnDeleteAuthor;
+        private Button btnUpdateAuthor;
+        private Button btnNewAuthor;
+        private Label txtAuthorContact;
+        private Label txtAuthorDescription;
+        private Label txtAuthorName;
         private Label label12;
         private Label label13;
         private Label label14;
@@ -884,21 +939,31 @@
         private TextBox textBox3;
         private Panel panel8;
         private GroupBox groupBox3;
-        private Button button8;
-        private Button button9;
-        private Button button10;
-        private Label label16;
-        private Label label17;
-        private Label label18;
+        private Button btnDeletePublisher;
+        private Button btnUpdatePublisher;
+        private Button btnNewPublisher;
+        private Label txtPublisherContact;
+        private Label txtPublisherDescription;
+        private Label txtPublisherName;
         private Label label19;
         private Label label20;
         private Label label21;
         private Label label22;
         private Panel panel11;
-        private DataGridView dataGridView3;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private Label label23;
+        private DataGridView dgvPublisher;
+        private Label txtPublisherAddress;
         private Label label24;
+        private DataGridViewTextBoxColumn authorName;
+        private DataGridViewTextBoxColumn authorContact;
+        private DataGridViewTextBoxColumn authorDescription;
+        private DataGridViewTextBoxColumn publisherName;
+        private DataGridViewTextBoxColumn publisherContact;
+        private DataGridViewTextBoxColumn publisherAddress;
+        private DataGridViewTextBoxColumn publisherDescription;
+        private DataGridViewTextBoxColumn genreName;
+        private DataGridViewTextBoxColumn genreDescription;
+        private DataTable dtGenre;
+        private DataTable dtAuthor;
+        private DataTable dtPublisher;
     }
 }

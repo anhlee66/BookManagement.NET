@@ -30,5 +30,10 @@ namespace BookManagement.Views
         {
 
         }
+
+        private void AdminEmployee_Load(object sender, EventArgs e)
+        {
+            this.ControlBox = false;
+        }
     }
 }
