@@ -21,14 +21,37 @@ namespace BookManagement.Views
         const int FAILURE_CODE = 0;
         const int ADD_MODE = 1;
         const int EDIT_MODE = 0;
+        private Shadow shadow;
         public AdminCategory()
         {
             InitializeComponent();
         }
+
+        private void AdminCategory_Load(object sender, EventArgs e)
+        {
+            this.ControlBox = false;
+            genreTab_Load();
+            authorTab_Load();
+            publisherTab_Load();
+            shadow = new Shadow(this);
+            GenreChanged += button_GenreChanged;
+            AuthorChanged += button_AuthorChanged;
+            PublisherChanged += button_PublisherChanged;
+
+
+        }
+
+        private void AdminCategory_PublisherChanged(object? sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        #region common handler
+
         internal void GetMessage(int code, Object obj, int mode)
         {
             if (code == FAILURE_CODE) return;
-            
+
             if (obj is BookGenre)
             {
                 BookGenre genre = (BookGenre)obj;
@@ -110,18 +133,13 @@ namespace BookManagement.Views
                 }
             }
 
-            
+
             return;
         }
 
-        private void AdminCategory_Load(object sender, EventArgs e)
-        {
-            this.ControlBox = false;
-            genreTab_Load();
-            authorTab_Load();
-            publisherTab_Load();
 
-        }
+        #endregion
+
 
         #region Load datagridview 
         public void genreTab_Load()
@@ -178,11 +196,27 @@ namespace BookManagement.Views
         #endregion
 
         #region genre handler
+
+        private void button_GenreChanged(object sender, EventArgs e)
+        {
+            if (bookGenreSelected == null)
+            {
+                btnEditGenre.Enabled = false;
+                btnDeleteGenre.Enabled = false;
+            }
+            else
+            {
+                btnEditGenre.Enabled = true;
+                btnDeleteGenre.Enabled = true;
+            }
+        }
         private void btnEditGenre_Click(object sender, EventArgs e)
         {
             if (isSelectedItem(bookGenreSelected))
             {
                 BookGenreDialog gender = new BookGenreDialog(this);
+                shadow.Show();
+                gender.setShadow(shadow);
                 gender.setMode(EDIT_MODE);
                 gender.setData(bookGenreSelected);
                 gender.ShowDialog();
@@ -205,20 +239,23 @@ namespace BookManagement.Views
         // delete click
         private void btnDeleteGenre_Click(object sender, EventArgs e)
         {
-            if (isSelectedItem(bookGenreSelected))
+            if (isSelectedItem(bookGenreSelected) )
             {
-                if (!BookGenreController.isGenreEmpty(bookGenreSelected.genreId))
+                if(MessageDelete())
                 {
-                    Message.DeleteError("Cannot execute this action because this list not empty", "Delete Error");
-                }
-                else if (BookGenreController.DeleteBookGenre(bookGenreSelected.genreId))
-                {
-                    MessageBox.Show("Deleted a item", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.genreTab_Load();
-                }
-                else
-                {
-                    MessageBox.Show("Deleted Error");
+                    if (!BookGenreController.isGenreEmpty(bookGenreSelected.genreId))
+                    {
+                        Message.DeleteError("Cannot execute this action because this list not empty", "Delete Error");
+                    }
+                    else if (BookGenreController.DeleteBookGenre(bookGenreSelected.genreId))
+                    {
+                        MessageBox.Show("Deleted a item", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.genreTab_Load();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Deleted Error");
+                    }
                 }
             }
             else Message.EmptySelection();
@@ -227,6 +264,8 @@ namespace BookManagement.Views
         private void btnNewGenre_Click(object sender, EventArgs e)
         {
             BookGenreDialog gender = new BookGenreDialog(this);
+            shadow.Show();
+            gender.setShadow(shadow);
             gender.setMode(EDIT_MODE);
             gender.setData(new BookGenre());
             gender.ShowDialog();
@@ -245,11 +284,26 @@ namespace BookManagement.Views
             //MessageBox.Show(authorSelected.authorId.ToString());
         }
 
+        public void button_AuthorChanged(Object sender, EventArgs e)
+        {
+            if(authorSelected == null)
+            {
+                btnDeleteAuthor.Enabled = false;
+                btnEditAuthor.Enabled = false;
+            }
+            else
+            {
+                btnDeleteAuthor.Enabled = true;
+                btnEditAuthor.Enabled = true;
+            }
+        }
         private void btnEditAuthor_Click(object sender, EventArgs e)
         {
             if (isSelectedItem(authorSelected))
             {
                 AuthorDialog author = new AuthorDialog(this);
+                shadow.Show();
+                author.setShadow(shadow);
                 author.setMode(EDIT_MODE);
                 author.getData(authorSelected);
                 author.ShowDialog();
@@ -263,6 +317,8 @@ namespace BookManagement.Views
         {
 
             AuthorDialog author = new AuthorDialog(this);
+            shadow.Show();
+            author.setShadow(shadow);
             author.setMode(ADD_MODE);
             author.getData(new Author());
             author.ShowDialog();
@@ -270,7 +326,7 @@ namespace BookManagement.Views
         }
         private void btnDeleteAuthor_Click(object sender, EventArgs e)
         {
-            if (isSelectedItem(authorSelected))
+            if (isSelectedItem(authorSelected) && MessageDelete())
             {
                 if (!AuthorController.isAuthorEmpty(authorSelected.authorId))
                 {
@@ -287,6 +343,10 @@ namespace BookManagement.Views
                     MessageBox.Show("Deleted Error");
                 }
             }
+            else
+            {
+                Message.EmptySelection();
+            }
         }
         #endregion
 
@@ -301,11 +361,28 @@ namespace BookManagement.Views
             publisherSelected = new Publisher(dtPublisher.Rows[index]);
             //MessageBox.Show(publisherSelected.publisherId.ToString());
         }
+
+        public void button_PublisherChanged(Object sender, EventArgs e)
+        {
+            if ((publisherSelected == null))
+            {
+                btnDeletePublisher.Enabled = false;
+                btnEditPuslisher.Enabled = false;
+            }
+            else
+            {
+                btnDeletePublisher.Enabled = true;
+                btnEditPuslisher.Enabled = true;
+            }
+            
+        }
         private void btnEditPuslisher_Click(object sender, EventArgs e)
         {
-            if(isSelectedItem(publisherSelected))
+            if (isSelectedItem(publisherSelected))
             {
                 PubisherDialog publisher = new PubisherDialog(this);
+                shadow.Show();
+                publisher.setShadow(shadow);
                 publisher.setMode(EDIT_MODE);
                 publisher.setData(publisherSelected);
                 publisher.ShowDialog();
@@ -319,18 +396,20 @@ namespace BookManagement.Views
 
         private void btnNewPublisher_Click(object sender, EventArgs e)
         {
-            
+
             PubisherDialog publisher = new PubisherDialog(this);
+            shadow.Show();
+            publisher.setShadow(shadow);
             publisher.setMode(ADD_MODE);
             publisher.setData(new Publisher());
             publisher.ShowDialog();
 
-           
+
         }
 
         private void btnDeletePublisher_Click(object sender, EventArgs e)
         {
-            if (isSelectedItem(publisherSelected))
+            if (isSelectedItem(publisherSelected) && MessageDelete())
             {
                 if (!PublisherController.isPublisherEmpty(publisherSelected.publisherId))
                 {
@@ -340,16 +419,43 @@ namespace BookManagement.Views
                 else if (PublisherController.DeletePublisher(publisherSelected.publisherId))
                 {
                     MessageBox.Show("Deleted a item", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.authorTab_Load();
+                    this.publisherTab_Load();
                 }
                 else
                 {
                     MessageBox.Show("Deleted Error");
                 }
             }
+            else
+            {
+                Message.EmptySelection();
+            }
         }
         #endregion
 
 
+        private void AdminCategory_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            shadow.Hide();
+        }
+
+        public bool MessageDelete()
+        {
+            string msg = "Do you want to delete this item?";
+            string title = "Delete item";
+            DialogResult result = MessageBox.Show(msg, title,MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        private void dgvGenre_Click(object sender, EventArgs e)
+        {
+            //MessageBox.Show("Click");
+        }
+
+       
     }
 }

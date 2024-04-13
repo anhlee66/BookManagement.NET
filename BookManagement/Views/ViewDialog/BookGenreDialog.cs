@@ -23,8 +23,8 @@ namespace BookManagement.Views.ViewDialog
         private int mode;
         private int id;
         private AdminCategory category;
+        private Shadow shadow;
 
-        
         public BookGenreDialog(AdminCategory category)
         {
             this.category = category;
@@ -33,7 +33,7 @@ namespace BookManagement.Views.ViewDialog
         internal void setMode(int mode)
         {
             this.mode = mode;
-            if(mode == ADD_MODE)
+            if (mode == ADD_MODE)
             {
                 title.Text = "Add new genre";
                 btnSave.Text = "New";
@@ -43,6 +43,10 @@ namespace BookManagement.Views.ViewDialog
                 title.Text = "Edit genre book";
                 btnSave.Text = "Save";
             }
+        }
+        internal void setShadow(Shadow shadow)
+        {
+            this.shadow = shadow;
         }
         internal void setData(BookGenre genre)
         {
@@ -81,7 +85,7 @@ namespace BookManagement.Views.ViewDialog
                 }
 
                 BookGenre genre = new BookGenre(id, name, description);
-                category.GetMessage(SUCCESS_CODE, genre,mode);
+                category.GetMessage(SUCCESS_CODE, genre, mode);
                 this.Close();
 
 
@@ -94,13 +98,18 @@ namespace BookManagement.Views.ViewDialog
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            foreach(Control control in this.Controls)
+            foreach (Control control in this.Controls)
             {
-                if(control is TextBox)
+                if (control is TextBox)
                 {
                     control.Text = "";
                 }
             }
+        }
+
+        private void BookGenreDialog_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            shadow.Hide();
         }
     }
 }

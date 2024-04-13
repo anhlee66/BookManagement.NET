@@ -65,7 +65,7 @@ namespace BookManagement.Controller
             {
                 Debug.Print(ex.Message);
                 return false;
-            }
+            }   
             finally
             {
                 DBHandler.close();
@@ -132,7 +132,7 @@ namespace BookManagement.Controller
             try
             {
                 DBHandler.open();
-                string query = "SELECT COUNT(BookId) FROM Books WHERE Publisher=" + id;
+                string query = "SELECT COUNT(BookId) FROM Books WHERE PublisherId=" + id;
                 SqlCommand cmd = new SqlCommand(query, DBHandler.con);
                 int result = Convert.ToInt32(cmd.ExecuteScalar());
                 if (result == 0)

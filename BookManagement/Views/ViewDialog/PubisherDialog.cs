@@ -19,14 +19,21 @@ namespace BookManagement.Views.ViewDialog
         const int EDIT_MODE = 0;
 
         private AdminCategory category;
+        private Shadow shadow;
         private int id;
         private int mode;
+
         public PubisherDialog(AdminCategory category)
         {
             this.category = category;
             InitializeComponent();
+
         }
 
+        internal void setShadow(Shadow shadow)
+        {
+            this.shadow = shadow;
+        }
         internal void setMode(int mode)
         {
             this.mode = mode;
@@ -79,9 +86,14 @@ namespace BookManagement.Views.ViewDialog
                 txtPublisher.Focus();
                 return;
             }
-            Publisher publisher = new Publisher(id,name,contact,description);
-            category.GetMessage(SUCCESS_CODE,publisher,mode);
+            Publisher publisher = new Publisher(id, name, contact, description);
+            category.GetMessage(SUCCESS_CODE, publisher, mode);
             this.Close();
+        }
+
+        private void PubisherDialog_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            shadow.Hide();
         }
     }
 }

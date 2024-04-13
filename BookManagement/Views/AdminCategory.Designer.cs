@@ -31,16 +31,16 @@ namespace BookManagement.Views
         /// </summary>button
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle19 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle20 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle21 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle22 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle23 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle24 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle25 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle26 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle27 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminCategory));
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
             label1 = new Label();
             tabCategory = new TabControl();
             tabGenre = new TabPage();
@@ -69,7 +69,6 @@ namespace BookManagement.Views
             dgvPublisher = new DataGridView();
             publisherName = new DataGridViewTextBoxColumn();
             publisherContact = new DataGridViewTextBoxColumn();
-            publisherAddress = new DataGridViewTextBoxColumn();
             publisherDescription = new DataGridViewTextBoxColumn();
             panel9 = new Panel();
             panel8 = new Panel();
@@ -171,6 +170,7 @@ namespace BookManagement.Views
             // btnDeleteGenre
             // 
             btnDeleteGenre.BackColor = Color.Salmon;
+            btnDeleteGenre.Enabled = false;
             btnDeleteGenre.FlatAppearance.BorderSize = 0;
             btnDeleteGenre.FlatStyle = FlatStyle.Flat;
             btnDeleteGenre.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -189,6 +189,7 @@ namespace BookManagement.Views
             // btnEditGenre
             // 
             btnEditGenre.BackColor = Color.SteelBlue;
+            btnEditGenre.Enabled = false;
             btnEditGenre.FlatAppearance.BorderSize = 0;
             btnEditGenre.FlatStyle = FlatStyle.Flat;
             btnEditGenre.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
@@ -232,38 +233,38 @@ namespace BookManagement.Views
             dgvGenre.BackgroundColor = Color.LightGray;
             dgvGenre.BorderStyle = BorderStyle.None;
             dgvGenre.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle19.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = Color.SteelBlue;
-            dataGridViewCellStyle19.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle19.ForeColor = SystemColors.InactiveBorder;
-            dataGridViewCellStyle19.SelectionBackColor = Color.SteelBlue;
-            dataGridViewCellStyle19.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = DataGridViewTriState.True;
-            dgvGenre.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.SteelBlue;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.InactiveBorder;
+            dataGridViewCellStyle1.SelectionBackColor = Color.SteelBlue;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvGenre.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvGenre.ColumnHeadersHeight = 40;
             dgvGenre.Columns.AddRange(new DataGridViewColumn[] { genreName, genreDescription });
-            dataGridViewCellStyle20.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.BackColor = Color.Silver;
-            dataGridViewCellStyle20.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle20.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle20.SelectionBackColor = SystemColors.ButtonShadow;
-            dataGridViewCellStyle20.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle20.WrapMode = DataGridViewTriState.False;
-            dgvGenre.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.Silver;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.ButtonShadow;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvGenre.DefaultCellStyle = dataGridViewCellStyle2;
             dgvGenre.EnableHeadersVisualStyles = false;
             dgvGenre.Location = new Point(5, 68);
             dgvGenre.MultiSelect = false;
             dgvGenre.Name = "dgvGenre";
             dgvGenre.ReadOnly = true;
             dgvGenre.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle21.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle21.BackColor = Color.LightGray;
-            dataGridViewCellStyle21.Font = new Font("Segoe UI", 12F);
-            dataGridViewCellStyle21.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle21.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle21.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle21.WrapMode = DataGridViewTriState.True;
-            dgvGenre.RowHeadersDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.LightGray;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 12F);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgvGenre.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dgvGenre.RowHeadersVisible = false;
             dgvGenre.RowHeadersWidth = 51;
             dgvGenre.RowTemplate.Height = 35;
@@ -271,6 +272,7 @@ namespace BookManagement.Views
             dgvGenre.Size = new Size(826, 318);
             dgvGenre.TabIndex = 1;
             dgvGenre.CellClick += dgvGenre_CellClick;
+            dgvGenre.Click += dgvGenre_Click;
             // 
             // genreName
             // 
@@ -292,6 +294,7 @@ namespace BookManagement.Views
             // 
             // tabAuthor
             // 
+            tabAuthor.BackColor = Color.LightGray;
             tabAuthor.Controls.Add(panel6);
             tabAuthor.Font = new Font("Segoe UI", 12F);
             tabAuthor.Location = new Point(4, 40);
@@ -300,7 +303,6 @@ namespace BookManagement.Views
             tabAuthor.Size = new Size(842, 407);
             tabAuthor.TabIndex = 1;
             tabAuthor.Text = "Author";
-            tabAuthor.UseVisualStyleBackColor = true;
             // 
             // panel6
             // 
@@ -336,6 +338,7 @@ namespace BookManagement.Views
             // btnDeleteAuthor
             // 
             btnDeleteAuthor.BackColor = Color.Salmon;
+            btnDeleteAuthor.Enabled = false;
             btnDeleteAuthor.FlatAppearance.BorderSize = 0;
             btnDeleteAuthor.FlatStyle = FlatStyle.Flat;
             btnDeleteAuthor.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -354,6 +357,7 @@ namespace BookManagement.Views
             // btnEditAuthor
             // 
             btnEditAuthor.BackColor = Color.SteelBlue;
+            btnEditAuthor.Enabled = false;
             btnEditAuthor.FlatAppearance.BorderSize = 0;
             btnEditAuthor.FlatStyle = FlatStyle.Flat;
             btnEditAuthor.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
@@ -397,38 +401,38 @@ namespace BookManagement.Views
             dgvAuthor.BackgroundColor = Color.LightGray;
             dgvAuthor.BorderStyle = BorderStyle.None;
             dgvAuthor.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle22.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle22.BackColor = Color.SteelBlue;
-            dataGridViewCellStyle22.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle22.ForeColor = SystemColors.InactiveBorder;
-            dataGridViewCellStyle22.SelectionBackColor = Color.SteelBlue;
-            dataGridViewCellStyle22.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle22.WrapMode = DataGridViewTriState.True;
-            dgvAuthor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.SteelBlue;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle4.ForeColor = SystemColors.InactiveBorder;
+            dataGridViewCellStyle4.SelectionBackColor = Color.SteelBlue;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dgvAuthor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dgvAuthor.ColumnHeadersHeight = 40;
             dgvAuthor.Columns.AddRange(new DataGridViewColumn[] { authorName, authorContact, authorDescription });
-            dataGridViewCellStyle23.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle23.BackColor = Color.Silver;
-            dataGridViewCellStyle23.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle23.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle23.SelectionBackColor = SystemColors.ButtonShadow;
-            dataGridViewCellStyle23.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle23.WrapMode = DataGridViewTriState.False;
-            dgvAuthor.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.Silver;
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle5.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.ButtonShadow;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
+            dgvAuthor.DefaultCellStyle = dataGridViewCellStyle5;
             dgvAuthor.EnableHeadersVisualStyles = false;
             dgvAuthor.Location = new Point(5, 68);
             dgvAuthor.MultiSelect = false;
             dgvAuthor.Name = "dgvAuthor";
             dgvAuthor.ReadOnly = true;
             dgvAuthor.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle24.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle24.BackColor = Color.LightGray;
-            dataGridViewCellStyle24.Font = new Font("Segoe UI", 12F);
-            dataGridViewCellStyle24.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle24.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle24.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle24.WrapMode = DataGridViewTriState.True;
-            dgvAuthor.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.LightGray;
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 12F);
+            dataGridViewCellStyle6.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
+            dgvAuthor.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             dgvAuthor.RowHeadersVisible = false;
             dgvAuthor.RowHeadersWidth = 51;
             dgvAuthor.RowTemplate.Height = 35;
@@ -466,6 +470,7 @@ namespace BookManagement.Views
             // 
             // tabPuslisher
             // 
+            tabPuslisher.BackColor = Color.LightGray;
             tabPuslisher.Controls.Add(panel11);
             tabPuslisher.Controls.Add(panel9);
             tabPuslisher.Font = new Font("Segoe UI", 12F);
@@ -475,7 +480,6 @@ namespace BookManagement.Views
             tabPuslisher.Size = new Size(842, 407);
             tabPuslisher.TabIndex = 2;
             tabPuslisher.Text = "Publisher";
-            tabPuslisher.UseVisualStyleBackColor = true;
             // 
             // panel11
             // 
@@ -496,38 +500,39 @@ namespace BookManagement.Views
             dgvPublisher.BackgroundColor = Color.LightGray;
             dgvPublisher.BorderStyle = BorderStyle.None;
             dgvPublisher.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle25.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle25.BackColor = Color.SteelBlue;
-            dataGridViewCellStyle25.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle25.ForeColor = SystemColors.InactiveBorder;
-            dataGridViewCellStyle25.SelectionBackColor = Color.SteelBlue;
-            dataGridViewCellStyle25.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle25.WrapMode = DataGridViewTriState.True;
-            dgvPublisher.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = Color.SteelBlue;
+            dataGridViewCellStyle7.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle7.ForeColor = SystemColors.InactiveBorder;
+            dataGridViewCellStyle7.SelectionBackColor = Color.SteelBlue;
+            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            dgvPublisher.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             dgvPublisher.ColumnHeadersHeight = 40;
-            dgvPublisher.Columns.AddRange(new DataGridViewColumn[] { publisherName, publisherContact, publisherAddress, publisherDescription });
-            dataGridViewCellStyle26.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle26.BackColor = Color.Silver;
-            dataGridViewCellStyle26.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle26.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle26.SelectionBackColor = SystemColors.ButtonShadow;
-            dataGridViewCellStyle26.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle26.WrapMode = DataGridViewTriState.False;
-            dgvPublisher.DefaultCellStyle = dataGridViewCellStyle26;
+            dgvPublisher.Columns.AddRange(new DataGridViewColumn[] { publisherName, publisherContact, publisherDescription });
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = Color.Silver;
+            dataGridViewCellStyle8.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle8.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = SystemColors.ButtonShadow;
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
+            dgvPublisher.DefaultCellStyle = dataGridViewCellStyle8;
             dgvPublisher.EnableHeadersVisualStyles = false;
             dgvPublisher.Location = new Point(5, 10);
+            dgvPublisher.Margin = new Padding(0);
             dgvPublisher.MultiSelect = false;
             dgvPublisher.Name = "dgvPublisher";
             dgvPublisher.ReadOnly = true;
             dgvPublisher.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle27.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle27.BackColor = Color.LightGray;
-            dataGridViewCellStyle27.Font = new Font("Segoe UI", 12F);
-            dataGridViewCellStyle27.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle27.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle27.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle27.WrapMode = DataGridViewTriState.True;
-            dgvPublisher.RowHeadersDefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = Color.LightGray;
+            dataGridViewCellStyle9.Font = new Font("Segoe UI", 12F);
+            dataGridViewCellStyle9.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.True;
+            dgvPublisher.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             dgvPublisher.RowHeadersVisible = false;
             dgvPublisher.RowHeadersWidth = 51;
             dgvPublisher.RowTemplate.Height = 35;
@@ -554,15 +559,6 @@ namespace BookManagement.Views
             publisherContact.ReadOnly = true;
             publisherContact.Width = 300;
             // 
-            // publisherAddress
-            // 
-            publisherAddress.DataPropertyName = "Address";
-            publisherAddress.HeaderText = "Address";
-            publisherAddress.MinimumWidth = 6;
-            publisherAddress.Name = "publisherAddress";
-            publisherAddress.ReadOnly = true;
-            publisherAddress.Width = 450;
-            // 
             // publisherDescription
             // 
             publisherDescription.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -588,6 +584,7 @@ namespace BookManagement.Views
             panel8.Controls.Add(btnNewPublisher);
             panel8.Dock = DockStyle.Top;
             panel8.Location = new Point(0, 0);
+            panel8.Margin = new Padding(0);
             panel8.Name = "panel8";
             panel8.Size = new Size(836, 62);
             panel8.TabIndex = 3;
@@ -605,6 +602,7 @@ namespace BookManagement.Views
             // btnDeletePublisher
             // 
             btnDeletePublisher.BackColor = Color.Salmon;
+            btnDeletePublisher.Enabled = false;
             btnDeletePublisher.FlatAppearance.BorderSize = 0;
             btnDeletePublisher.FlatStyle = FlatStyle.Flat;
             btnDeletePublisher.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -623,6 +621,7 @@ namespace BookManagement.Views
             // btnEditPuslisher
             // 
             btnEditPuslisher.BackColor = Color.SteelBlue;
+            btnEditPuslisher.Enabled = false;
             btnEditPuslisher.FlatAppearance.BorderSize = 0;
             btnEditPuslisher.FlatStyle = FlatStyle.Flat;
             btnEditPuslisher.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
@@ -691,6 +690,7 @@ namespace BookManagement.Views
             FormBorderStyle = FormBorderStyle.None;
             Name = "AdminCategory";
             Text = "AdminCategory";
+            FormClosed += AdminCategory_FormClosed;
             Load += AdminCategory_Load;
             tabCategory.ResumeLayout(false);
             tabGenre.ResumeLayout(false);
@@ -724,6 +724,7 @@ namespace BookManagement.Views
         private DataGridView dgvGenre;
         private Panel panel3;
         private DataTable dtGenre;
+       
         private DataTable dtAuthor;
         private DataTable dtPublisher;
         private Button btnNewGenre;
@@ -753,13 +754,56 @@ namespace BookManagement.Views
         private Panel panel7;
         private Button btnDeletePublisher;
         private Button btnEditPuslisher;
+        private BookGenre _genre;
+        private Author _author;
+        private Publisher _publisher;
+        public event EventHandler GenreChanged;   
+        public event EventHandler AuthorChanged;
+        public event EventHandler PublisherChanged;
+        private BookGenre bookGenreSelected
+        {
+            get { return _genre; }
+            set
+            {
+                _genre = value;
+                OnGenreChanged();
+            }
+        }
+        private Author authorSelected
+        {
+            get { return _author; }
+            set
+            {
+                _author = value;
+                OnAuthorChanged();
+            }
+        }
+
+        private Publisher publisherSelected
+        {
+            get { return _publisher; }
+            set
+            {
+                _publisher = value;
+                OnPublisherChanged();
+            }
+        }
+        protected virtual void OnGenreChanged()
+        {
+            GenreChanged?.Invoke(this, EventArgs.Empty);
+        }
+        protected virtual void OnAuthorChanged()
+        {
+            AuthorChanged?.Invoke(this, EventArgs.Empty);
+        }
+        protected virtual void OnPublisherChanged()
+        {
+            PublisherChanged?.Invoke(this, EventArgs.Empty);
+        }
+        
+        private Button button1;
         private DataGridViewTextBoxColumn publisherName;
         private DataGridViewTextBoxColumn publisherContact;
-        private DataGridViewTextBoxColumn publisherAddress;
         private DataGridViewTextBoxColumn publisherDescription;
-        private BookGenre bookGenreSelected;
-        private Author authorSelected;
-        private Publisher publisherSelected;
-        private Button button1;
     }
 }

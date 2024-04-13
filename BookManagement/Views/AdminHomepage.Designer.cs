@@ -82,6 +82,7 @@
             sidebar.Controls.Add(panel9);
             sidebar.Dock = DockStyle.Left;
             sidebar.Location = new Point(0, 0);
+            sidebar.Margin = new Padding(0);
             sidebar.Name = "sidebar";
             sidebar.Size = new Size(284, 753);
             sidebar.TabIndex = 1;
@@ -387,6 +388,7 @@
             panel8.Controls.Add(panel10);
             panel8.Dock = DockStyle.Top;
             panel8.Location = new Point(284, 0);
+            panel8.Margin = new Padding(0);
             panel8.Name = "panel8";
             panel8.Size = new Size(978, 71);
             panel8.TabIndex = 3;

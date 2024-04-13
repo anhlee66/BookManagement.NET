@@ -218,6 +218,7 @@
             StartPosition = FormStartPosition.CenterParent;
             Text = "AuthorDialog";
             TransparencyKey = Color.Gray;
+            FormClosed += AuthorDialog_FormClosed;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();

@@ -182,6 +182,7 @@
             Name = "BookGenreDialog";
             StartPosition = FormStartPosition.CenterParent;
             Text = "BookGenreDialog";
+            FormClosed += BookGenreDialog_FormClosed;
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             groupBox3.ResumeLayout(false);

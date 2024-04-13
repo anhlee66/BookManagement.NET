@@ -13,13 +13,14 @@ namespace BookManagement.Views.ViewDialog
 {
     public partial class AuthorDialog : Form
     {
-       
+
         const int SUCCESS_CODE = 1;
         const int FAILURE_CODE = 0;
         const int ADD_MODE = 1;
         const int EDIT_MODE = 0;
 
         private AdminCategory category;
+        private Shadow shadow;
         private int id;
         private int mode;
         public AuthorDialog()
@@ -32,6 +33,10 @@ namespace BookManagement.Views.ViewDialog
             InitializeComponent();
         }
 
+        internal void setShadow(Shadow shadow)
+        {
+            this.shadow = shadow;
+        }
         internal void setMode(int mode)
         {
             this.mode = mode;
@@ -81,15 +86,21 @@ namespace BookManagement.Views.ViewDialog
             string name = txtAuthor.Text.Trim();
             string contact = txtContact.Text.Trim();
             string description = txtDescription.Text.Trim();
-            if (name == null || contact == null || description == null) {
+            if (name == null || contact == null || description == null)
+            {
                 MessageBox.Show("Needed values are empty.");
                 txtAuthor.Focus();
                 return;
             }
             Author author = new Author(id, name, contact, description);
-            category.GetMessage(SUCCESS_CODE,author,mode);
+            category.GetMessage(SUCCESS_CODE, author, mode);
 
             this.Close();
+        }
+
+        private void AuthorDialog_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            shadow.Hide();
         }
     }
 }

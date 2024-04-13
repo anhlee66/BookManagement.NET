@@ -215,7 +215,9 @@
             Controls.Add(groupBox1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "PubisherDialog";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "PubisherDialog";
+            FormClosed += PubisherDialog_FormClosed;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox4.ResumeLayout(false);
