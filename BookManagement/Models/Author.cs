@@ -25,9 +25,9 @@ namespace BookManagement.Models
             this.contact = contact;
             this.description = description;
         }
-        private int authorId { get; set; }
-        private string name { get; set; }
-        private string contact { get; set; }
-        private string description {  get; set; }   
+        public int authorId { get; set; }
+        public string name { get; set; }
+        public string contact { get; set; }
+        public string description {  get; set; }   
     }   
 }

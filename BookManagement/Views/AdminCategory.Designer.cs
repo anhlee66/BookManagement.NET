@@ -184,6 +184,7 @@ namespace BookManagement.Views
             btnDeleteGenre.TabIndex = 5;
             btnDeleteGenre.Text = "Delete";
             btnDeleteGenre.UseVisualStyleBackColor = false;
+            btnDeleteGenre.Click += btnDeleteGenre_Click;
             // 
             // btnEditGenre
             // 
@@ -219,6 +220,7 @@ namespace BookManagement.Views
             btnNewGenre.TabIndex = 3;
             btnNewGenre.Text = "New";
             btnNewGenre.UseVisualStyleBackColor = false;
+            btnNewGenre.Click += btnNewGenre_Click;
             // 
             // dgvGenre
             // 
@@ -347,6 +349,7 @@ namespace BookManagement.Views
             btnDeleteAuthor.TabIndex = 5;
             btnDeleteAuthor.Text = "Delete";
             btnDeleteAuthor.UseVisualStyleBackColor = false;
+            btnDeleteAuthor.Click += btnDeleteAuthor_Click;
             // 
             // btnEditAuthor
             // 
@@ -364,6 +367,7 @@ namespace BookManagement.Views
             btnEditAuthor.TabIndex = 4;
             btnEditAuthor.Text = "Edit";
             btnEditAuthor.UseVisualStyleBackColor = false;
+            btnEditAuthor.Click += btnEditAuthor_Click;
             // 
             // btnNewAuthor
             // 
@@ -381,6 +385,7 @@ namespace BookManagement.Views
             btnNewAuthor.TabIndex = 4;
             btnNewAuthor.Text = "New";
             btnNewAuthor.UseVisualStyleBackColor = false;
+            btnNewAuthor.Click += btnNewAuthor_Click;
             // 
             // dgvAuthor
             // 
@@ -430,6 +435,7 @@ namespace BookManagement.Views
             dgvAuthor.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvAuthor.Size = new Size(826, 318);
             dgvAuthor.TabIndex = 2;
+            dgvAuthor.CellClick += dgvAuthor_CellClick;
             // 
             // authorName
             // 
@@ -748,5 +754,8 @@ namespace BookManagement.Views
         private DataGridViewTextBoxColumn publisherAddress;
         private DataGridViewTextBoxColumn publisherDescription;
         private BookGenre bookGenreSelected;
+        private Author authorSelected;
+        private Publisher publisherSelected;
+        private Button button1;
     }
 }

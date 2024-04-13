@@ -28,92 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button4 = new Button();
-            textBox2 = new TextBox();
-            button3 = new Button();
-            textBox1 = new TextBox();
-            button2 = new Button();
-            label4 = new Label();
-            label2 = new Label();
-            label1 = new Label();
             pictureBox1 = new PictureBox();
+            groupBox1 = new GroupBox();
+            groupBox4 = new GroupBox();
+            txtDescription = new TextBox();
+            label4 = new Label();
+            groupBox3 = new GroupBox();
+            txtContact = new TextBox();
+            label3 = new Label();
+            groupBox2 = new GroupBox();
+            txtAuthor = new TextBox();
+            label2 = new Label();
+            btnSave = new Button();
+            btnClear = new Button();
+            btnCancel = new Button();
+            title = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            groupBox1.SuspendLayout();
+            groupBox4.SuspendLayout();
+            groupBox3.SuspendLayout();
+            groupBox2.SuspendLayout();
             SuspendLayout();
-            // 
-            // button4
-            // 
-            button4.Font = new Font("Segoe UI", 12F);
-            button4.Location = new Point(134, 276);
-            button4.Name = "button4";
-            button4.Size = new Size(108, 37);
-            button4.TabIndex = 34;
-            button4.Text = "New";
-            button4.UseVisualStyleBackColor = true;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(254, 169);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(339, 27);
-            textBox2.TabIndex = 30;
-            // 
-            // button3
-            // 
-            button3.Font = new Font("Segoe UI", 12F);
-            button3.Location = new Point(289, 276);
-            button3.Name = "button3";
-            button3.Size = new Size(108, 37);
-            button3.TabIndex = 27;
-            button3.Text = "Clear";
-            button3.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            textBox1.Font = new Font("Segoe UI", 12F);
-            textBox1.Location = new Point(254, 106);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(338, 34);
-            textBox1.TabIndex = 25;
-            // 
-            // button2
-            // 
-            button2.Font = new Font("Segoe UI", 12F);
-            button2.Location = new Point(445, 276);
-            button2.Name = "button2";
-            button2.Size = new Size(108, 37);
-            button2.TabIndex = 24;
-            button2.Text = "Cancel";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 12F);
-            label4.Location = new Point(87, 165);
-            label4.Name = "label4";
-            label4.Size = new Size(84, 28);
-            label4.TabIndex = 22;
-            label4.Text = "Contact:";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F);
-            label2.Location = new Point(87, 106);
-            label2.Name = "label2";
-            label2.Size = new Size(130, 28);
-            label2.TabIndex = 21;
-            label2.Text = "Author Name";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(239, 25);
-            label1.Name = "label1";
-            label1.Size = new Size(172, 38);
-            label1.TabIndex = 20;
-            label1.Text = "Add Author";
             // 
             // pictureBox1
             // 
@@ -124,41 +59,193 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox1.TabIndex = 35;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(groupBox4);
+            groupBox1.Controls.Add(groupBox3);
+            groupBox1.Controls.Add(groupBox2);
+            groupBox1.Controls.Add(btnSave);
+            groupBox1.Controls.Add(btnClear);
+            groupBox1.Controls.Add(btnCancel);
+            groupBox1.Controls.Add(title);
+            groupBox1.Location = new Point(22, 12);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(634, 466);
+            groupBox1.TabIndex = 36;
+            groupBox1.TabStop = false;
+            // 
+            // groupBox4
+            // 
+            groupBox4.Controls.Add(txtDescription);
+            groupBox4.Controls.Add(label4);
+            groupBox4.Location = new Point(55, 251);
+            groupBox4.Name = "groupBox4";
+            groupBox4.Size = new Size(525, 127);
+            groupBox4.TabIndex = 50;
+            groupBox4.TabStop = false;
+            // 
+            // txtDescription
+            // 
+            txtDescription.Font = new Font("Segoe UI", 12F);
+            txtDescription.Location = new Point(167, 20);
+            txtDescription.Multiline = true;
+            txtDescription.Name = "txtDescription";
+            txtDescription.Size = new Size(338, 101);
+            txtDescription.TabIndex = 44;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 12F);
+            label4.Location = new Point(21, 23);
+            label4.Name = "label4";
+            label4.Size = new Size(116, 28);
+            label4.TabIndex = 43;
+            label4.Text = "Description:";
+            // 
+            // groupBox3
+            // 
+            groupBox3.Controls.Add(txtContact);
+            groupBox3.Controls.Add(label3);
+            groupBox3.Location = new Point(55, 166);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Size = new Size(525, 67);
+            groupBox3.TabIndex = 49;
+            groupBox3.TabStop = false;
+            // 
+            // txtContact
+            // 
+            txtContact.Font = new Font("Segoe UI", 12F);
+            txtContact.Location = new Point(167, 20);
+            txtContact.Name = "txtContact";
+            txtContact.Size = new Size(338, 34);
+            txtContact.TabIndex = 44;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 12F);
+            label3.Location = new Point(21, 23);
+            label3.Name = "label3";
+            label3.Size = new Size(84, 28);
+            label3.TabIndex = 43;
+            label3.Text = "Contact:";
+            // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(txtAuthor);
+            groupBox2.Controls.Add(label2);
+            groupBox2.Location = new Point(55, 84);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(525, 67);
+            groupBox2.TabIndex = 48;
+            groupBox2.TabStop = false;
+            // 
+            // txtAuthor
+            // 
+            txtAuthor.Font = new Font("Segoe UI", 12F);
+            txtAuthor.Location = new Point(167, 20);
+            txtAuthor.Name = "txtAuthor";
+            txtAuthor.Size = new Size(338, 34);
+            txtAuthor.TabIndex = 44;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 12F);
+            label2.Location = new Point(21, 23);
+            label2.Name = "label2";
+            label2.Size = new Size(134, 28);
+            label2.TabIndex = 43;
+            label2.Text = "Author Name:";
+            // 
+            // btnSave
+            // 
+            btnSave.BackColor = SystemColors.ActiveCaption;
+            btnSave.Font = new Font("Segoe UI", 12F);
+            btnSave.Location = new Point(108, 413);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(108, 37);
+            btnSave.TabIndex = 45;
+            btnSave.Text = "Save";
+            btnSave.UseVisualStyleBackColor = false;
+            btnSave.Click += btnSave_Click;
+            // 
+            // btnClear
+            // 
+            btnClear.Font = new Font("Segoe UI", 12F);
+            btnClear.Location = new Point(263, 413);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(108, 37);
+            btnClear.TabIndex = 43;
+            btnClear.Text = "Clear";
+            btnClear.UseVisualStyleBackColor = true;
+            btnClear.Click += btnClear_Click;
+            // 
+            // btnCancel
+            // 
+            btnCancel.BackColor = SystemColors.ButtonShadow;
+            btnCancel.Font = new Font("Segoe UI", 12F);
+            btnCancel.Location = new Point(419, 413);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(108, 37);
+            btnCancel.TabIndex = 41;
+            btnCancel.Text = "Cancel";
+            btnCancel.UseVisualStyleBackColor = false;
+            btnCancel.Click += button2_Click;
+            // 
+            // title
+            // 
+            title.AutoSize = true;
+            title.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            title.Location = new Point(231, 23);
+            title.Name = "title";
+            title.Size = new Size(172, 38);
+            title.TabIndex = 38;
+            title.Text = "Add Author";
             // 
             // AuthorDialog
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(680, 358);
+            ClientSize = new Size(680, 490);
+            Controls.Add(groupBox1);
             Controls.Add(pictureBox1);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Controls.Add(label4);
-            Controls.Add(label2);
-            Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "AuthorDialog";
             StartPosition = FormStartPosition.CenterParent;
             Text = "AuthorDialog";
             TransparencyKey = Color.Gray;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            groupBox4.ResumeLayout(false);
+            groupBox4.PerformLayout();
+            groupBox3.ResumeLayout(false);
+            groupBox3.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private Button button4;
-        private TextBox textBox2;
-        private Button button3;
-        private TextBox textBox1;
-        private Button button2;
-        private Label label4;
-        private Label label2;
-        private Label label1;
         private PictureBox pictureBox1;
+        private GroupBox groupBox1;
+        private GroupBox groupBox4;
+        private TextBox txtDescription;
+        private Label label4;
+        private GroupBox groupBox3;
+        private TextBox txtContact;
+        private Label label3;
+        private GroupBox groupBox2;
+        private TextBox txtAuthor;
+        private Label label2;
+        private Button btnSave;
+        private Button btnClear;
+        private Button btnCancel;
+        private Label title;
     }
 }

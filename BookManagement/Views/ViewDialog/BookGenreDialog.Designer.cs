@@ -29,9 +29,7 @@
         private void InitializeComponent()
         {
             groupBox2 = new GroupBox();
-            groupBox4 = new GroupBox();
-            txtGenreId = new TextBox();
-            label4 = new Label();
+            btnClear = new Button();
             groupBox3 = new GroupBox();
             txtGenreDescription = new TextBox();
             label1 = new Label();
@@ -40,10 +38,9 @@
             label3 = new Label();
             btnCancel = new Button();
             btnSave = new Button();
-            label2 = new Label();
+            title = new Label();
             pictureBox1 = new PictureBox();
             groupBox2.SuspendLayout();
-            groupBox4.SuspendLayout();
             groupBox3.SuspendLayout();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -52,52 +49,35 @@
             // groupBox2
             // 
             groupBox2.AutoSize = true;
-            groupBox2.Controls.Add(groupBox4);
+            groupBox2.Controls.Add(btnClear);
             groupBox2.Controls.Add(groupBox3);
             groupBox2.Controls.Add(groupBox1);
             groupBox2.Controls.Add(btnCancel);
             groupBox2.Controls.Add(btnSave);
-            groupBox2.Controls.Add(label2);
+            groupBox2.Controls.Add(title);
             groupBox2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             groupBox2.Location = new Point(23, 12);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(520, 433);
+            groupBox2.Size = new Size(520, 370);
             groupBox2.TabIndex = 5;
             groupBox2.TabStop = false;
             // 
-            // groupBox4
+            // btnClear
             // 
-            groupBox4.Controls.Add(txtGenreId);
-            groupBox4.Controls.Add(label4);
-            groupBox4.Location = new Point(21, 73);
-            groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(479, 73);
-            groupBox4.TabIndex = 16;
-            groupBox4.TabStop = false;
-            // 
-            // txtGenreId
-            // 
-            txtGenreId.Location = new Point(147, 27);
-            txtGenreId.Name = "txtGenreId";
-            txtGenreId.ReadOnly = true;
-            txtGenreId.Size = new Size(326, 34);
-            txtGenreId.TabIndex = 6;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label4.Location = new Point(6, 23);
-            label4.Name = "label4";
-            label4.Size = new Size(38, 28);
-            label4.TabIndex = 5;
-            label4.Text = "ID:";
+            btnClear.BackColor = Color.LightGray;
+            btnClear.Location = new Point(211, 297);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(102, 39);
+            btnClear.TabIndex = 17;
+            btnClear.Text = "Clear";
+            btnClear.UseVisualStyleBackColor = false;
+            btnClear.Click += btnClear_Click;
             // 
             // groupBox3
             // 
             groupBox3.Controls.Add(txtGenreDescription);
             groupBox3.Controls.Add(label1);
-            groupBox3.Location = new Point(21, 240);
+            groupBox3.Location = new Point(21, 177);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(479, 73);
             groupBox3.TabIndex = 15;
@@ -124,7 +104,7 @@
             // 
             groupBox1.Controls.Add(txtGenreName);
             groupBox1.Controls.Add(label3);
-            groupBox1.Location = new Point(21, 152);
+            groupBox1.Location = new Point(21, 89);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(479, 73);
             groupBox1.TabIndex = 14;
@@ -141,7 +121,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label3.Location = new Point(6, 23);
+            label3.Location = new Point(6, 27);
             label3.Name = "label3";
             label3.Size = new Size(135, 28);
             label3.TabIndex = 5;
@@ -150,7 +130,7 @@
             // btnCancel
             // 
             btnCancel.BackColor = Color.LightGray;
-            btnCancel.Location = new Point(287, 361);
+            btnCancel.Location = new Point(361, 297);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(102, 39);
             btnCancel.TabIndex = 13;
@@ -162,7 +142,7 @@
             // 
             btnSave.BackColor = SystemColors.ActiveCaption;
             btnSave.FlatAppearance.BorderSize = 0;
-            btnSave.Location = new Point(131, 361);
+            btnSave.Location = new Point(57, 297);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(102, 39);
             btnSave.TabIndex = 11;
@@ -170,15 +150,15 @@
             btnSave.UseVisualStyleBackColor = false;
             btnSave.Click += btnSave_Click;
             // 
-            // label2
+            // title
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(175, 23);
-            label2.Name = "label2";
-            label2.Size = new Size(171, 38);
-            label2.TabIndex = 4;
-            label2.Text = "Book Genre";
+            title.AutoSize = true;
+            title.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            title.Location = new Point(175, 23);
+            title.Name = "title";
+            title.Size = new Size(171, 38);
+            title.TabIndex = 4;
+            title.Text = "Book Genre";
             // 
             // pictureBox1
             // 
@@ -195,7 +175,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(567, 449);
+            ClientSize = new Size(567, 405);
             Controls.Add(pictureBox1);
             Controls.Add(groupBox2);
             FormBorderStyle = FormBorderStyle.None;
@@ -204,8 +184,6 @@
             Text = "BookGenreDialog";
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
-            groupBox4.ResumeLayout(false);
-            groupBox4.PerformLayout();
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
             groupBox1.ResumeLayout(false);
@@ -221,15 +199,13 @@
         private Button btnCancel;
         private Button btnSave;
         private Label label3;
-        private Label label2;
+        private Label title;
         private GroupBox groupBox3;
         private TextBox txtGenreDescription;
         private Label label1;
         private GroupBox groupBox1;
         private TextBox txtGenreName;
         private PictureBox pictureBox1;
-        private GroupBox groupBox4;
-        private TextBox txtGenreId;
-        private Label label4;
+        private Button btnClear;
     }
 }

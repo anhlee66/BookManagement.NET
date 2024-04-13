@@ -37,6 +37,21 @@ namespace BookManagement.Controller
 
             return list;
         }
+        public static DataTable getAllBookToTable()
+        {
+            DataTable dt = new DataTable();
+            DBHandler.open();
+            String query = "SELECT * FROM Books";
+            using (SqlCommand cmd = new SqlCommand(query, DBHandler.con))
+            {
+                SqlDataAdapter dp = new SqlDataAdapter(cmd);
+                dp.Fill(dt);
+                
+            }
+            DBHandler.close();
+
+            return dt;
+        }
         public static Book getBookById(int id)
         {
             Book book = new Book();
