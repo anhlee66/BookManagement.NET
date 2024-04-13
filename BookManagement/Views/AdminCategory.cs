@@ -27,61 +27,90 @@ namespace BookManagement.Views
         }
         internal void GetMessage(int code, Object obj, int mode)
         {
-            if (code == SUCCESS_CODE)
+            if (code == FAILURE_CODE) return;
+            
+            if (obj is BookGenre)
             {
-                if (obj is BookGenre)
+                BookGenre genre = (BookGenre)obj;
+                switch (mode)
                 {
-                    BookGenre genre = (BookGenre)obj;
-                    switch (mode)
-                    {
-                        case ADD_MODE:
-                            if (BookGenreController.UpdateBookGenre(genre))
-                            {
-                                this.genreTab_Load();
-                                // MessageBox.Show("Need to refresh");
-                            }
-                            break;
-                        default:
-                            if (BookGenreController.InsertBookGenre(genre))
-                            {
-                                this.genreTab_Load();
-                            }
-                            break;
-                    }
-
-
+                    case ADD_MODE:
+                        if (BookGenreController.UpdateBookGenre(genre))
+                        {
+                            this.genreTab_Load();
+                            // MessageBox.Show("Need to refresh");
+                        }
+                        break;
+                    default:
+                        if (BookGenreController.InsertBookGenre(genre))
+                        {
+                            this.genreTab_Load();
+                        }
+                        break;
                 }
-                if (obj is Author)
-                {
-                    Author author = (Author)obj;
-                    switch (mode)
-                    {
-                        case EDIT_MODE:
-                            if (AuthorController.updateAuthor(author))
-                            {
-                                this.authorTab_Load();
-                                // MessageBox.Show("Need to refresh");
-                            }
-                            else
-                            {
-                                Debug.Print("Update error");
-                            }
-                            break;
-                        default:
-                            if (AuthorController.InsertAuthor(author))
-                            {
-                                this.authorTab_Load();
-                            }
-                            else
-                            {
-                                Debug.Print("Insert error");
-                            }
-                            break;
-                    }
 
-                }
 
             }
+            else if (obj is Author)
+            {
+                Author author = (Author)obj;
+                switch (mode)
+                {
+                    case EDIT_MODE:
+                        if (AuthorController.updateAuthor(author))
+                        {
+                            this.authorTab_Load();
+                            // MessageBox.Show("Need to refresh");
+                        }
+                        else
+                        {
+                            Debug.Print("Update error");
+                        }
+                        break;
+                    default:
+                        if (AuthorController.InsertAuthor(author))
+                        {
+                            this.authorTab_Load();
+                        }
+                        else
+                        {
+                            Debug.Print("Insert error");
+                        }
+                        break;
+                }
+
+
+            }
+            else
+            {
+                Publisher publisher = (Publisher)obj;
+                switch (mode)
+                {
+                    case EDIT_MODE:
+                        if (PublisherController.UpdatePublisher(publisher))
+                        {
+                            this.publisherTab_Load();
+                            // MessageBox.Show("Need to refresh");
+                        }
+                        else
+                        {
+                            Debug.Print("Update error");
+                        }
+                        break;
+                    default:
+                        if (PublisherController.InsertPublisher(publisher))
+                        {
+                            this.publisherTab_Load();
+                        }
+                        else
+                        {
+                            Debug.Print("Insert error");
+                        }
+                        break;
+                }
+            }
+
+            
             return;
         }
 
@@ -121,11 +150,11 @@ namespace BookManagement.Views
         }
         public void publisherTab_Load()
         {
-            DataTable dt = new DataTable();
-            dt = PublisherController.getAllPublisherDataTable();
-            if (dt.Rows.Count > 0)
+
+            dtPublisher = PublisherController.getAllPublisherDataTable();
+            if (dtPublisher.Rows.Count > 0)
             {
-                dgvPublisher.DataSource = dt;
+                dgvPublisher.DataSource = dtPublisher;
 
             }
             dgvPublisher.Columns["PublisherId"].Visible = false;
@@ -213,7 +242,7 @@ namespace BookManagement.Views
             int index = e.RowIndex;
             if (isRangeOut(index, dtAuthor.Rows.Count)) return;
             authorSelected = new Author(dtAuthor.Rows[index]);
-            MessageBox.Show(authorSelected.authorId.ToString());
+            //MessageBox.Show(authorSelected.authorId.ToString());
         }
 
         private void btnEditAuthor_Click(object sender, EventArgs e)
@@ -262,6 +291,64 @@ namespace BookManagement.Views
         #endregion
 
 
+
+
+        #region publisher handler
+        private void dgvPublisher_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int index = e.RowIndex;
+            if (isRangeOut(index, dtPublisher.Rows.Count)) return;
+            publisherSelected = new Publisher(dtPublisher.Rows[index]);
+            //MessageBox.Show(publisherSelected.publisherId.ToString());
+        }
+        private void btnEditPuslisher_Click(object sender, EventArgs e)
+        {
+            if(isSelectedItem(publisherSelected))
+            {
+                PubisherDialog publisher = new PubisherDialog(this);
+                publisher.setMode(EDIT_MODE);
+                publisher.setData(publisherSelected);
+                publisher.ShowDialog();
+
+            }
+            else
+            {
+                Message.EmptySelection();
+            }
+        }
+
+        private void btnNewPublisher_Click(object sender, EventArgs e)
+        {
+            
+            PubisherDialog publisher = new PubisherDialog(this);
+            publisher.setMode(ADD_MODE);
+            publisher.setData(new Publisher());
+            publisher.ShowDialog();
+
+           
+        }
+
+        private void btnDeletePublisher_Click(object sender, EventArgs e)
+        {
+            if (isSelectedItem(publisherSelected))
+            {
+                if (!PublisherController.isPublisherEmpty(publisherSelected.publisherId))
+                {
+                    Message.DeleteError("Cannot execute this action because this list not empty", "Delete Error");
+
+                }
+                else if (PublisherController.DeletePublisher(publisherSelected.publisherId))
+                {
+                    MessageBox.Show("Deleted a item", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.authorTab_Load();
+                }
+                else
+                {
+                    MessageBox.Show("Deleted Error");
+                }
+            }
+        }
+        #endregion
 
 
     }

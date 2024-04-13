@@ -146,7 +146,7 @@ namespace BookManagement.Controller
                 Debug.Print(ex.Message);
                 return false;
             }
-            return false;
+            return true;
         }
         public static bool isAuthorEmpty(int id)
         {
