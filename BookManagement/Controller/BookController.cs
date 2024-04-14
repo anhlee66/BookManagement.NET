@@ -13,7 +13,23 @@ namespace BookManagement.Controller
 {
     internal class BookController
     {
-        
+        public static decimal getBookPrice(int id)
+        {
+            decimal price = 0;
+            DBHandler.open();
+            String query = "GetCurrentPrice";
+               
+            using (SqlCommand cmd = new SqlCommand(query, DBHandler.con))
+            {
+
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Id", id);
+                price = Convert.ToDecimal(cmd.ExecuteScalar());
+            }
+            DBHandler.close();
+            return price;
+
+        }
         public static List<Book> getAllBook()
         {
             List<Book> list = new List<Book>();

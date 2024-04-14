@@ -177,9 +177,9 @@
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             label4.Location = new Point(8, 217);
             label4.Name = "label4";
-            label4.Size = new Size(64, 28);
+            label4.Size = new Size(82, 28);
             label4.TabIndex = 17;
-            label4.Text = "Price:";
+            label4.Text = "Import:";
             // 
             // label3
             // 
@@ -197,7 +197,7 @@
             txtBookTitleDetail.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             txtBookTitleDetail.AutoSize = true;
             txtBookTitleDetail.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtBookTitleDetail.Location = new Point(8, -10);
+            txtBookTitleDetail.Location = new Point(6, 0);
             txtBookTitleDetail.MaximumSize = new Size(400, 0);
             txtBookTitleDetail.Name = "txtBookTitleDetail";
             txtBookTitleDetail.Size = new Size(345, 62);
@@ -209,7 +209,7 @@
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label1.Location = new Point(8, 64);
+            label1.Location = new Point(6, 64);
             label1.Name = "label1";
             label1.Size = new Size(82, 28);
             label1.TabIndex = 14;

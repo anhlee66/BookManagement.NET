@@ -25,7 +25,7 @@ namespace BookManagement.Views
 
         }
 
-        
+
         private void dashboard_Closed(object sender, FormClosedEventArgs e)
         {
             dashborad = null;
@@ -109,7 +109,7 @@ namespace BookManagement.Views
             }
         }
 
-        
+
         private void sbSetting_Click(object sender, EventArgs e)
         {
             if (setting == null)
@@ -144,7 +144,7 @@ namespace BookManagement.Views
         }
         private void sbEmployee_Click(object sender, EventArgs e)
         {
-            if(employee == null)
+            if (employee == null)
             {
                 employee = new AdminEmployee();
                 employee.MdiParent = this;
@@ -158,6 +158,32 @@ namespace BookManagement.Views
             }
         }
 
-       
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            enter_Seacrch();
+
+        }
+
+        private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == (char)Keys.Enter)
+            {
+                enter_Seacrch();
+                txtSearch.Text = "";
+            }
+            
+        }
+        public void enter_Seacrch()
+        {
+            Form activate = this.ActiveMdiChild;
+            Form form = new Form();
+            string keyword = txtSearch.Text.Trim();
+            switch (activate)
+            {
+                case AdminStorage storage: storage.searchRecord(keyword); break;
+                case AdminCategory category: category.searchRecord(keyword); break;
+
+            }
+        }
     }
 }

@@ -136,7 +136,33 @@ namespace BookManagement.Views
 
             return;
         }
-
+        internal void searchRecord(string keyword)
+        {
+            string searchText,contact="";
+            if (keyword != "")
+            {
+                searchText = string.Format("Name like '%{0}%'", keyword);
+                contact = string.Format(" OR Contact like '%{0}%'", keyword);
+            }
+            else
+            {
+                searchText = "";
+                //MessageBox.Show("' '");
+            }
+            switch (tabCategory.SelectedTab.Name)
+            {
+                case "tabGenre":
+                    dtGenre.DefaultView.RowFilter = searchText;
+                    dgvGenre.DataSource = dtGenre;
+                    break;
+                case "tabAuthor":
+                    dtAuthor.DefaultView.RowFilter = searchText + contact;
+                    break;
+                default: 
+                    dtPublisher.DefaultView.RowFilter = searchText + contact;
+                    break;
+            }
+        }
 
         #endregion
 

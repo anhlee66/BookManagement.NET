@@ -53,7 +53,7 @@
             panel8 = new Panel();
             panel10 = new Panel();
             btnSearch = new Button();
-            textBox1 = new TextBox();
+            txtSearch = new TextBox();
             sidebar.SuspendLayout();
             panel7.SuspendLayout();
             panel11.SuspendLayout();
@@ -397,7 +397,7 @@
             // 
             panel10.Anchor = AnchorStyles.Left;
             panel10.Controls.Add(btnSearch);
-            panel10.Controls.Add(textBox1);
+            panel10.Controls.Add(txtSearch);
             panel10.Location = new Point(6, 10);
             panel10.Name = "panel10";
             panel10.Size = new Size(509, 52);
@@ -418,17 +418,19 @@
             btnSearch.TabIndex = 3;
             btnSearch.Text = "Search";
             btnSearch.UseVisualStyleBackColor = false;
+            btnSearch.Click += btnSearch_Click;
             // 
-            // textBox1
+            // txtSearch
             // 
-            textBox1.Font = new Font("Segoe UI", 12F);
-            textBox1.Location = new Point(4, 6);
-            textBox1.Margin = new Padding(4);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "    Search ?";
-            textBox1.Size = new Size(363, 42);
-            textBox1.TabIndex = 2;
+            txtSearch.Font = new Font("Segoe UI", 12F);
+            txtSearch.Location = new Point(4, 6);
+            txtSearch.Margin = new Padding(4);
+            txtSearch.Multiline = true;
+            txtSearch.Name = "txtSearch";
+            txtSearch.PlaceholderText = "    Search ?";
+            txtSearch.Size = new Size(363, 42);
+            txtSearch.TabIndex = 2;
+            txtSearch.KeyPress += txtSearch_KeyPress;
             // 
             // AdminHomepage
             // 
@@ -485,7 +487,7 @@
         private Panel panel8;
         private Panel panel10;
         private Button btnSearch;
-        private TextBox textBox1;
+        private TextBox txtSearch;
         private Panel panel11;
         private Label label2;
         private PictureBox pbThumbnail;
