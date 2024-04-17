@@ -31,7 +31,7 @@
             sidebar = new FlowLayoutPanel();
             panel7 = new Panel();
             panel11 = new Panel();
-            label2 = new Label();
+            txtUser = new Label();
             pbThumbnail = new PictureBox();
             panel3 = new Panel();
             sbDashboard = new Button();
@@ -102,23 +102,24 @@
             // panel11
             // 
             panel11.Anchor = AnchorStyles.Right;
-            panel11.Controls.Add(label2);
+            panel11.Controls.Add(txtUser);
             panel11.Controls.Add(pbThumbnail);
             panel11.Location = new Point(12, 10);
             panel11.Name = "panel11";
             panel11.Size = new Size(202, 54);
             panel11.TabIndex = 5;
             // 
-            // label2
+            // txtUser
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(53, 5);
-            label2.Name = "label2";
-            label2.Size = new Size(88, 28);
-            label2.TabIndex = 1;
-            label2.Text = "Anh Lee";
-            label2.TextAlign = ContentAlignment.MiddleCenter;
+            txtUser.AutoSize = true;
+            txtUser.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtUser.Location = new Point(53, 5);
+            txtUser.Name = "txtUser";
+            txtUser.Size = new Size(88, 28);
+            txtUser.TabIndex = 1;
+            txtUser.Text = "Anh Lee";
+            txtUser.TextAlign = ContentAlignment.MiddleCenter;
+            txtUser.Click += label2_Click;
             // 
             // pbThumbnail
             // 
@@ -439,6 +440,7 @@
             Name = "AdminHomepage";
             Text = "AdminHomepage";
             WindowState = FormWindowState.Maximized;
+            FormClosed += AdminHomepage_FormClosed;
             Load += sbDashboard_Click;
             sidebar.ResumeLayout(false);
             panel7.ResumeLayout(false);
@@ -482,7 +484,7 @@
         private Panel panel10;
         private TextBox txtSearch;
         private Panel panel11;
-        private Label label2;
+        private Label txtUser;
         private PictureBox pbThumbnail;
         private Button btnSearch;
     }

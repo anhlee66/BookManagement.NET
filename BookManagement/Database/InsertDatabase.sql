@@ -157,7 +157,12 @@ INSERT INTO ComputerAccounts (EmployeeId, AccountName, Password, RoleId)
 VALUES 
     (2, 'jane_smith', 'letmein', 2),
     (3, 'michael_johnson', 'accounting123', 1);
-    
+
+	select * from Employees;
+	select * from roles;
+INSERT INTO ComputerAccounts (EmployeeId, AccountName, Password, RoleId)
+VALUES 
+    (1,'anhle','123',1);
 
 -- Inserting sample customers
 INSERT INTO Customers (Name, Contact, Gender, Address)

@@ -1,6 +1,6 @@
 ﻿namespace BookManagement.Views
 {
-    partial class Employee
+    partial class EmployeeControl
     {
         /// <summary> 
         /// Required designer variable.

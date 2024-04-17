@@ -12,15 +12,22 @@ namespace BookManagement.Models
         public AccountComputer() { }
         public AccountComputer(DataRow r)
         {
-            this.loginName = (string)r["LoginName"];
+            this.loginName = (string)r["AccountName"];
             this.password = (string)r["Password"];
+            this.RoleId = (int)r["RoleId"];
+            this.EmployeeId = (int)r["EmployeeId"];
         }
-        public AccountComputer(string loginName, string password)
+        public AccountComputer(string loginName, string password, int roleId, int id)
         {
             this.loginName = loginName;
             this.password = password;
+            this.RoleId=roleId;
+            this.EmployeeId = id;
+
         }
-        private string loginName { get; set; }
-        private string password { get; set; }
+        public string loginName { get; set; }
+        public string password { get; set; }
+        public int EmployeeId { get; set; }
+        public int RoleId { get; set; }
     }
 }

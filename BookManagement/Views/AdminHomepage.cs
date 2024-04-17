@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BookManagement.Controller;
+using BookManagement.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,25 +14,66 @@ namespace BookManagement.Views
 {
     public partial class AdminHomepage : Form
     {
+
+        LoginForm login;
         AdminCategory category;
         AdminDashborad dashborad;
         AdminOrders orders;
         AdminSetting setting;
         AdminStorage storage;
         AdminEmployee employee;
-
-        public AdminHomepage()
+        private int id;
+        public AdminHomepage(LoginForm login)
         {
             InitializeComponent();
-
+            this.login = login;
+        }
+        internal void setUser(int id)
+        {
+            this.id = id;
         }
 
+        #region Form load
+        private void home_Load(object sender, EventArgs e)
+        {
+            userLogin_Load();
+        }
 
+        private void userLogin_Load()
+        {
+            Employee employee = EmployeeController.GetEmployee(id);
+            txtUser.Text = employee.name;
+        }
+        #endregion
+
+        #region sibar closed
         private void dashboard_Closed(object sender, FormClosedEventArgs e)
         {
             dashborad = null;
         }
+        private void category_Closed(object sender, FormClosedEventArgs e)
+        {
+            category = null;
+        }
+        private void storage_Closed(object sender, FormClosedEventArgs e)
+        {
+            storage = null;
+        }
+        private void order_Closed(Object sender, FormClosedEventArgs e)
+        {
+            orders = null;
+        }
+        private void setting_Closed(object sender, FormClosedEventArgs e)
+        {
+            setting = null;
+        }
+        private void Employee_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            employee = null;
+        }
+        #endregion
 
+        #region sibar click
         private void sbDashboard_Click(object sender, EventArgs e)
         {
             if (dashborad == null)
@@ -48,10 +91,6 @@ namespace BookManagement.Views
             }
         }
 
-        private void order_Closed(Object sender, FormClosedEventArgs e)
-        {
-            orders = null;
-        }
         private void sbOrders_Click(object sender, EventArgs e)
         {
             if (orders == null)
@@ -68,7 +107,6 @@ namespace BookManagement.Views
             }
 
         }
-
         private void button3_Click(object sender, EventArgs e)
         {
             if (category == null)
@@ -83,15 +121,6 @@ namespace BookManagement.Views
             {
                 category.Activate();
             }
-        }
-
-        private void category_Closed(object sender, FormClosedEventArgs e)
-        {
-            category = null;
-        }
-        private void storage_Closed(object sender, FormClosedEventArgs e)
-        {
-            storage = null;
         }
         private void sbStorage_Click(object sender, EventArgs e)
         {
@@ -108,8 +137,6 @@ namespace BookManagement.Views
                 storage.Activate();
             }
         }
-
-
         private void sbSetting_Click(object sender, EventArgs e)
         {
             if (setting == null)
@@ -125,22 +152,12 @@ namespace BookManagement.Views
                 setting.Activate();
             }
         }
-        private void setting_Closed(object sender, FormClosedEventArgs e)
-        {
-            setting = null;
-        }
-
-
         private void button6_Click(object sender, EventArgs e)
         {
             LoginForm loginForm = new LoginForm();
             loginForm.Show();
             this.Close();
 
-        }
-        private void Employee_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            employee = null;
         }
         private void sbEmployee_Click(object sender, EventArgs e)
         {
@@ -157,6 +174,8 @@ namespace BookManagement.Views
                 employee.Activate();
             }
         }
+        #endregion
+
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
@@ -180,12 +199,23 @@ namespace BookManagement.Views
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-             enter_Seacrch();
+            enter_Seacrch();
         }
 
         private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
             enter_Seacrch();
+        }
+
+
+        private void AdminHomepage_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            login.Close();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

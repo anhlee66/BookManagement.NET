@@ -28,12 +28,12 @@ namespace BookManagement.Models
             this.phone = phone;
             this.role = role;
         }
-        private int employeeId { get; set; }
-        private string name { get; set; }
-        private int gender { get; set; } 
-        private string address { get; set; }
-        private string phone { get; set; }
-        private string role { get; set; }
+        public int employeeId { get; set; }
+        public string name { get; set; }
+        public int gender { get; set; }
+        public string address { get; set; }
+        public string phone { get; set; }
+        public string role { get; set; }
        
     }
 }

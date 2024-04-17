@@ -607,4 +607,7 @@ begin
 end;
 go
 
-update Books set Thumbnails='\Database\Images\dac_nhan_tam.jpg' where BookId=1;
+update Books set Thumbnails='\Database\Images\dac_nhan_tam.jpg' where BookId=16;
+select * from Books ;
+
+select * from ComputerAccounts;
