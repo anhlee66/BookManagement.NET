@@ -18,5 +18,12 @@ namespace BookManagement.Views
         public static void DeleteError(string title, string message) {
             MessageBox.Show(message, title, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+
+        public static void InputFaild()
+        {
+            string message = "Please enter all informatio above.";
+            string title = "Some input is empty";
+            MessageBox.Show(message,title,MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
     }
 }

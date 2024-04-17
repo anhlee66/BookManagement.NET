@@ -20,8 +20,7 @@ create table Publishers(
 );
 go
 
-alter table Publishers
-add  Address nvarchar(100) COLLATE Vietnamese_CI_AS default '';
+
 --------------------------------------------------------------
 
 drop table if exists Books;
@@ -33,19 +32,23 @@ create table Books(
 	ImportPrice money check(ImportPrice >0),
 	BookGenreId int not null,
 	PublisherId int not null,
+	Thumbnails varchar(200) default '\Database\Images\defaultThumbnail.jpg',
 	Foreign key (PublisherId) references Publishers(PublisherId),
 	Foreign key (BookGenreId) references BookGenres(BookgenreId),
 );
 go
 
+
+
 --------------------------------------------------------------
 
 drop table if exists States;
 create table States(
+	Id int primary key identity,
 	BookId int not null,
 	LastChangeDate date default getDate(),
 	State nvarchar(20) not null,
-	Primary key(BookId,LastChangeDate),
+	--Primary key(BookId,LastChangeDate),
 	Foreign key(BookId) references Books(BookId)
 );
 go
@@ -87,10 +90,12 @@ drop table if exists Suppliers ;
 create table Suppliers(
 	SupplierId int primary key identity,
 	Name nvarchar(50) COLLATE Vietnamese_CI_AS not null,
-	Contact varchar(12) not null,
+	Contact varchar(60) not null,
 	Description nvarchar(500) COLLATE Vietnamese_CI_AS default '',
 );
 go
+
+
 --------------------------------------------------------------
 
 drop table if exists Roles;
@@ -116,11 +121,12 @@ create table Employees(
 	Name nvarchar(50) COLLATE Vietnamese_CI_AS not null,
 	Gender bit default null,
 	Address nvarchar(200) default '',
-	Contact varchar(12) not null,
+	Contact varchar(60) not null,
 	PositionId int not null,
 	Foreign key (PositionId) references Positions(PositionId)
 );
 go
+
 --------------------------------------------------------------
 
 drop table if exists ComputerAccounts;
@@ -344,11 +350,12 @@ returns @Book table (
 	Price money,
 	BookGenre nvarchar(50),
 	Publicer nvarchar(50),
-	Author nvarchar(50))
+	Author nvarchar(50),
+	Thumbnails varchar(200))
 as 
 begin
 	insert @Book
-	select b.BookId,b.Name,Summary,Quantity,ImportPrice,Price,bg.Name,p.Name,a.Name from Books b
+	select b.BookId,b.Name,Summary,Quantity,ImportPrice,Price,bg.Name,p.Name,a.Name,Thumbnails from Books b
 		inner join BookGenres bg on bg.BookGenreId = b.BookGenreId
 		inner join Authorship c on c.BookId = b.BookId
 		inner join Authors a on c.AuthorId = a.AuthorId
@@ -377,20 +384,23 @@ create procedure SetBooks(	@Name nvarchar(50),
 							@Price money,
 							@BookGenreId int,
 							@AuthorId int,
-							@PublisherId int)
+							@PublisherId int,
+							@State nvarchar(30),
+							@Thumbnail varchar(200))
 as
 begin
-	insert into Books values(@Name,@Summary,@Quantity,@ImportPrice,@BookGenreId,@PublisherId);
+	insert into Books values(@Name,@Summary,@Quantity,@ImportPrice,@BookGenreId,@PublisherId,@Thumbnail);
 	declare @BookId int  = (select  SCOPE_IDENTITY());
 	select @BookId;
 	insert into Authorship values(@AuthorID,@BookId);
 	insert into SellingPrice values(@BookId,GETDATE(),@Price);
+	insert into States values(@BookId,GETDATE(),@State);
 end;
 go
 
-select * from Books;
+select * from States;
 declare @id int;
-exec SetBooks N'Hello World HTML JS','',1,10000,12000,1,3,2;
+exec SetBooks N'Hello World HTML JS','',1,10000,12000,1,3,2,'In stock';
 select @id;
 
 Select * from Books;
@@ -438,6 +448,7 @@ exec UpdatePrice 1,@date,13000;
 select * from SellingPrice;
 
 select * from publicers;
+--------------------------------------------------------------
 
 drop procedure if exists UpdateBooks;
 create procedure UpdateBooks(	@BookId int,
@@ -448,7 +459,9 @@ create procedure UpdateBooks(	@BookId int,
 								@Price money,
 								@BookGenreId int,
 								@AuthorId int,
-								@PublisherId int)
+								@PublisherId int,
+								@State nvarchar(30),
+								@Thumbnails varchar(200))
 as
 begin
 	update Books
@@ -457,7 +470,8 @@ begin
 		Quantity = @Quantity,
 		ImportPrice = @ImportPrice,
 		BookGenreId  = @BookGenreId,
-		PublisherId = @PublisherId
+		PublisherId = @PublisherId,
+		Thumbnails =@Thumbnails
 	where BookId = @BookId;
 
 	update Authorship
@@ -469,15 +483,16 @@ begin
 	where BookId = @BookId and LastChangeDate = (
 		Select Max(LastChangeDate) from SellingPrice
 		where BookId = @BookId);
+	insert into States values(@BookId,GETDATE(),@State);
 	select @BookId;
 end;
 go
 
-exec UpdateBooks 6,N'Hello World HTML JS And PHP','',2,100000,120000,3,3,2;
+exec UpdateBooks 6,N'Hello World HTML JS And PHP','',2,100000,120000,3,3,2,'In stoke';
 
 select * from GetBooks();
 
-
+--------------------------------------------------------------
 drop procedure if exists DeleteBook;
 create procedure DeleteBook(@BookId int)
 as
@@ -497,6 +512,8 @@ go
 
 Exec DeleteBook 6;
 
+
+--------------------------------------------------------------
 drop procedure if exists CreateInvoice;
 create procedure CreateInvoice(
 	@EmployeeId int,
@@ -512,3 +529,82 @@ select * from invoices;
 select * from Customers;
 select * from Employees;
 exec CreateInvoice 1,2;
+
+
+--------------------------------------------------------------
+
+drop procedure if exists GetAuthorName
+create procedure GetAuthorName(@id int)
+as
+begin
+	select Name from Authors a inner join Authorship au on a.AuthorId = au.AuthorId
+	where BookId = @id;
+end;
+go
+
+exec GetAuthorName 1;
+select * from books;
+select * from Authorship;
+insert into Authorship(AuthorId,BookId) values(3,1);
+
+drop table if exists GetAuthorId;
+create procedure GetAuthorId(@id int)
+as
+begin
+	select a.AuthorId from Authors a inner join Authorship au on a.AuthorId = au.AuthorId
+	where BookId = @id;
+end;
+go
+
+exec GetAuthorId 1;
+
+drop procedure if exists GetPublisher;
+create procedure GetPublisherName(@id int)
+as
+begin
+	select p.Name from Books b inner join Publishers p on p.PublisherId = b.PublisherId
+	where BookId=@id;
+end;
+go
+
+exec GetPublisherName 1;
+
+drop procedure if exists GetNumberBookFilter;
+create procedure GetNumberBookFilter(@authorId int, @genreId int)
+as
+begin
+	select count(distinct b.BookId),sum(quantity) from Books b
+		inner join Authorship au on b.BookId = au.BookId
+		inner join Authors a on a.AuthorId = au.AuthorId
+	where a.AuthorId=@authorId and BookGenreId=@genreId;
+end;
+go
+
+--exec GetNumberBookFilter 3,7;
+select * from books;
+select * from authors;
+select * from Authors
+select * from bookGenres;
+
+drop procedure if exists GetCurrentPrice;
+create procedure GetCurrentPrice (@Id int)
+as
+begin
+	SELECT Price  FROM SellingPrice 
+	Where BookId=@id and LastChangeDate Like
+               (SELECT Max(LastChangeDate) FROM SellingPrice where BookId=@id);
+end;
+go
+
+
+drop procedure GetStateById;
+create procedure GetStateById(@id int)
+as
+begin
+	select state from States
+	where BookId=@id and LastChangeDate =	
+		(Select Max(LastChangeDate) from States where BookId=@id);
+end;
+go
+
+update Books set Thumbnails='\Database\Images\dac_nhan_tam.jpg' where BookId=1;

@@ -20,10 +20,11 @@ namespace BookManagement.Models
             this.importPrice = (decimal)r["ImportPrice"];
             this.genre = (int)r["BookGenreId"];
             this.publisher = (int)r["PublisherId"];
+            this.thumbnail = (string)r["Thumbnails"];
 
         }
         public Book(int id,string name, string summary, int quantity,
-        int importPrice, int genre, int author, int publisher)
+        int importPrice, int genre, int author, int publisher,string thumbnail)
         {
             this.bookId = id;
             this.name = name;
@@ -32,6 +33,7 @@ namespace BookManagement.Models
             this.importPrice = importPrice;
             this.genre = genre;
             this.publisher = publisher;
+            this.thumbnail = thumbnail;
 
         }
         public int bookId { get; set; }
@@ -41,5 +43,6 @@ namespace BookManagement.Models
         public int quantity { get; set; }
         public decimal importPrice { get; set; }
         public int publisher { get; set; }
+        public string thumbnail { get; set; }
     }
 }

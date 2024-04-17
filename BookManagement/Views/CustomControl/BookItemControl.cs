@@ -34,7 +34,8 @@ namespace BookManagement.Views.CustomControl
         private string _price;
         private string _quantity;
         private Image _thumbnail;
-
+        private List<int> authorId;
+        private int genreId;
         private bool _isSelected;
         private bool isSelected
         {
@@ -48,13 +49,14 @@ namespace BookManagement.Views.CustomControl
             }
         }
         // 
-        private void setEventToChild(Control parent) { 
-            foreach(Control c in parent.Controls)
+        private void setEventToChild(Control parent)
+        {
+            foreach (Control c in parent.Controls)
             {
                 c.Click += child_Click;
                 setEventToChild((Control)c);
             }
-        
+
         }
         private void child_Click(Object sender, EventArgs e)
         {
@@ -65,11 +67,14 @@ namespace BookManagement.Views.CustomControl
         // parent click
         private void BookItemControl_Click(object sender, EventArgs e)
         {
-           
+
 
         }
 
-        
+        private void itemInfoArea_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
 
         [Category("Custome Props")]
         public string Title
@@ -131,10 +136,33 @@ namespace BookManagement.Views.CustomControl
                 txtQuantity.Text = value;
             }
         }
+        [Category("Custome Props")]
         public int Id
         {
             get { return id; }
             set { id = value; }
+        }
+
+        [Category("Custome Props")]
+        public List<int> AuthorId
+        {
+            get
+            {
+                return authorId;
+            }
+            set
+            {
+                authorId = value;
+            }
+        }
+
+        [Category("Custome Props")]
+        public int GenreId
+        {
+            get { return genreId; }
+            set { 
+                genreId = value;
+            }
         }
         #endregion
     }

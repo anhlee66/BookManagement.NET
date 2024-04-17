@@ -38,7 +38,7 @@
             ClientSize = new Size(800, 450);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Shadow";
-            Opacity = 0.5D;
+            Opacity = 0.7D;
             Text = "Shadow";
             FormClosed += Shadow_FormClosed;
             Load += Shadow_Load;

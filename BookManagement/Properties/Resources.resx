@@ -121,8 +121,11 @@
   <data name="menu (Custom)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\Image\menu (Custom).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="search-interface-symbol (Custom)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resource\Image\search-interface-symbol (Custom).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="hosting (Custom)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\Image\hosting (Custom).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="plus (Custom)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\Image\plus (Custom).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="settings (Custom) (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\Image\settings (Custom) (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -130,11 +133,11 @@
   <data name="checkout (Custom)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\Image\checkout (Custom).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="hosting (Custom)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resource\Image\hosting (Custom).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="categories (Custom)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\Image\categories (Custom).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="refesh (Custom)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\Image\refesh (Custom).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="user (Custom)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\Image\user (Custom).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -142,8 +145,17 @@
   <data name="add (Custom)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\Image\add (Custom).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="team (Custom)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resource\Image\team (Custom).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="plus (Custom) (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\Image\plus (Custom) (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="search-interface-symbol (Custom)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\Image\search-interface-symbol (Custom).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="plus (Custom) (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\Image\plus (Custom) (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="defaultThumbnail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Database\Images\defaultThumbnail.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="dashboard (Custom)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\Image\dashboard (Custom).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -154,10 +166,16 @@
   <data name="menu (Custom)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\Image\menu (Custom).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="search25x25" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\Image\search25x25.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="team (Custom)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\Image\team (Custom).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="logout (Custom)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\Image\logout (Custom).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="search25x25" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resource\Image\search25x25.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="defaultThumbnail1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Database\Images\defaultThumbnail.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

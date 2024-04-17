@@ -13,11 +13,11 @@ namespace BookManagement.Controller
 {
     internal class PublisherController
     {
-        public static DataTable getPublisherToFilter()
+        public static DataTable getPublisherToCombobox()
         {
             DataTable dt = new DataTable();
             DBHandler.open();
-            string query = "SELECT * FROM Publishers";
+            string query = "SELECT PublisherId,Name FROM Publishers";
             using (SqlCommand cmd = new SqlCommand(query, DBHandler.con))
             {
                 SqlDataAdapter dp= new SqlDataAdapter(cmd);
@@ -145,5 +145,19 @@ namespace BookManagement.Controller
             return false;
         }
 
+        public static string GetPublisherName(int id)
+        {
+            string name = string.Empty;
+            DBHandler.open();
+            string query = "GetPublisherName";
+            SqlCommand cmd = new SqlCommand(query, DBHandler.con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@id", id);
+            name = cmd.ExecuteScalar().ToString();
+            if (name == null)
+                return "";
+            DBHandler.close();
+            return name;
+        }
     }
 }

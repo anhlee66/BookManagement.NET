@@ -45,6 +45,19 @@ namespace BookManagement.Controller
             DBHandler.close();
             return genre;
         }
+        public static string getBookGenreName(int id)
+        {
+            string name = string.Empty;
+            DBHandler.open();
+            string query = "SELECT Name FROM BookGenres WHERE BookGenreId=" + id.ToString();
+            using (SqlCommand cmd = new SqlCommand(query, DBHandler.con))
+            {
+                name = cmd.ExecuteScalar().ToString();
+                if (name == null) return "";
+            }
+            DBHandler.close();
+            return name;
+        }
         public static DataTable getAllBookGenre()
         {
             DataTable dt = new DataTable();

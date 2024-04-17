@@ -41,10 +41,7 @@ namespace BookManagement.Views
 
         }
 
-        private void AdminCategory_PublisherChanged(object? sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
+        
 
         #region common handler
 

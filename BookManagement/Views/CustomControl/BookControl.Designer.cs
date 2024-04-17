@@ -28,8 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BookControl));
-            pictureBox1 = new PictureBox();
+            ptbThumbnail = new PictureBox();
             txtSummaryDetail = new Label();
             groupBox1 = new GroupBox();
             txtPublisherDetail = new Label();
@@ -43,19 +42,19 @@
             label3 = new Label();
             txtBookTitleDetail = new Label();
             label1 = new Label();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ptbThumbnail).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
-            // pictureBox1
+            // ptbThumbnail
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(17, 20);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(197, 285);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            ptbThumbnail.Image = Properties.Resources.defaultThumbnail1;
+            ptbThumbnail.Location = new Point(17, 20);
+            ptbThumbnail.Name = "ptbThumbnail";
+            ptbThumbnail.Size = new Size(197, 285);
+            ptbThumbnail.SizeMode = PictureBoxSizeMode.StretchImage;
+            ptbThumbnail.TabIndex = 0;
+            ptbThumbnail.TabStop = false;
             // 
             // txtSummaryDetail
             // 
@@ -222,10 +221,10 @@
             BackColor = Color.FromArgb(224, 224, 224);
             Controls.Add(groupBox1);
             Controls.Add(txtSummaryDetail);
-            Controls.Add(pictureBox1);
+            Controls.Add(ptbThumbnail);
             Name = "BookControl";
             Size = new Size(593, 506);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ptbThumbnail).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);
@@ -233,7 +232,7 @@
 
         #endregion
 
-        private PictureBox pictureBox1;
+        private PictureBox ptbThumbnail;
         private Label txtSummaryDetail;
         private GroupBox groupBox1;
         private Label txtPublisherDetail;

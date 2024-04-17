@@ -164,15 +164,7 @@ namespace BookManagement.Views
 
         }
 
-        private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if(e.KeyChar == (char)Keys.Enter)
-            {
-                enter_Seacrch();
-                txtSearch.Text = "";
-            }
-            
-        }
+
         public void enter_Seacrch()
         {
             Form activate = this.ActiveMdiChild;
@@ -184,6 +176,16 @@ namespace BookManagement.Views
                 case AdminCategory category: category.searchRecord(keyword); break;
 
             }
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+             enter_Seacrch();
+        }
+
+        private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            enter_Seacrch();
         }
     }
 }

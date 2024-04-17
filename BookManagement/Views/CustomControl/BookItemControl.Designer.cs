@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BookItemControl));
             ptbThumbnail = new PictureBox();
             panel1 = new Panel();
             itemInfoArea = new Panel();
@@ -55,7 +54,7 @@
             // ptbThumbnail
             // 
             ptbThumbnail.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            ptbThumbnail.Image = (Image)resources.GetObject("ptbThumbnail.Image");
+            ptbThumbnail.Image = Properties.Resources.defaultThumbnail;
             ptbThumbnail.Location = new Point(20, 17);
             ptbThumbnail.Name = "ptbThumbnail";
             ptbThumbnail.Size = new Size(104, 132);
@@ -88,13 +87,14 @@
             itemInfoArea.Name = "itemInfoArea";
             itemInfoArea.Size = new Size(899, 166);
             itemInfoArea.TabIndex = 3;
+            itemInfoArea.Paint += itemInfoArea_Paint;
             // 
             // panel6
             // 
             panel6.Anchor = AnchorStyles.None;
             panel6.Controls.Add(labQuantity);
             panel6.Controls.Add(txtQuantity);
-            panel6.Location = new Point(383, 71);
+            panel6.Location = new Point(479, 71);
             panel6.Name = "panel6";
             panel6.Size = new Size(169, 47);
             panel6.TabIndex = 15;
@@ -121,11 +121,12 @@
             // 
             // panel5
             // 
+            panel5.Anchor = AnchorStyles.Left;
             panel5.Controls.Add(label1);
             panel5.Controls.Add(txtItemAuthor);
-            panel5.Location = new Point(58, 71);
+            panel5.Location = new Point(32, 71);
             panel5.Name = "panel5";
-            panel5.Size = new Size(250, 47);
+            panel5.Size = new Size(419, 47);
             panel5.TabIndex = 14;
             // 
             // label1
@@ -150,12 +151,12 @@
             // 
             // panel4
             // 
-            panel4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            panel4.Anchor = AnchorStyles.Right;
             panel4.Controls.Add(txtItemPrice);
             panel4.Controls.Add(label4);
-            panel4.Location = new Point(611, 71);
+            panel4.Location = new Point(673, 71);
             panel4.Name = "panel4";
-            panel4.Size = new Size(250, 47);
+            panel4.Size = new Size(188, 47);
             panel4.TabIndex = 13;
             // 
             // txtItemPrice
@@ -198,7 +199,7 @@
             // 
             txtItemTitle.AutoSize = true;
             txtItemTitle.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtItemTitle.Location = new Point(58, 23);
+            txtItemTitle.Location = new Point(32, 23);
             txtItemTitle.MaximumSize = new Size(450, 0);
             txtItemTitle.Name = "txtItemTitle";
             txtItemTitle.Size = new Size(319, 31);

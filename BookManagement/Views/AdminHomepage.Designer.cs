@@ -400,24 +400,17 @@
             panel10.Controls.Add(txtSearch);
             panel10.Location = new Point(6, 10);
             panel10.Name = "panel10";
-            panel10.Size = new Size(509, 52);
+            panel10.Size = new Size(464, 52);
             panel10.TabIndex = 1;
             // 
             // btnSearch
             // 
-            btnSearch.BackColor = Color.LightBlue;
-            btnSearch.FlatAppearance.BorderSize = 0;
-            btnSearch.FlatStyle = FlatStyle.Flat;
-            btnSearch.Font = new Font("Segoe UI", 12F);
             btnSearch.Image = Properties.Resources.search25x25;
-            btnSearch.ImageAlign = ContentAlignment.MiddleLeft;
-            btnSearch.Location = new Point(375, 5);
-            btnSearch.Margin = new Padding(4);
+            btnSearch.Location = new Point(374, 5);
             btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(130, 41);
+            btnSearch.Size = new Size(64, 43);
             btnSearch.TabIndex = 3;
-            btnSearch.Text = "Search";
-            btnSearch.UseVisualStyleBackColor = false;
+            btnSearch.UseVisualStyleBackColor = true;
             btnSearch.Click += btnSearch_Click;
             // 
             // txtSearch
@@ -430,6 +423,7 @@
             txtSearch.PlaceholderText = "    Search ?";
             txtSearch.Size = new Size(363, 42);
             txtSearch.TabIndex = 2;
+            txtSearch.TextChanged += txtSearch_TextChanged;
             txtSearch.KeyPress += txtSearch_KeyPress;
             // 
             // AdminHomepage
@@ -486,10 +480,10 @@
         private Button button2;
         private Panel panel8;
         private Panel panel10;
-        private Button btnSearch;
         private TextBox txtSearch;
         private Panel panel11;
         private Label label2;
         private PictureBox pbThumbnail;
+        private Button btnSearch;
     }
 }

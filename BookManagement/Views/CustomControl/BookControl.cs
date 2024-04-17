@@ -11,8 +11,11 @@ using System.Windows.Forms;
 
 namespace BookManagement.Views.CustomControl
 {
+
     public partial class BookControl : UserControl
     {
+        const string Root = "C:\\Users\\anh79\\source\\repos\\BookManagement\\BookManagement\\";
+
         public BookControl()
         {
             InitializeComponent();
@@ -27,6 +30,7 @@ namespace BookManagement.Views.CustomControl
         private string _import;
         private string _publisher;
         private string _summary;
+        private Image _thumbnail;
 
         /*public Book BookSource
         {
@@ -76,6 +80,7 @@ namespace BookManagement.Views.CustomControl
             set
             {
                 _genre = value;
+                txtAuthorDetail.Text = value;
             }
         }
         [Category("Custom Props")]
@@ -133,6 +138,20 @@ namespace BookManagement.Views.CustomControl
                 txtSummaryDetail.Text = value;
             }
         }
+        [Category("Custom Props")]
+        public Image Thumbnail
+        {
+            get
+            {
+                return _thumbnail;
+            }
+            set
+            {
+                _thumbnail = value;
+                ptbThumbnail.Image = _thumbnail;
+            }
+        }
+
         #endregion
 
     }
