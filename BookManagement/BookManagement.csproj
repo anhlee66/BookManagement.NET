@@ -11,6 +11,7 @@
   <ItemGroup>
     <Folder Include="Controller\" />
     <Folder Include="Models\" />
+    <Folder Include="Properties\DataSources\" />
     <Folder Include="Resource\Image\" />
   </ItemGroup>
 
@@ -18,6 +19,7 @@
     <PackageReference Include="Azure.Identity" Version="1.3.0" />
     <PackageReference Include="HIC.System.Windows.Forms.DataVisualization" Version="1.0.1" />
     <PackageReference Include="Microsoft.Data.SqlClient" Version="3.0.0" />
+    <PackageReference Include="Microsoft.Data.SqlClient.SNI.runtime" Version="5.2.0" />
     <PackageReference Include="ReaLTaiizor" Version="3.8.0.5" />
     <PackageReference Include="System.Windows.Forms.DataVisualization" Version="1.0.0-prerelease.20110.1" />
   </ItemGroup>

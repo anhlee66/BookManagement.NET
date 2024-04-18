@@ -103,6 +103,26 @@ namespace BookManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap coins {
+            get {
+                object obj = ResourceManager.GetObject("coins", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap coins__2_ {
+            get {
+                object obj = ResourceManager.GetObject("coins (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dashboard__Custom_ {
             get {
                 object obj = ResourceManager.GetObject("dashboard (Custom)", resourceCulture);
@@ -153,6 +173,26 @@ namespace BookManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap money {
+            get {
+                object obj = ResourceManager.GetObject("money", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap money1 {
+            get {
+                object obj = ResourceManager.GetObject("money1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap search_interface_symbol__Custom_ {
             get {
                 object obj = ResourceManager.GetObject("search-interface-symbol (Custom)", resourceCulture);
@@ -186,6 +226,36 @@ namespace BookManagement.Properties {
         internal static System.Drawing.Bitmap team__Custom_ {
             get {
                 object obj = ResourceManager.GetObject("team (Custom)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap top1 {
+            get {
+                object obj = ResourceManager.GetObject("top1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap top2 {
+            get {
+                object obj = ResourceManager.GetObject("top2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap top3 {
+            get {
+                object obj = ResourceManager.GetObject("top3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
