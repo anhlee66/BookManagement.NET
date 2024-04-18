@@ -52,23 +52,21 @@
             position = new DataGridViewTextBoxColumn();
             state = new DataGridViewTextBoxColumn();
             panel2 = new Panel();
-            panel4 = new Panel();
-            label8 = new Label();
-            comboBox5 = new ComboBox();
             panel3 = new Panel();
             label7 = new Label();
             comboBox4 = new ComboBox();
+            label8 = new Label();
             panel1.SuspendLayout();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel2.SuspendLayout();
-            panel4.SuspendLayout();
             panel3.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
+            panel1.BackgroundImageLayout = ImageLayout.None;
             panel1.Controls.Add(groupBox1);
             panel1.Dock = DockStyle.Left;
             panel1.Font = new Font("Segoe UI", 12F);
@@ -97,7 +95,6 @@
             groupBox1.Size = new Size(444, 535);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
-            groupBox1.Text = "on";
             // 
             // label12
             // 
@@ -287,43 +284,12 @@
             // 
             // panel2
             // 
-            panel2.Controls.Add(panel4);
             panel2.Controls.Add(panel3);
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(500, 0);
             panel2.Name = "panel2";
             panel2.Size = new Size(676, 77);
             panel2.TabIndex = 2;
-            // 
-            // panel4
-            // 
-            panel4.Anchor = AnchorStyles.Right;
-            panel4.Controls.Add(label8);
-            panel4.Controls.Add(comboBox5);
-            panel4.Location = new Point(1092, 20);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(260, 39);
-            panel4.TabIndex = 5;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label8.Location = new Point(3, 5);
-            label8.Name = "label8";
-            label8.Size = new Size(60, 28);
-            label8.TabIndex = 5;
-            label8.Text = "State:";
-            // 
-            // comboBox5
-            // 
-            comboBox5.Anchor = AnchorStyles.Right;
-            comboBox5.FormattingEnabled = true;
-            comboBox5.Location = new Point(81, 5);
-            comboBox5.Name = "comboBox5";
-            comboBox5.Size = new Size(175, 28);
-            comboBox5.TabIndex = 4;
-            comboBox5.Text = "         -- filter state --";
             // 
             // panel3
             // 
@@ -354,31 +320,37 @@
             comboBox4.TabIndex = 3;
             comboBox4.Text = "-- filter position --";
             // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label8.Location = new Point(3, 5);
+            label8.Name = "label8";
+            label8.Size = new Size(60, 28);
+            label8.TabIndex = 5;
+            label8.Text = "State:";
+            // 
             // AdminEmployee
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleDimensions = new SizeF(120F, 120F);
+            AutoScaleMode = AutoScaleMode.Dpi;
             AutoSize = true;
             ClientSize = new Size(1176, 665);
             ControlBox = false;
             Controls.Add(panel2);
-            Controls.Add(dataGridView1);
             Controls.Add(panel1);
+            Controls.Add(dataGridView1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "AdminEmployee";
-            ShowIcon = false;
-            ShowInTaskbar = false;
             Text = "AdminEmployee";
             TopMost = true;
-            WindowState = FormWindowState.Maximized;
+            Load += AdminEmployee_Load;
             panel1.ResumeLayout(false);
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel2.ResumeLayout(false);
-            panel4.ResumeLayout(false);
-            panel4.PerformLayout();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ResumeLayout(false);
@@ -389,9 +361,7 @@
         private Panel panel1;
         private DataGridView dataGridView1;
         private Panel panel2;
-        private Panel panel4;
         private Label label8;
-        private ComboBox comboBox5;
         private Panel panel3;
         private Label label7;
         private ComboBox comboBox4;

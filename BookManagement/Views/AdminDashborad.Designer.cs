@@ -30,12 +30,9 @@ namespace BookManagement.Views
         /// </summary>
         private void InitializeComponent()
         {
-            cbSort = new ComboBox();
-            panel3 = new Panel();
-            label2 = new Label();
-            pbThumbnail = new PictureBox();
             panel2 = new Panel();
             splitContainer1 = new SplitContainer();
+<<<<<<< HEAD
             panel1 = new Panel();
             headerLabel7 = new ReaLTaiizor.Controls.HeaderLabel();
             pictureBox5 = new PictureBox();
@@ -52,11 +49,14 @@ namespace BookManagement.Views
             bigLabel1 = new ReaLTaiizor.Controls.BigLabel();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbThumbnail).BeginInit();
+=======
+            panel4 = new Panel();
+>>>>>>> dd74185c78061e2ef9406bd6678b9223950f5392
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
-            splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
+<<<<<<< HEAD
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
@@ -119,6 +119,10 @@ namespace BookManagement.Views
             pbThumbnail.TabStop = false;
             pbThumbnail.Click += pbThumbnail_Click;
             // 
+=======
+            SuspendLayout();
+            // 
+>>>>>>> dd74185c78061e2ef9406bd6678b9223950f5392
             // panel2
             // 
             panel2.Controls.Add(splitContainer1);
@@ -140,8 +144,6 @@ namespace BookManagement.Views
             // splitContainer1.Panel1
             // 
             splitContainer1.Panel1.BackColor = Color.Silver;
-            splitContainer1.Panel1.Controls.Add(panel1);
-            splitContainer1.Panel1.Controls.Add(panel3);
             splitContainer1.Panel1.Paint += splitContainer1_Panel1_Paint;
             // 
             // splitContainer1.Panel2
@@ -167,6 +169,7 @@ namespace BookManagement.Views
             splitContainer1.TabIndex = 0;
             splitContainer1.SplitterMoved += splitContainer1_SplitterMoved;
             // 
+<<<<<<< HEAD
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Left;
@@ -180,6 +183,9 @@ namespace BookManagement.Views
             panel1.Paint += panel1_Paint;
             // 
             // headerLabel7
+=======
+            // panel4
+>>>>>>> dd74185c78061e2ef9406bd6678b9223950f5392
             // 
             headerLabel7.AutoSize = true;
             headerLabel7.BackColor = Color.Transparent;
@@ -340,32 +346,27 @@ namespace BookManagement.Views
             Text = "AdminDashborad";
             WindowState = FormWindowState.Maximized;
             Load += dashboard_Load;
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pbThumbnail).EndInit();
             panel2.ResumeLayout(false);
-            splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel2.ResumeLayout(false);
             splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
+<<<<<<< HEAD
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+=======
+>>>>>>> dd74185c78061e2ef9406bd6678b9223950f5392
             ResumeLayout(false);
         }
 
         #endregion
-
-        private ComboBox cbSort;
         private Panel panel2;
-        private Panel panel3;
-        private PictureBox pbThumbnail;
-        private Label label2;
         private SplitContainer splitContainer1;
+<<<<<<< HEAD
         private Panel panel1;
         private ReaLTaiizor.Controls.BigLabel bigLabel1;
         private ReaLTaiizor.Controls.HeaderLabel headerLabel1;
@@ -380,5 +381,8 @@ namespace BookManagement.Views
         private ReaLTaiizor.Controls.HeaderLabel headerLabel6;
         private PictureBox pictureBox5;
         private ReaLTaiizor.Controls.HeaderLabel headerLabel7;
+=======
+        private Panel panel4;
+>>>>>>> dd74185c78061e2ef9406bd6678b9223950f5392
     }
 }

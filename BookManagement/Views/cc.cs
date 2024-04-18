@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BookManagement.Views
 {
-    public partial class Content : Form
+    public partial class cc : Form
     {
-        public Content()
+        public cc()
         {
             InitializeComponent();
         }

@@ -1,0 +1,39 @@
+public static List<Book> SearchListBook(string name)
+{
+    List<Book> list = new List<Book>();
+    DBHandler.open();
+    String[] filterName = name.Trim().Split(' ');
+    StringBuilder str = new StringBuilder();
+    str.Append("SELECT * FROM Books WHERE Name ");
+    int count = 0;
+    foreach (string s in filterName)
+    {
+        count++;
+        str.Append(string.Format(" LIKE '%{0}%' ", s));
+        if (count < filterName.Length)
+        {
+            str.Append(" OR Name");
+        }
+        else
+        {
+            str.Append(';');
+        }
+    }
+    using (SqlCommand cmd = new SqlCommand(str.ToString(), DBHandler.con))
+    {
+        DataTable dt = new DataTable();
+        SqlDataAdapter dp = new SqlDataAdapter(cmd);
+        dp.Fill(dt);
+        if (dt.Rows.Count > 0)
+        {
+            foreach (DataRow dr in dt.Rows)
+            {
+                Book book = new Book(dr);
+                list.Add(book);
+            }
+        }
+    }
+    DBHandler.close();
+
+    return list;
+}

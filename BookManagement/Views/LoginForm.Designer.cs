@@ -30,28 +30,29 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             panel1 = new Panel();
+            panel2 = new Panel();
+            txtUser = new TextBox();
+            labuser = new Label();
             txtCancel = new Label();
             btnLogin = new Button();
             cbPassword = new CheckBox();
             txtPassword = new TextBox();
-            txtName = new TextBox();
             label3 = new Label();
-            label2 = new Label();
             label1 = new Label();
             pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
+            panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
+            panel1.Controls.Add(panel2);
             panel1.Controls.Add(txtCancel);
             panel1.Controls.Add(btnLogin);
             panel1.Controls.Add(cbPassword);
             panel1.Controls.Add(txtPassword);
-            panel1.Controls.Add(txtName);
             panel1.Controls.Add(label3);
-            panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
             panel1.Font = new Font("Segoe UI", 12F);
             panel1.Location = new Point(12, 12);
@@ -59,23 +60,54 @@
             panel1.Size = new Size(399, 435);
             panel1.TabIndex = 0;
             // 
+            // panel2
+            // 
+            panel2.BackColor = Color.Transparent;
+            panel2.Controls.Add(txtUser);
+            panel2.Controls.Add(labuser);
+            panel2.Location = new Point(25, 63);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(349, 101);
+            panel2.TabIndex = 8;
+            // 
+            // txtUser
+            // 
+            txtUser.Font = new Font("Segoe UI", 12F);
+            txtUser.Location = new Point(15, 50);
+            txtUser.Name = "txtUser";
+            txtUser.Size = new Size(318, 34);
+            txtUser.TabIndex = 6;
+            // 
+            // labuser
+            // 
+            labuser.AutoSize = true;
+            labuser.Font = new Font("Segoe UI", 12F);
+            labuser.Location = new Point(15, 10);
+            labuser.Name = "labuser";
+            labuser.Size = new Size(104, 28);
+            labuser.TabIndex = 5;
+            labuser.Text = "User name";
+            // 
             // txtCancel
             // 
             txtCancel.AutoSize = true;
-            txtCancel.Location = new Point(165, 384);
+            txtCancel.Location = new Point(165, 393);
             txtCancel.Name = "txtCancel";
             txtCancel.Size = new Size(69, 28);
             txtCancel.TabIndex = 7;
             txtCancel.Text = "Cancel";
+            txtCancel.Click += txtCancel_Click;
             // 
             // btnLogin
             // 
-            btnLogin.Location = new Point(38, 335);
+            btnLogin.BackColor = Color.SteelBlue;
+            btnLogin.Location = new Point(40, 335);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(318, 46);
             btnLogin.TabIndex = 6;
             btnLogin.Text = "Login";
-            btnLogin.UseVisualStyleBackColor = true;
+            btnLogin.UseVisualStyleBackColor = false;
+            btnLogin.Click += btnLogin_Click;
             // 
             // cbPassword
             // 
@@ -86,22 +118,16 @@
             cbPassword.TabIndex = 5;
             cbPassword.Text = "Show password";
             cbPassword.UseVisualStyleBackColor = true;
+            cbPassword.CheckedChanged += cbPassword_CheckedChanged;
             // 
             // txtPassword
             // 
             txtPassword.Font = new Font("Segoe UI", 12F);
-            txtPassword.Location = new Point(38, 218);
+            txtPassword.Location = new Point(40, 218);
             txtPassword.Name = "txtPassword";
+            txtPassword.PasswordChar = '*';
             txtPassword.Size = new Size(318, 34);
             txtPassword.TabIndex = 4;
-            // 
-            // txtName
-            // 
-            txtName.Font = new Font("Segoe UI", 12F);
-            txtName.Location = new Point(38, 117);
-            txtName.Name = "txtName";
-            txtName.Size = new Size(318, 34);
-            txtName.TabIndex = 3;
             // 
             // label3
             // 
@@ -113,25 +139,15 @@
             label3.TabIndex = 2;
             label3.Text = "Password";
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F);
-            label2.Location = new Point(38, 76);
-            label2.Name = "label2";
-            label2.Size = new Size(104, 28);
-            label2.TabIndex = 1;
-            label2.Text = "User name";
-            // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(118, 9);
+            label1.Location = new Point(59, 9);
             label1.Name = "label1";
-            label1.Size = new Size(162, 38);
+            label1.Size = new Size(281, 38);
             label1.TabIndex = 0;
-            label1.Text = "Book Store";
+            label1.Text = "Login To Book Store";
             // 
             // pictureBox1
             // 
@@ -153,8 +169,11 @@
             Name = "LoginForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "LoginForm";
+            Load += LoginForm_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
@@ -171,5 +190,8 @@
         private Label label2;
         private Label label1;
         private PictureBox pictureBox1;
+        private Panel panel2;
+        private TextBox txtUser;
+        private Label labuser;
     }
 }

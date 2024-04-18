@@ -1,4 +1,6 @@
-﻿namespace BookManagement.Views
+﻿using BookManagement.Models;
+
+namespace BookManagement.Views
 {
     partial class AdminStorage
     {
@@ -28,504 +30,368 @@
         /// </summary>
         private void InitializeComponent()
         {
-            groupBox1 = new GroupBox();
-            button4 = new Button();
-            label9 = new Label();
-            button1 = new Button();
-            button3 = new Button();
-            comboBox3 = new ComboBox();
-            label5 = new Label();
-            button2 = new Button();
-            groupBox3 = new GroupBox();
-            textBox4 = new TextBox();
-            textBox3 = new TextBox();
-            label6 = new Label();
-            label7 = new Label();
-            groupBox2 = new GroupBox();
-            label3 = new Label();
-            label2 = new Label();
-            label4 = new Label();
-            comboBox2 = new ComboBox();
-            comboBox1 = new ComboBox();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
-            label1 = new Label();
-            dataGridView1 = new DataGridView();
-            bookname = new DataGridViewTextBoxColumn();
-            bookgenre = new DataGridViewTextBoxColumn();
-            quantity = new DataGridViewTextBoxColumn();
-            price = new DataGridViewTextBoxColumn();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminStorage));
+            btnClear = new Button();
             panel1 = new Panel();
-            panel4 = new Panel();
-            btnSearch = new Button();
-            textBox5 = new TextBox();
+            btnClearSelected = new Button();
+            btnEdit = new Button();
+            btnNew = new Button();
+            panel6 = new Panel();
+            label2 = new Label();
+            cbGenreFilter = new ComboBox();
+            panel5 = new Panel();
+            label3 = new Label();
+            cbAuthorFilter = new ComboBox();
+            flowListBook = new FlowLayoutPanel();
+            panel2 = new Panel();
+            panelBookDetail = new Panel();
+            bookControl1 = new CustomControl.BookControl();
             panel3 = new Panel();
-            comboBox6 = new ComboBox();
-            comboBox5 = new ComboBox();
-            label8 = new Label();
-            comboBox4 = new ComboBox();
-            groupBox1.SuspendLayout();
-            groupBox3.SuspendLayout();
-            groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            txtAmountSold = new Label();
+            txtQuantity = new Label();
+            txtNumberBook = new Label();
+            label6 = new Label();
+            label5 = new Label();
+            label4 = new Label();
             panel1.SuspendLayout();
-            panel4.SuspendLayout();
+            panel6.SuspendLayout();
+            panel5.SuspendLayout();
+            panel2.SuspendLayout();
+            panelBookDetail.SuspendLayout();
             panel3.SuspendLayout();
             SuspendLayout();
             // 
-            // groupBox1
+            // btnClear
             // 
-            groupBox1.Controls.Add(button4);
-            groupBox1.Controls.Add(label9);
-            groupBox1.Controls.Add(button1);
-            groupBox1.Controls.Add(button3);
-            groupBox1.Controls.Add(comboBox3);
-            groupBox1.Controls.Add(label5);
-            groupBox1.Controls.Add(button2);
-            groupBox1.Controls.Add(groupBox3);
-            groupBox1.Controls.Add(groupBox2);
-            groupBox1.Font = new Font("Segoe UI", 12F);
-            groupBox1.Location = new Point(0, 107);
-            groupBox1.Name = "groupBox1";
-            groupBox1.RightToLeft = RightToLeft.No;
-            groupBox1.Size = new Size(587, 652);
-            groupBox1.TabIndex = 0;
-            groupBox1.TabStop = false;
+            btnClear.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnClear.BackColor = SystemColors.Control;
+            btnClear.Image = (Image)resources.GetObject("btnClear.Image");
+            btnClear.Location = new Point(1383, 21);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(51, 36);
+            btnClear.TabIndex = 7;
+            btnClear.UseVisualStyleBackColor = false;
+            btnClear.Click += btnClear_Click;
             // 
-            // button4
+            // panel1
             // 
-            button4.Font = new Font("Segoe UI", 12F);
-            button4.Location = new Point(97, 604);
-            button4.Name = "button4";
-            button4.RightToLeft = RightToLeft.No;
-            button4.Size = new Size(110, 41);
-            button4.TabIndex = 23;
-            button4.Text = "New";
-            button4.UseVisualStyleBackColor = true;
+            panel1.BackColor = Color.Gainsboro;
+            panel1.Controls.Add(btnClearSelected);
+            panel1.Controls.Add(btnEdit);
+            panel1.Controls.Add(btnNew);
+            panel1.Controls.Add(btnClear);
+            panel1.Controls.Add(panel6);
+            panel1.Controls.Add(panel5);
+            panel1.Dock = DockStyle.Top;
+            panel1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1446, 76);
+            panel1.TabIndex = 2;
             // 
-            // label9
+            // btnClearSelected
             // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label9.Location = new Point(167, 30);
-            label9.Name = "label9";
-            label9.Size = new Size(252, 38);
-            label9.TabIndex = 22;
-            label9.Text = "Book Information";
+            btnClearSelected.BackColor = Color.SlateGray;
+            btnClearSelected.ImageAlign = ContentAlignment.MiddleLeft;
+            btnClearSelected.Location = new Point(354, 17);
+            btnClearSelected.Name = "btnClearSelected";
+            btnClearSelected.Size = new Size(125, 44);
+            btnClearSelected.TabIndex = 17;
+            btnClearSelected.Text = "Clear";
+            btnClearSelected.UseVisualStyleBackColor = false;
+            btnClearSelected.Click += btnClearSelected_Click;
             // 
-            // button1
+            // btnEdit
             // 
-            button1.Font = new Font("Segoe UI", 12F);
-            button1.Location = new Point(255, 604);
-            button1.Name = "button1";
-            button1.RightToLeft = RightToLeft.No;
-            button1.Size = new Size(110, 41);
-            button1.TabIndex = 17;
-            button1.Text = "Update";
-            button1.UseVisualStyleBackColor = true;
+            btnEdit.BackColor = Color.SteelBlue;
+            btnEdit.Enabled = false;
+            btnEdit.Image = (Image)resources.GetObject("btnEdit.Image");
+            btnEdit.ImageAlign = ContentAlignment.MiddleLeft;
+            btnEdit.Location = new Point(189, 17);
+            btnEdit.Name = "btnEdit";
+            btnEdit.Size = new Size(125, 44);
+            btnEdit.TabIndex = 16;
+            btnEdit.Text = "Edit";
+            btnEdit.UseVisualStyleBackColor = false;
+            btnEdit.Click += btnEdit_Click;
             // 
-            // button3
+            // btnNew
             // 
-            button3.Font = new Font("Segoe UI", 12F);
-            button3.Location = new Point(416, 604);
-            button3.Name = "button3";
-            button3.RightToLeft = RightToLeft.No;
-            button3.Size = new Size(110, 41);
-            button3.TabIndex = 21;
-            button3.Text = "Help";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
+            btnNew.BackColor = Color.LimeGreen;
+            btnNew.Image = (Image)resources.GetObject("btnNew.Image");
+            btnNew.ImageAlign = ContentAlignment.MiddleLeft;
+            btnNew.Location = new Point(27, 16);
+            btnNew.Name = "btnNew";
+            btnNew.Size = new Size(125, 44);
+            btnNew.TabIndex = 15;
+            btnNew.Text = "New";
+            btnNew.UseVisualStyleBackColor = false;
+            btnNew.Click += btnNew_Click;
             // 
-            // comboBox3
+            // panel6
             // 
-            comboBox3.Font = new Font("Segoe UI", 12F);
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(206, 528);
-            comboBox3.Name = "comboBox3";
-            comboBox3.RightToLeft = RightToLeft.No;
-            comboBox3.Size = new Size(346, 36);
-            comboBox3.TabIndex = 20;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 12F);
-            label5.Location = new Point(62, 531);
-            label5.Name = "label5";
-            label5.RightToLeft = RightToLeft.No;
-            label5.Size = new Size(104, 28);
-            label5.TabIndex = 19;
-            label5.Text = "Book state";
-            // 
-            // button2
-            // 
-            button2.Font = new Font("Segoe UI", 12F);
-            button2.Location = new Point(106, 676);
-            button2.Name = "button2";
-            button2.RightToLeft = RightToLeft.No;
-            button2.Size = new Size(110, 42);
-            button2.TabIndex = 18;
-            button2.Text = "Add";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // groupBox3
-            // 
-            groupBox3.Controls.Add(textBox4);
-            groupBox3.Controls.Add(textBox3);
-            groupBox3.Controls.Add(label6);
-            groupBox3.Controls.Add(label7);
-            groupBox3.Font = new Font("Segoe UI", 12F);
-            groupBox3.Location = new Point(28, 347);
-            groupBox3.Name = "groupBox3";
-            groupBox3.RightToLeft = RightToLeft.No;
-            groupBox3.Size = new Size(543, 159);
-            groupBox3.TabIndex = 15;
-            groupBox3.TabStop = false;
-            groupBox3.Text = "Price";
-            // 
-            // textBox4
-            // 
-            textBox4.Font = new Font("Segoe UI", 12F);
-            textBox4.Location = new Point(179, 93);
-            textBox4.Name = "textBox4";
-            textBox4.RightToLeft = RightToLeft.No;
-            textBox4.Size = new Size(346, 34);
-            textBox4.TabIndex = 10;
-            // 
-            // textBox3
-            // 
-            textBox3.Font = new Font("Segoe UI", 12F);
-            textBox3.Location = new Point(179, 42);
-            textBox3.Name = "textBox3";
-            textBox3.RightToLeft = RightToLeft.No;
-            textBox3.Size = new Size(346, 34);
-            textBox3.TabIndex = 9;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 12F);
-            label6.Location = new Point(28, 49);
-            label6.Name = "label6";
-            label6.RightToLeft = RightToLeft.No;
-            label6.Size = new Size(120, 28);
-            label6.TabIndex = 7;
-            label6.Text = "Import price";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 12F);
-            label7.Location = new Point(28, 96);
-            label7.Name = "label7";
-            label7.RightToLeft = RightToLeft.No;
-            label7.Size = new Size(54, 28);
-            label7.TabIndex = 8;
-            label7.Text = "Price";
-            // 
-            // groupBox2
-            // 
-            groupBox2.Controls.Add(label3);
-            groupBox2.Controls.Add(label2);
-            groupBox2.Controls.Add(label4);
-            groupBox2.Controls.Add(comboBox2);
-            groupBox2.Controls.Add(comboBox1);
-            groupBox2.Controls.Add(textBox2);
-            groupBox2.Controls.Add(textBox1);
-            groupBox2.Controls.Add(label1);
-            groupBox2.Font = new Font("Segoe UI", 12F);
-            groupBox2.Location = new Point(28, 86);
-            groupBox2.Name = "groupBox2";
-            groupBox2.RightToLeft = RightToLeft.No;
-            groupBox2.Size = new Size(543, 255);
-            groupBox2.TabIndex = 14;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "Information";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 12F);
-            label3.Location = new Point(24, 88);
-            label3.Name = "label3";
-            label3.RightToLeft = RightToLeft.No;
-            label3.Size = new Size(114, 28);
-            label3.TabIndex = 17;
-            label3.Text = "Book Genre";
+            panel6.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            panel6.AutoSize = true;
+            panel6.Controls.Add(label2);
+            panel6.Controls.Add(cbGenreFilter);
+            panel6.Location = new Point(684, 16);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(338, 44);
+            panel6.TabIndex = 13;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F);
-            label2.Location = new Point(30, 142);
+            label2.Location = new Point(13, 7);
             label2.Name = "label2";
-            label2.RightToLeft = RightToLeft.No;
-            label2.Size = new Size(81, 28);
-            label2.TabIndex = 16;
-            label2.Text = "Authors";
+            label2.Size = new Size(68, 28);
+            label2.TabIndex = 4;
+            label2.Text = "Genre:";
+            // 
+            // cbGenreFilter
+            // 
+            cbGenreFilter.BackColor = SystemColors.InactiveCaption;
+            cbGenreFilter.FormattingEnabled = true;
+            cbGenreFilter.ImeMode = ImeMode.NoControl;
+            cbGenreFilter.Location = new Point(87, 3);
+            cbGenreFilter.Name = "cbGenreFilter";
+            cbGenreFilter.Size = new Size(248, 36);
+            cbGenreFilter.TabIndex = 3;
+            cbGenreFilter.Text = "     -- filter genre --   ";
+            cbGenreFilter.SelectedIndexChanged += filter_SelectedChanged;
+            // 
+            // panel5
+            // 
+            panel5.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            panel5.Controls.Add(label3);
+            panel5.Controls.Add(cbAuthorFilter);
+            panel5.Location = new Point(1038, 17);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(325, 43);
+            panel5.TabIndex = 12;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(3, 7);
+            label3.Name = "label3";
+            label3.Size = new Size(77, 28);
+            label3.TabIndex = 6;
+            label3.Text = "Author:";
+            // 
+            // cbAuthorFilter
+            // 
+            cbAuthorFilter.BackColor = SystemColors.InactiveCaption;
+            cbAuthorFilter.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbAuthorFilter.FormattingEnabled = true;
+            cbAuthorFilter.Location = new Point(86, 3);
+            cbAuthorFilter.Name = "cbAuthorFilter";
+            cbAuthorFilter.Size = new Size(230, 36);
+            cbAuthorFilter.TabIndex = 5;
+            cbAuthorFilter.SelectedIndexChanged += filter_SelectedChanged;
+            // 
+            // flowListBook
+            // 
+            flowListBook.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            flowListBook.AutoScroll = true;
+            flowListBook.BackColor = Color.WhiteSmoke;
+            flowListBook.FlowDirection = FlowDirection.TopDown;
+            flowListBook.Location = new Point(608, 76);
+            flowListBook.Name = "flowListBook";
+            flowListBook.Size = new Size(838, 748);
+            flowListBook.TabIndex = 4;
+            flowListBook.TabStop = true;
+            flowListBook.WrapContents = false;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.WhiteSmoke;
+            panel2.Controls.Add(panelBookDetail);
+            panel2.Controls.Add(panel3);
+            panel2.Dock = DockStyle.Left;
+            panel2.Location = new Point(0, 76);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(602, 748);
+            panel2.TabIndex = 5;
+            // 
+            // panelBookDetail
+            // 
+            panelBookDetail.AutoSize = true;
+            panelBookDetail.Controls.Add(bookControl1);
+            panelBookDetail.Dock = DockStyle.Bottom;
+            panelBookDetail.Location = new Point(0, 345);
+            panelBookDetail.Name = "panelBookDetail";
+            panelBookDetail.Size = new Size(602, 403);
+            panelBookDetail.TabIndex = 6;
+            // 
+            // bookControl1
+            // 
+            bookControl1.Author = null;
+            bookControl1.BackColor = Color.FromArgb(224, 224, 224);
+            bookControl1.Genre = null;
+            bookControl1.Import = null;
+            bookControl1.Location = new Point(12, 13);
+            bookControl1.Name = "bookControl1";
+            bookControl1.Publisher = null;
+            bookControl1.Quantity = null;
+            bookControl1.Size = new Size(568, 387);
+            bookControl1.Summary = null;
+            bookControl1.TabIndex = 0;
+            bookControl1.Title = null;
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.LightSkyBlue;
+            panel3.Controls.Add(txtAmountSold);
+            panel3.Controls.Add(txtQuantity);
+            panel3.Controls.Add(txtNumberBook);
+            panel3.Controls.Add(label6);
+            panel3.Controls.Add(label5);
+            panel3.Controls.Add(label4);
+            panel3.Dock = DockStyle.Top;
+            panel3.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            panel3.Location = new Point(0, 0);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(602, 201);
+            panel3.TabIndex = 5;
+            // 
+            // txtAmountSold
+            // 
+            txtAmountSold.AutoSize = true;
+            txtAmountSold.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            txtAmountSold.ForeColor = Color.Transparent;
+            txtAmountSold.Location = new Point(262, 130);
+            txtAmountSold.Name = "txtAmountSold";
+            txtAmountSold.Size = new Size(27, 31);
+            txtAmountSold.TabIndex = 5;
+            txtAmountSold.Text = "8";
+            // 
+            // txtQuantity
+            // 
+            txtQuantity.AutoSize = true;
+            txtQuantity.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            txtQuantity.ForeColor = Color.Transparent;
+            txtQuantity.Location = new Point(262, 84);
+            txtQuantity.Name = "txtQuantity";
+            txtQuantity.Size = new Size(40, 31);
+            txtQuantity.TabIndex = 4;
+            txtQuantity.Text = "44";
+            // 
+            // txtNumberBook
+            // 
+            txtNumberBook.AutoSize = true;
+            txtNumberBook.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            txtNumberBook.ForeColor = Color.Transparent;
+            txtNumberBook.Location = new Point(262, 35);
+            txtNumberBook.Name = "txtNumberBook";
+            txtNumberBook.Size = new Size(27, 31);
+            txtNumberBook.TabIndex = 3;
+            txtNumberBook.Text = "6";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            label6.Location = new Point(38, 130);
+            label6.Name = "label6";
+            label6.Size = new Size(159, 31);
+            label6.TabIndex = 2;
+            label6.Text = "Amount sold:";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            label5.Location = new Point(38, 84);
+            label5.Name = "label5";
+            label5.Size = new Size(114, 31);
+            label5.TabIndex = 1;
+            label5.Text = "Quantity:";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 12F);
-            label4.Location = new Point(28, 198);
+            label4.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            label4.Location = new Point(38, 35);
             label4.Name = "label4";
-            label4.RightToLeft = RightToLeft.No;
-            label4.Size = new Size(81, 28);
-            label4.TabIndex = 18;
-            label4.Text = "Publiser";
-            // 
-            // comboBox2
-            // 
-            comboBox2.Font = new Font("Segoe UI", 12F);
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(179, 198);
-            comboBox2.Name = "comboBox2";
-            comboBox2.RightToLeft = RightToLeft.No;
-            comboBox2.Size = new Size(346, 36);
-            comboBox2.TabIndex = 17;
-            // 
-            // comboBox1
-            // 
-            comboBox1.Font = new Font("Segoe UI", 12F);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(179, 142);
-            comboBox1.Name = "comboBox1";
-            comboBox1.RightToLeft = RightToLeft.No;
-            comboBox1.Size = new Size(346, 36);
-            comboBox1.TabIndex = 15;
-            // 
-            // textBox2
-            // 
-            textBox2.Font = new Font("Segoe UI", 12F);
-            textBox2.Location = new Point(179, 81);
-            textBox2.Name = "textBox2";
-            textBox2.RightToLeft = RightToLeft.No;
-            textBox2.Size = new Size(346, 34);
-            textBox2.TabIndex = 13;
-            // 
-            // textBox1
-            // 
-            textBox1.Font = new Font("Segoe UI", 12F);
-            textBox1.Location = new Point(179, 31);
-            textBox1.Name = "textBox1";
-            textBox1.RightToLeft = RightToLeft.No;
-            textBox1.Size = new Size(346, 34);
-            textBox1.TabIndex = 11;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 12F);
-            label1.Location = new Point(28, 33);
-            label1.Name = "label1";
-            label1.RightToLeft = RightToLeft.No;
-            label1.Size = new Size(110, 28);
-            label1.TabIndex = 10;
-            label1.Text = "Book name";
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { bookname, bookgenre, quantity, price });
-            dataGridView1.Location = new Point(593, 119);
-            dataGridView1.MultiSelect = false;
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridView1.Size = new Size(614, 728);
-            dataGridView1.TabIndex = 1;
-            // 
-            // bookname
-            // 
-            bookname.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            bookname.HeaderText = "Book name";
-            bookname.MinimumWidth = 6;
-            bookname.Name = "bookname";
-            bookname.ReadOnly = true;
-            // 
-            // bookgenre
-            // 
-            bookgenre.HeaderText = "Book genre";
-            bookgenre.MinimumWidth = 6;
-            bookgenre.Name = "bookgenre";
-            bookgenre.ReadOnly = true;
-            bookgenre.Width = 125;
-            // 
-            // quantity
-            // 
-            quantity.HeaderText = "Quantity";
-            quantity.MinimumWidth = 6;
-            quantity.Name = "quantity";
-            quantity.ReadOnly = true;
-            quantity.Width = 125;
-            // 
-            // price
-            // 
-            price.HeaderText = "Price";
-            price.MinimumWidth = 6;
-            price.Name = "price";
-            price.ReadOnly = true;
-            price.Width = 125;
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.White;
-            panel1.Controls.Add(panel4);
-            panel1.Controls.Add(panel3);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1219, 106);
-            panel1.TabIndex = 2;
-            // 
-            // panel4
-            // 
-            panel4.Anchor = AnchorStyles.Right;
-            panel4.Controls.Add(btnSearch);
-            panel4.Controls.Add(textBox5);
-            panel4.Location = new Point(676, 14);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(531, 47);
-            panel4.TabIndex = 6;
-            // 
-            // btnSearch
-            // 
-            btnSearch.BackColor = SystemColors.ButtonShadow;
-            btnSearch.Image = Properties.Resources.search25x25;
-            btnSearch.ImageAlign = ContentAlignment.MiddleLeft;
-            btnSearch.Location = new Point(393, 3);
-            btnSearch.Margin = new Padding(4);
-            btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(129, 41);
-            btnSearch.TabIndex = 3;
-            btnSearch.Text = "Search";
-            btnSearch.UseVisualStyleBackColor = false;
-            // 
-            // textBox5
-            // 
-            textBox5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox5.Location = new Point(22, 9);
-            textBox5.Margin = new Padding(4);
-            textBox5.Name = "textBox5";
-            textBox5.PlaceholderText = "Search ?";
-            textBox5.Size = new Size(363, 34);
-            textBox5.TabIndex = 2;
-            // 
-            // panel3
-            // 
-            panel3.Anchor = AnchorStyles.Right;
-            panel3.Controls.Add(comboBox6);
-            panel3.Controls.Add(comboBox5);
-            panel3.Controls.Add(label8);
-            panel3.Controls.Add(comboBox4);
-            panel3.Location = new Point(676, 62);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(531, 41);
-            panel3.TabIndex = 5;
-            // 
-            // comboBox6
-            // 
-            comboBox6.FormattingEnabled = true;
-            comboBox6.Location = new Point(371, 6);
-            comboBox6.Name = "comboBox6";
-            comboBox6.Size = new Size(151, 28);
-            comboBox6.TabIndex = 6;
-            comboBox6.Text = "-- filter publiser --";
-            // 
-            // comboBox5
-            // 
-            comboBox5.FormattingEnabled = true;
-            comboBox5.Location = new Point(200, 6);
-            comboBox5.Name = "comboBox5";
-            comboBox5.Size = new Size(151, 28);
-            comboBox5.TabIndex = 5;
-            comboBox5.Text = "-- filter author --";
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label8.Location = new Point(4, 6);
-            label8.Name = "label8";
-            label8.Size = new Size(0, 28);
-            label8.TabIndex = 4;
-            // 
-            // comboBox4
-            // 
-            comboBox4.FormattingEnabled = true;
-            comboBox4.Location = new Point(26, 6);
-            comboBox4.Name = "comboBox4";
-            comboBox4.Size = new Size(151, 28);
-            comboBox4.TabIndex = 3;
-            comboBox4.Text = "-- filter genre --";
+            label4.Size = new Size(208, 31);
+            label4.TabIndex = 0;
+            label4.Text = "Number of books:";
             // 
             // AdminStorage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
-            ClientSize = new Size(1219, 764);
+            ClientSize = new Size(1446, 824);
+            Controls.Add(panel2);
+            Controls.Add(flowListBook);
             Controls.Add(panel1);
-            Controls.Add(dataGridView1);
-            Controls.Add(groupBox1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "AdminStorage";
             Text = "AdminStorage";
             Load += AdminStorage_Load;
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
-            groupBox3.ResumeLayout(false);
-            groupBox3.PerformLayout();
-            groupBox2.ResumeLayout(false);
-            groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel1.ResumeLayout(false);
-            panel4.ResumeLayout(false);
-            panel4.PerformLayout();
+            panel1.PerformLayout();
+            panel6.ResumeLayout(false);
+            panel6.PerformLayout();
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            panelBookDetail.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private GroupBox groupBox1;
-        private GroupBox groupBox2;
-        private ComboBox comboBox1;
-        private TextBox textBox2;
-        private TextBox textBox1;
-        private Label label1;
-        private Label label7;
-        private Label label6;
-        private GroupBox groupBox3;
-        private TextBox textBox4;
-        private TextBox textBox3;
-        private Label label3;
-        private Label label2;
-        private Label label4;
-        private ComboBox comboBox2;
-        private ComboBox comboBox3;
-        private Label label5;
-        private Button button2;
-        private Button button1;
-        private Button button3;
-        private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn bookname;
-        private DataGridViewTextBoxColumn bookgenre;
-        private DataGridViewTextBoxColumn quantity;
-        private DataGridViewTextBoxColumn price;
+        private ComboBox cbAuthor;
         private Panel panel1;
+        private FlowLayoutPanel flowListBook;
+        private Panel panel2;
+        private CustomControl.BookItemControl bookItemControl1;
+        private Button btnClear;
+        private Panel panel6;
+        private Label label2;
+        private ComboBox cbGenreFilter;
+        private Panel panel5;
+        private Label label3;
+        private ComboBox cbAuthorFilter;
         private Panel panel3;
-        private ComboBox comboBox5;
-        private Label label8;
-        private ComboBox comboBox4;
-        private Panel panel4;
-        private Button btnSearch;
-        private TextBox textBox5;
-        private ComboBox comboBox6;
-        private Button button4;
-        private Label label9;
+        private Label label6;
+        private Label label5;
+        private Label label4;
+        private Label txtAmountSold;
+        private Label txtQuantity;
+        private Label txtNumberBook;
+        private Panel panelBookDetail;
+        public event EventHandler SelectedChanged;
+        private int _id;
+        private int itemSelected
+        {
+            get
+            {
+                return _id;
+            }
+            set
+            {
+                _id = value;
+                OnSelectedChanged();
+
+            }
+        }
+        protected virtual void OnSelectedChanged()
+        {
+            SelectedChanged?.Invoke(this, EventArgs.Empty);
+
+        }
+        private CustomControl.BookControl bookControl1;
+        List<Book> books;
+        private int author = -1;
+        private int genre = -1;
+        private Button btnNew;
+        private Button btnEdit;
+        private Button btnClearSelected;
     }
 }

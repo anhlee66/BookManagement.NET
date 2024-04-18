@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BookManagement.Views
 {
-    public partial class Employee : UserControl
+    public partial class EmployeeControl : UserControl
     {
-        public Employee()
+        public EmployeeControl()
         {
             InitializeComponent();
         }

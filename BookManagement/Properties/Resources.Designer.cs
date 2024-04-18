@@ -133,6 +133,26 @@ namespace BookManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap defaultThumbnail {
+            get {
+                object obj = ResourceManager.GetObject("defaultThumbnail", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap defaultThumbnail1 {
+            get {
+                object obj = ResourceManager.GetObject("defaultThumbnail1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap hosting__Custom_ {
             get {
                 object obj = ResourceManager.GetObject("hosting (Custom)", resourceCulture);
@@ -173,9 +193,15 @@ namespace BookManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+<<<<<<< HEAD
         internal static System.Drawing.Bitmap money {
             get {
                 object obj = ResourceManager.GetObject("money", resourceCulture);
+=======
+        internal static System.Drawing.Bitmap plus__Custom_ {
+            get {
+                object obj = ResourceManager.GetObject("plus (Custom)", resourceCulture);
+>>>>>>> dd74185c78061e2ef9406bd6678b9223950f5392
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -183,9 +209,35 @@ namespace BookManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+<<<<<<< HEAD
         internal static System.Drawing.Bitmap money1 {
             get {
                 object obj = ResourceManager.GetObject("money1", resourceCulture);
+=======
+        internal static System.Drawing.Bitmap plus__Custom___1_ {
+            get {
+                object obj = ResourceManager.GetObject("plus (Custom) (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap plus__Custom___2_ {
+            get {
+                object obj = ResourceManager.GetObject("plus (Custom) (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap refesh__Custom_ {
+            get {
+                object obj = ResourceManager.GetObject("refesh (Custom)", resourceCulture);
+>>>>>>> dd74185c78061e2ef9406bd6678b9223950f5392
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -38,9 +38,9 @@
             // 
             panel1.Controls.Add(btnSearch);
             panel1.Controls.Add(textBox1);
-            panel1.Location = new Point(24, 13);
+            panel1.Location = new Point(14, 14);
             panel1.Name = "panel1";
-            panel1.Size = new Size(531, 47);
+            panel1.Size = new Size(509, 52);
             panel1.TabIndex = 0;
             // 
             // btnSearch
@@ -48,7 +48,7 @@
             btnSearch.BackColor = Color.LightBlue;
             btnSearch.Image = Properties.Resources.search25x25;
             btnSearch.ImageAlign = ContentAlignment.MiddleLeft;
-            btnSearch.Location = new Point(393, 3);
+            btnSearch.Location = new Point(375, 5);
             btnSearch.Margin = new Padding(4);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(129, 41);
@@ -58,11 +58,12 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(22, 6);
+            textBox1.Location = new Point(4, 4);
             textBox1.Margin = new Padding(4);
+            textBox1.Multiline = true;
             textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "Search ?";
-            textBox1.Size = new Size(363, 34);
+            textBox1.PlaceholderText = "    Search ?";
+            textBox1.Size = new Size(363, 42);
             textBox1.TabIndex = 2;
             // 
             // SeachControl
@@ -73,7 +74,7 @@
             Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Margin = new Padding(4);
             Name = "SeachControl";
-            Size = new Size(619, 87);
+            Size = new Size(539, 78);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -82,7 +83,7 @@
         #endregion
 
         private Panel panel1;
-        private Button btnSearch;
         private TextBox textBox1;
+        private Button btnSearch;
     }
 }
